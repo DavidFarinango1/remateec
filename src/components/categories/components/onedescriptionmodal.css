@@ -1,0 +1,53 @@
+.ODM-principal-box{
+    display:grid;
+    border-radius:  5px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 4fr 2fr;
+    grid-template-areas: "odmname odmimages"
+                         "odmdetails odmdetails";
+}
+.ODM-PBboxa{grid-area: odmname;}
+.ODM-PBboxb{grid-area: odmimages;}
+.ODM-PBboxc{grid-area: odmdetails;}
+.OMDmb{
+    padding: 0 !important;
+}
+.OMDmb button{
+    margin-right: .2rem !important;
+}
+.ODM-PBboxa,.ODM-PBboxb{
+    align-items: center;
+    text-align: center;
+    padding: 15px 15px 0px 15px;
+    background: white;
+}
+.ODM-PBbox1 img{
+    border: 1px solid black;
+}
+.ODM-PBbox2 img{
+    width: auto;
+    object-fit: contain;
+}
+.ODM-PBproduct{
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    margin: 5px 0px;
+    text-align: center;
+}
+.ODM-PBboxc{
+    background: white;
+    text-align: left; 
+    padding: 5px 0px 2px 15px;
+}
+/* fin primer caja */
+@media screen and (max-width:1024px){
+}
+@media screen and (max-width: 768px){
+}
+@media screen and (max-width: 480px){
+
+}
+@media screen and (max-width: 320px){
+
+}

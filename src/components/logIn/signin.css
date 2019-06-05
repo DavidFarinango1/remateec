@@ -1,0 +1,39 @@
+.SIP{
+    background: #F8F9FA;
+    padding: 1em;
+    text-align: center;
+}
+.SIP1{
+    display: grid;
+    width: 100%;
+    justify-content: center;
+    margin: 0;
+}
+.SIP1header{
+    background: #F8F9FA;
+    border: #6fbec6;
+    border-style: inset;
+    border-radius: .30rem;
+    padding: 2em;
+}
+
+.SIP1header button{
+    color: black;
+    border-color: grey;
+    margin: 1em !important;
+}
+.SIP1header button:hover{
+    background-color: #1E5372 !important;
+    color: white;
+}
+.LItitleprincipal{
+    margin: 10px 0;
+}
+.LItitle{
+
+    margin: 10px 0 3px 0;
+}
+.socialprincipal img{
+    margin: .5em 1.5em;
+    width: 40px;
+}

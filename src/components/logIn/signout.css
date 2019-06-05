@@ -1,0 +1,16 @@
+.buttonSOut{
+    padding: 1px 5px 2px;
+    color: black;
+    border-color: black;
+    font-size: .8em;
+    margin-right: .5em;
+}
+.buttonSOut:hover{
+    background-color: #1E5372;
+    color: white;
+}
+@media screen and (max-width: 480px){
+    .buttonSOut{
+        margin: 0 !important;
+    }
+}

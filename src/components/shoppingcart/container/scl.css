@@ -1,0 +1,91 @@
+.SCLimageccontainer{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+.SCLimage{
+    border-radius: 3px;
+    border: 1px solid grey;
+    width: 70%;
+}
+.SCL-principalbox{
+    display: flex;
+    margin: 0px 10px 50px 10px;
+
+}
+.SCL-box1{
+    width: 75%;
+}
+
+.SCL-box-x{
+    border: 1.5px solid rgb(0, 0, 0);
+    border-radius: 3px;
+    background: white;
+    height: max-content;
+    display: grid;
+    grid-template-columns: 1.5fr 5fr 1fr 1fr 1fr;
+    grid-template-areas: "a a b c d";
+    grid-gap: 3px;
+}
+.SCL-a{
+    grid-area: a;
+    display: flex;
+}
+.SCL-a-w{
+    margin: 10px;
+    padding-left: 30px;
+    font-weight: bold;
+    font-size: 25px;
+}
+.SCL-b{
+    grid-area: b;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.SCL-b-w{
+    margin: 0px;
+    font-weight: bold;
+}
+.SCL-c{
+    grid-area: c;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.SCL-c-w{
+    margin: 0px;
+    font-weight: bold;
+}
+.SCL-d{
+    grid-area: d;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.SCL-d-w{
+    margin: 0px;
+    font-weight: bold;
+}
+.SCL-box2{
+    grid-area: e;
+    text-align: center;
+    width: 25%;
+    margin-left: 10px;
+    border: 1.5px solid rgb(0, 0, 0);
+    border-radius: 3px;
+    background: white;
+    height: max-content;
+}
+
+.SCL-box-z{
+    border: 1.5px solid rgb(0, 0, 0);
+    border-radius: 3px;
+    background: white;
+}
+.SCL-box-za{
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px 30px;
+}

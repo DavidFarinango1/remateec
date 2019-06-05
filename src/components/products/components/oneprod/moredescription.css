@@ -1,0 +1,71 @@
+.secundary-box{
+    display: grid;
+    margin: 0px 15px 15px 15px;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    font-family: 'Open Sans', sans-serif;
+    grid-template-areas: "descripcion1 descripcion2"
+}
+.SBbox{
+    /* background: rgb(245, 245, 245); */
+    background: white;
+    border-radius:  5px;
+}
+.SBbox.d{grid-area: descripcion1;}
+.SBbox.e{grid-area: descripcion2;}
+.SBtitle2{
+    font-size: 2em;
+    font-weight: bold;
+    margin: 10px 15px;
+    padding: 5px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    background: white;
+    border-radius: 5px;
+}
+.SBlist{
+    margin: 1em;
+    font-size: .8em;
+}
+.SBdetails-title{
+    margin: .5em 0 0 1.6em;
+    font-size: 1.3em;
+    display: flex;
+}
+@media screen and (max-width:1024px){
+}
+@media screen and (max-width: 768px){
+}
+@media screen and (max-width: 480px){
+    .SBdetails-title{
+        margin: 2px;
+        justify-content: center;
+
+    }
+    .SBtitle2{
+        font-size: 1.5em;
+    }
+    .SBlist{
+        margin: 0px 0px 0px 20px;
+        padding: 0px;
+    }
+}
+@media screen and (max-width: 320px){
+    .SBtitle2{
+        margin: 3px;
+        padding: 0px;
+        font-size: 1.2em;
+    }
+    .SBdetails-title{
+        font-size: 1.2em;
+    }
+    .SBsecundary-box{
+        display: grid;
+        margin: 0px 3px;
+        grid-gap: 3px;
+        grid-template-columns: 1fr;
+        font-family: 'Open Sans', sans-serif;
+        grid-template-areas: "descripcion1" 
+                             "descripcion2";
+    }
+}

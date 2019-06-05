@@ -1,0 +1,105 @@
+/* inicio primer caja */
+.principal-box{
+    display:grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-gap: 10px;
+    margin: 15px 15px 0 15px; 
+    /* height: 300px; */
+    grid-template-areas: "detalles central venta"
+}
+.PBbox.a{grid-area: detalles;}
+.PBbox.b{grid-area: central;}
+.PBproduct.prueba{
+    display: none;
+}
+.PBbox.c{grid-area: venta;}
+.PBbox.a,.PBbox.b{
+    align-items: center;
+    text-align: center;
+    padding: 15px 15px 0px 15px;
+}
+.PBbox{
+    /* background: rgb(245, 245, 245); */
+    background: white;
+    border-radius:  5px;
+}
+.PBbox1 img{
+    border: 1px solid black;
+}
+.PBbox2 img{
+    width: auto;
+    object-fit: contain;
+}
+.PBdetails-title, .PBproduct{
+    font-size: 1.3em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    margin: 5px 0px;
+    text-align: center;
+}
+.PBbox.c{
+    /* border: 1px solid black; */
+    /* align-items: center; */
+    text-align: left; 
+    padding: 15px 15px 0px 15px;
+}
+.PBbutton-sell{
+    justify-content: center;
+    text-align: center;
+    margin: 4px 0px;
+}
+.PBventa{
+    border-radius: 10px;
+    /* background: rgba(33, 88, 114, 0.966); */
+    background: #0279B0;
+    padding: 7px 7px;
+    font-size: 1.2em;
+    /* font-weight: bold; */
+    color: white;
+}
+/* fin primer caja */
+@media screen and (max-width:1024px){
+}
+@media screen and (max-width: 768px){
+}
+@media screen and (max-width: 480px){
+    .principal-box{
+        display:grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-gap: 5px;
+        margin: 10px 2px 0 2px; 
+        height: auto;
+        grid-template-areas: "central venta venta"
+                             "detalles detalles detalles";
+    }
+    .PBbox2 img{
+        width: initial;
+        /* height: 200px; */
+    }
+    .PBbox.a{
+        padding: 3px 3px 5px 3px;
+    }
+    .PBdetails-title{
+        margin: 2px;
+        justify-content: center;
+
+    }
+}
+@media screen and (max-width: 320px){
+    .principal-box{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-gap: 5px;
+        margin: 10px 2px 0 2px; 
+        height: auto;
+        grid-template-areas: "central"
+                             "venta"
+                             "detalles";
+    }
+    .PBproduct.prueba{
+        display: inline;
+    }
+    .PBproduct.prueba2{
+        display: none;
+    }
+}

@@ -1,0 +1,13 @@
+.ShopCart{
+    justify-content: center;
+    text-align: center;
+}
+.shopCartimg{
+    margin: 80px 0px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* .shopCartM{
+    justify-content: center;
+} */

@@ -1,0 +1,40 @@
+.SUP{
+    background: #F8F9FA;
+    padding: 2.1em;
+    width: 100%;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+}
+.SUPregister{
+    background: #F8F9FA;
+    border: #6fbec6;
+    border-style: inset;
+    border-radius: .30rem;
+    padding: 2em;
+}
+
+.SUPregister button{
+    color: black;
+    border-color: grey;
+    margin: 1em !important;
+}
+.SUPregister button:hover{
+    background-color: #1E5372;
+    color: white;
+}
+@media screen and (max-width: 320px){
+    .SUP{
+        padding: .2em;
+    }
+    .SUPLIheader img{
+        height: 50px;
+    }
+    .SUPLIheader h1{
+        font-size: 1.8rem;
+    }
+    .SUPLIprincipal h2{
+        font-size: 1.5rem;
+        margin: 20px 0;
+    }
+}

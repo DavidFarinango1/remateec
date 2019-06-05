@@ -1,0 +1,81 @@
+.OneProdCateg{
+    padding-top: 1em;
+    padding-bottom: .7em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.OneProdCateg_title{
+    text-align: center;
+    padding: .5em 0 0 0;
+    text-size-adjust: 1em;
+}
+.OneProdCateg_box{
+    /* border: 1.5px solid rgb(0, 0, 0);s */
+    border-radius: 3px;
+    background: white;
+    display: grid;
+    margin: 5px;
+    width: 195px;
+    /* width: 610px; */
+    /* height: 250px; */
+    /* grid-template-columns: repeat(6, 1fr); */
+    /* grid-template-rows: repeat(3, 1fr); */
+    grid-template-areas: "a a a"
+                         "b b b"
+                         "c c c"
+                         "d d d"
+                         "e e e"
+                         "f f f"
+}
+.OneProdCateg_name{
+    grid-area: a;
+    text-align: center;
+}
+.OneProdCateg_p_name{
+    margin: 5px;
+    font-size: 1.30em;
+    font-weight: bold;
+}
+.OneProdCateg_principal_image{
+    grid-area: c;
+    text-align: center;
+}
+.OneProdCateg_pi_img{
+    width: 180px;
+    height: 180px;
+}
+.OneProdCateg_price{
+    grid-area: d;
+    display: flex;
+    justify-content: space-evenly;
+    margin: .5em 0 .3em 0;
+}
+.OneProdCateg_P{
+    margin: 0px
+}
+.OneProdCateg_sendby{
+    grid-area: e;
+    display: flex;
+    justify-content: space-evenly;
+}
+.OneProdCateg_buttons{
+    grid-area: f;
+    text-align: center;
+}
+.OneProdCateg_button1{
+    margin: 0 10px 3px 10px;
+    font-size: 0.8em;
+    padding: .5em;
+}
+.OneProdCateg_button1_2{
+    background-color: crimson !important;
+    border-color: crimson !important;
+}
+.OneProdCateg_button1_2:hover{
+    background-color: darkred !important;
+    border-color: darkred !important;
+}
+.modalwid{
+    max-width: 50% !important;
+}

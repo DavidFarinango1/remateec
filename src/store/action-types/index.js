@@ -1,0 +1,7 @@
+export const SEARCH_PRODUCT = 'SEARCH_PRODUCT';
+export const ADD_TO_CART = 'ADD_TO_CART';
+export const REDUCE_TO_CART = 'REDUCE_TO_CART';
+export const INCREASE_PROD = 'INCREASE_PROD';
+export const DECREASE_PROD = 'DECREASE_PROD';
+export const UPDATE_ITEM_UNITS = 'UPDATE_ITEM_UNITS';
+export const DELETE_FROM_CART = 'DELETE_FROM_CART';

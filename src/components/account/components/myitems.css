@@ -1,0 +1,30 @@
+.ItemSeller-container{
+    background-color: white;
+    border-radius: 5px;
+    padding: 1.5em;
+}
+.ItemSellerBox1{
+    text-align: center;
+}
+.ItemSellerBox1 img{
+    margin: 0.5em;
+    border-radius: 5px;
+    height: 4em;
+    width: 4em;
+}
+.ItemSellerBox1 p{
+    font-size: 1.1em;
+    font-weight: 500;
+}
+.ItemSellerLinks{
+    text-align: center;
+    margin: 2em 0;
+}
+.ItemSellerLinks p{
+    display: inline-block;
+    font-size: 1.3em;
+    margin-bottom: 1.2em;
+}
+.ItemSellerLinks p:hover{
+    font-weight: 600;
+}

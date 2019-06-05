@@ -1,0 +1,55 @@
+.PWFORGET{
+    background: #F8F9FA;
+    padding: 9.4em;
+    width: 100%;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+}
+.PWFORGETFORM{
+    background: #F8F9FA;
+    border: #6fbec6;
+    border-style: inset;
+    border-radius: .30rem;
+    padding: 2em;
+}
+
+.PWFORGETFORM button{
+    color: black;
+    border-color: grey;
+    margin: 1em !important;
+}
+.PWFORGETFORM button:hover{
+    background-color: #1E5372;
+    color: white;
+}
+@media screen and (max-width:1024px){
+    .PWFORGET{
+        padding: 6em;
+    }
+}
+@media screen and (max-width: 768px){
+    .PWFORGET{
+        padding: 4em;
+    }
+}
+@media screen and (max-width: 576px){
+    .PWFORGET{
+        padding: 2em;
+    }
+}
+@media screen and (max-width: 480px){
+    .PWFORGET{
+        padding: 1em;
+    }
+}
+@media screen and (max-width: 425px){
+    .PWFORGET{
+        padding: .1em;
+    }
+}
+@media screen and (max-width: 320px){
+    .PWFORGET{
+        padding: .1em;
+    }
+}

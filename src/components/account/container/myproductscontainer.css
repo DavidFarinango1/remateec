@@ -1,0 +1,23 @@
+.Sellerprincipalbox{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-gap: 1.5em;
+    grid-template-areas: "SellerBox1 SellerBox2 SellerBox3";
+    margin: 1.5em;
+
+}
+.SellerBox1{
+    grid-area: SellerBox1;
+    /* background-color: white;
+    border-radius:  5px; */
+}
+.SellerBox2{
+    grid-area: SellerBox2;
+    /* background-color: white;
+    border-radius:  5px; */
+}
+.SellerBox3{
+    grid-area: SellerBox3;
+    /* background-color: white;
+    border-radius:  5px; */
+}

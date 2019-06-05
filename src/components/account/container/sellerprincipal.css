@@ -1,0 +1,20 @@
+.SellerPBOX{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-gap: 1.5em;
+    grid-template-areas: "SellerPBOX1 SellerPBOX2";
+    margin: 1.5em;
+}
+.SellerPBOX1{
+    grid-area: SellerPBOX1;
+    text-align: center;
+}
+.SellerPBOX2{
+    grid-area: SellerPBOX2;
+    text-align: center;
+}
+.MyaccountBOX{
+    background-color: white;
+    border-radius: 5px;
+    padding: 1.5em;
+}
