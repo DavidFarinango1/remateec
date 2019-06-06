@@ -8,7 +8,7 @@ import ItemSeller from '../components/myitems'
 import UploadProducts from '../components/seller/uploadproducts'
 import OnlyMyProducts from '../components/seller/onlymyproducts'
 import './myproductscontainer.css'
-
+import Footer from '../../footer/container/footer-container'
 
 
 class Myproducts extends Component{
@@ -370,6 +370,7 @@ class Myproducts extends Component{
                         />
                     </div>
                 </div>
+                <Footer />
             </div>
         )
     }

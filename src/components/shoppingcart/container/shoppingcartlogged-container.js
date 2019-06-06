@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import ShoppingCartLogged from '../components/shoppingcartlogged.js';
 import CartContainer from '../../Cart/cart_container'
 import HeaderContainer from '../../header/container/headercontainer';
-import Footer from '../../footer/components/footer';
+import Footer from '../../footer/container/footer-container';
 
 import { connect } from 'react-redux'
 import * as actions from '../../../store/actions/index.js'

@@ -3,24 +3,24 @@ import 'firebase/auth'
 import 'firebase/firestore'
 import 'firebase/storage'
 
-const config = {
-    apiKey: "AIzaSyBsFd51nIOjAQpU4MmttgZcmZfgVINj0r0",
-    authDomain: "ventasquito-ef0c3.firebaseapp.com",
-    databaseURL: "https://ventasquito-ef0c3.firebaseio.com",
-    projectId: "ventasquito-ef0c3",
-    storageBucket: "ventasquito-ef0c3.appspot.com",
-    messagingSenderId: "510782049463",
-    appId: "1:510782049463:web:6a4a3f4ec3049248"
-};
 // const config = {
-//     apiKey: "AIzaSyDaOQiVIl1oUFPhEdMIWrrB-bb2tT1F_vs",
-//     authDomain: "weygo-7ce1b.firebaseapp.com",
-//     databaseURL: "https://weygo-7ce1b.firebaseio.com",
-//     projectId: "weygo-7ce1b",
-//     storageBucket: "weygo-7ce1b.appspot.com",
-//     messagingSenderId: "269307451614",
-//     appId: "1:269307451614:web:b8735bfffa167863"
+//     apiKey: "AIzaSyBsFd51nIOjAQpU4MmttgZcmZfgVINj0r0",
+//     authDomain: "ventasquito-ef0c3.firebaseapp.com",
+//     databaseURL: "https://ventasquito-ef0c3.firebaseio.com",
+//     projectId: "ventasquito-ef0c3",
+//     storageBucket: "ventasquito-ef0c3.appspot.com",
+//     messagingSenderId: "510782049463",
+//     appId: "1:510782049463:web:6a4a3f4ec3049248"
 // };
+const config = {
+    apiKey: "AIzaSyB8vDP0nzvOFIEsZC-lEHZYlqfOPbPtf5A",
+    authDomain: "ventasquito-4da99.firebaseapp.com",
+    databaseURL: "https://ventasquito-4da99.firebaseio.com",
+    projectId: "ventasquito-4da99",
+    storageBucket: "ventasquito-4da99.appspot.com",
+    messagingSenderId: "742480332892",
+    appId: "1:742480332892:web:b44fd5a8f55bc0e4"
+};
 
 class Firebase {
     constructor(){

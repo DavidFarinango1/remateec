@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Header from '../../header/container/headercontainer'
 import ItemSeller from '../components/myitems'
 import Myaccount from '../components/myaccount/myaccount'
+import Footer from '../../footer/container/footer-container'
 import './sellerprincipal.css'
 
 class Seller extends Component{
@@ -17,6 +18,7 @@ class Seller extends Component{
                         <Myaccount />
                     </div>
                 </div>
+                <Footer />
             </div>
         )
     }

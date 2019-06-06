@@ -34,7 +34,7 @@ class SignUpFormBase extends Component {
               displayName: username,
             })
             const configuracion ={
-              url: 'http://localhost:8000'
+              url: 'https://www.ventasquito.com/'
             }
             
             authUser.user.sendEmailVerification(configuracion).catch(error=>{

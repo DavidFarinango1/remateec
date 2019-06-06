@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 // import './generallogin.css'
 import {Link} from 'react-router-dom';
 import HeaderContainer from '../../header/container/headercontainer';
-import Footer from '../../footer/components/footer.js';
+import Footer from '../../footer/container/footer-container';
 import './sc.css'
 class ShoppingCart extends Component{
     render(){
@@ -10,7 +10,7 @@ class ShoppingCart extends Component{
             <div className="ShopCart">
                 <HeaderContainer />
                 <div className = "shopCartimg">
-                    <img src= "./weygo/imagenes/others/carrito.PNG" height="66px"></img>
+                    <img src= "./images/others/carrito.PNG" height="66px"></img>
                     <h1>Carrito</h1>
                 </div>
                 <div className="shopCartM">
