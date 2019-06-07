@@ -8,7 +8,13 @@
     grid-template-areas: "detalles central venta"
 }
 .PBbox.a{grid-area: detalles;}
-.PBbox.b{grid-area: central;}
+.PBbox.b{
+    grid-area: central;
+    /* display:grid;
+    grid-template-rows: 25% 75%;
+    grid-template-areas: "imgmin"
+                         "imgmax"; */
+}
 .PBproduct.prueba{
     display: none;
 }
@@ -18,18 +24,44 @@
     text-align: center;
     padding: 15px 15px 0px 15px;
 }
+.PBbox1{
+    justify-content: center;
+    margin-bottom: 1em;
+    display: flex;
+}
+/* .PBbox2{
+    grid-area: imgmax;
+} */
 .PBbox{
     /* background: rgb(245, 245, 245); */
     background: white;
     border-radius:  5px;
 }
 .PBbox1 img{
-    border: 1px solid black;
+    margin: 0px .9em;
+    object-fit: scale-down;
 }
-.PBbox2 img{
+/* .PBbox2 img{
     width: auto;
     object-fit: contain;
+} */
+/* slides */
+.slide-box2{
+    /* background: linear-gradient(90deg, #1c3643 0, #273b47 100%, #1e5372); */
+    display: inline-block;
+    width: min-content;
 }
+.slide-box2 img{
+    height: 300px;
+    /* width: 0px; */
+    object-fit: cover;
+}
+.slide1a{
+    display: flex;
+    justify-content: center;
+    /* margin: 1.2em; */
+}
+/* fin slides */
 .PBdetails-title, .PBproduct{
     font-size: 1.3em;
     font-family: 'Open Sans', sans-serif;

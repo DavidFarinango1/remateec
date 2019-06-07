@@ -25,10 +25,10 @@ class Header extends Component{
                 if(image.photoURL){
                     return this.setState({image: image.photoURL})
                 }else{
-                    return this.setState({image: "./images/users/usuario_auth.png"});
+                    return this.setState({image: "/images/users/usuario_auth.png"});
                 }
             }else{
-                return this.setState({image: "./images/users/usuario.png"});
+                return this.setState({image: "/images/users/usuario.png"});
             }
         })
     }
@@ -42,9 +42,35 @@ class Header extends Component{
                 <div className="row no-gutters h-principal-box" id="Header">
                     <div className="header1 pb1">
                         <Link to= ''>
-                            <img src = "./images/weygo/logo.PNG" alt="logo" />
+                            {/* <img src = "./images/weygo/logo.PNG" alt="logo" /> */}
+                            <img src = {`/images/weygo/logo.PNG`} alt="logo" />
                         </Link>
-                        <a className="navbar-brand" href="#">Weygo</a>
+                            {/* <!-- Button trigger modal --> */}
+                            <div data-toggle="tooltip" data-placement="bottom" title="Como empezar!">
+                                <a className="navbar-brand buttonVentasQuito" href="#" data-toggle="modal" data-target="#exampleModalCenter">Ventasquito</a>
+                            </div>
+                            {/* <!-- Modal --> */}
+                            <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div className="modal-dialog modal-dialog-centered" role="document">
+                                <div className="modal-content">
+                                    <div className="modal-header">
+                                        <h5 className="modal-title" id="exampleModalCenterTitle">Como empezar:</h5>
+                                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div className="modal-body headermb">
+                                        <li>Primero haz click en ingresa o registrate</li>
+                                        <li>Después haz click en Registrate ahora</li>
+                                        <li>Una vez registrado te llegara a tu correo personal un enlace que verificará tu cuenta</li>
+                                        <li>Verifica tu cuenta e ingresa a ventasquito.com con tu correo y contraseña</li>
+                                        <li>Luego haz click en Mi cuenta y registra tu información personal la cual es totalmente privada, la puedes editar cuando quieras</li>
+                                        <li>Una vez agregada la información puedes empezar a publicar tus productos o empezar a comprar.</li>
+                                        <h5>Ventasquito agradece tu registro.</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
                     </div>
                     <div className="header2 pb2">
                         <form className="form-inline my-2 my-lg-0 justify-content-center">
@@ -57,7 +83,6 @@ class Header extends Component{
                         <Navigation authUser={this.state.authUser} />
                         <img className="img_avatar"src ={this.state.image} id='avatar' alt="carro compras" height="35px" weight="35px" />
                     </div>
-                    
                 </div>
             </div>
         )

@@ -19,7 +19,7 @@ const NavigationAuth =()=>(
       >
         <p className="navbar-brand">Mi carrito</p>
       </Link>
-      <img src ="./images/others/carrito.PNG" alt="carro compras" height="40px" />
+      <img src ="/images/others/carrito.PNG" alt="carro compras" height="40px" />
     </div>
     <div className="nav_user">
       <Link 
@@ -44,7 +44,7 @@ const NavigationNonAuth = () =>(
         >
           <p className="navbar-brand">Mi carrito</p>
         </Link>
-        <img src ="./images/others/carrito.PNG" alt="carro compras" height="40px"/>
+        <img src ="/images/others/carrito.PNG" alt="carro compras" height="40px"/>
       </div>
       <div className="nav2">
         <Link  to={ROUTES.SIGN_IN}>
