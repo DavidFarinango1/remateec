@@ -124,7 +124,7 @@ class Myproducts extends Component{
                     console.log(error)
                 })
             : this.setState({ authUser:null });
-            console.log(authUser.email)
+            // console.log(authUser.email)
         })
     }
     componentWillUnmount(){
@@ -187,7 +187,7 @@ class Myproducts extends Component{
                 edit 
             } = this.state;
         const user = this.props.firebase.auth.currentUser
-        // console.log(user.email)
+        console.log(user)
         console.log(edit)
         event.preventDefault()
         !edit?

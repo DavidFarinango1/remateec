@@ -19,7 +19,7 @@ class ItemsSeller extends Component{
             authUser
             ? this.setState({ authUser, username: authUser.displayName })
             : this.setState({ authUser:null });
-            console.log(authUser)
+            // console.log(authUser)
         })
         this.listener2 = this.props.firebase.auth.onAuthStateChanged(image =>{
             if(image){

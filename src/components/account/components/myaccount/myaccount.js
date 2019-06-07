@@ -12,6 +12,7 @@ class Myaccount extends Component {
             cellphone: 'Registra tu número de celular para una mejor atención y soporte.',
             password: '********',
             address:  'Todavía no tienes registrada tu dirección, registrala ahora.',
+            mybussinessname: '',
             mycell: '',
             mygps: '',
             edit2: false,
@@ -26,7 +27,7 @@ class Myaccount extends Component {
                             email: authUser.email, 
                            })
             : this.setState({ authUser:null});
-            console.log(authUser)
+            // console.log(authUser)
         })
         this.listener4 = this.props.firebase.auth.onAuthStateChanged((authUser)=>{
             authUser
@@ -46,6 +47,9 @@ class Myaccount extends Component {
                                     return user.doc.data().u_gps
                                 })
                             ,
+                            mybussinessname: result.map((user)=>{
+                                return user.doc.data().u_mybussinessname
+                            })
                         })
                     // })
                 },error=>{
@@ -68,13 +72,14 @@ createUser = event =>{
     const {
         name,
         email,
+        mybussinessname,
         mycell,
         mygps,
         edit2,
     }= this.state
     event.preventDefault()
     const user = this.props.firebase.auth.currentUser
-    console.log(user.uid)
+    // console.log(user.uid)
     const id = user.uid
     !edit2?
     this.props.firebase
@@ -84,24 +89,26 @@ createUser = event =>{
         .set({
             u_name: name,
             u_email: email,
+            u_mybussinessname: mybussinessname,
             u_cell: mycell,
             u_gps: mygps,
         })
         .then(()=>{
-            console.log('usuario creado')
+            // console.log('usuario creado')
             alert('Bienvenido Weyger, tu usuario a sido creado con éxito')
             this.setState({
                 edit2: true,
             })
         })
         .catch((error)=>{
-            console.log(error)
+            alert(error)
         })
         :this.update2();
 
 }
 update2=()=>{
     const {
+        mybussinessname,
         mycell,
         mygps,
     }= this.state;
@@ -113,17 +120,19 @@ update2=()=>{
         .update({
             u_cell: mycell,
             u_gps: mygps,
+            u_mybussinessname: mybussinessname,
         })
         .then(()=>{
-            console.log('usuario actualizado')
+            // console.log('usuario actualizado')
             alert('Usuario actualizado con éxito')
         })
         .catch((error)=>{
-            console.log('el error es :'+ error)
+            alert('el error es :'+ error)
         })
 }
     render(){
         const {
+            mybussinessname,
             mycell,
             mygps,
          } = this.state; 
@@ -135,12 +144,16 @@ update2=()=>{
                     <p>{this.state.name}</p>
                     <h4>Correo:</h4>
                     <p>{this.state.email}</p>
+                    <div>
+                        <h4>Nombre de la empresa:</h4>
+                        <input className="myaccinput1 form-control mr-sm-8" name="mybussinessname" value={mybussinessname} type="text" onChange={this.onActionChangeReal}  maxLength="200" data-length="200" required></input>
+                    </div>
                     <div >
                         <h4>Mi número de teléfono:</h4>
                         <input className="myaccinput1 form-control mr-sm-8" name="mycell" value={mycell} type="text" onChange={this.onActionChangeReal} maxLength="15" data-length="15" required></input>
                     </div>
-                    <div >
-                        <h4>Mi dirección de entrega, para las compras realizadas:</h4>
+                    <div>
+                        <h4>Mi dirección, para las compras realizadas y para sus ventas:</h4>
                         <input className="myaccinput2 form-control mr-sm-8" name="mygps" value={mygps} type="text" onChange={this.onActionChangeReal}  maxLength="200" data-length="200" required></input>
                     </div>
                     <div className="btnFinal">

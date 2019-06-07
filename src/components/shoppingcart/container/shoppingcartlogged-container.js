@@ -36,7 +36,9 @@ class ShoppingCartLoggedContainer extends Component{
             return acum;
         }, 0);
     }
-
+    onSellClick=()=>{
+        console.log(this.props.addToCart)
+    }
 
     render(){
         return(
@@ -49,7 +51,7 @@ class ShoppingCartLoggedContainer extends Component{
                     <div className="SCL-box1">
                         <div className="SCL-box-x">
                             <div className="SCL-a">
-                                <p className="SCL-a-w">Carrito</p>    
+                                <p className="SCL-a-w" onClick={this.onSellClick}>Carrito</p>    
                             </div>
                             <div className="SCL-b">
                                 <p className="SCL-b-w">Precio Unitario</p>
