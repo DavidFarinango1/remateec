@@ -2,11 +2,11 @@ import React, {Component} from 'react'
 import './cart.css'
 import {Link} from 'react-router-dom'
 class Cart extends Component{
-    handleClick=(event)=>{
-        // console.log(this.props.id);
-        console.log(this.props);
-        // this.props.openModal(this.props.id);
-    }
+    // handleClick=(event)=>{
+    //     // console.log(this.props.id);
+    //     console.log(this.props);
+    //     // this.props.openModal(this.props.id);
+    // }
 
     totalProduct(product){
         var a = this.props.price
@@ -30,7 +30,7 @@ class Cart extends Component{
                         className="Cart1_1"
                         src={this.props.principal_image} 
                         alt='img prod.'  
-                        onClick={this.handleClick}
+                        // onClick={this.handleClick}
                         />
                     </div>
                 </Link>

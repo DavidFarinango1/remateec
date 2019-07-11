@@ -47,14 +47,14 @@ class Header extends Component{
                         </Link>
                             {/* <!-- Button trigger modal --> */}
                             <div data-toggle="tooltip" data-placement="bottom" title="Como empezar!">
-                                <a className="navbar-brand buttonVentasQuito" href="#" data-toggle="modal" data-target="#exampleModalCenter">Ventasquito</a>
+                                <a className="navbar-brand buttonVentasQuito" href="#" data-toggle="modal" data-target="#exampleModalCenter2">Ventasquito</a>
                             </div>
                             {/* <!-- Modal --> */}
-                            <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div className="modal fade" id="exampleModalCenter2" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle2" aria-hidden="true">
                             <div className="modal-dialog modal-dialog-centered" role="document">
                                 <div className="modal-content">
                                     <div className="modal-header">
-                                        <h5 className="modal-title" id="exampleModalCenterTitle">Como empezar:</h5>
+                                        <h5 className="modal-title" id="exampleModalCenterTitle2">Como empezar:</h5>
                                         <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                         </button>

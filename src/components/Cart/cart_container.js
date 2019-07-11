@@ -7,9 +7,9 @@ import { bindActionCreators } from 'redux';
 
 
 class CartContainer extends Component {
-    openModal = (id) =>{
-        this.props.actions.openModal(id)
-    }
+    // openModal = (id) =>{
+    //     this.props.actions.openModal(id)
+    // }
     handleDeductUnit(id) {
         let units = -1;
         this.props.actions.updateItemUnits({id, units})
@@ -43,7 +43,7 @@ class CartContainer extends Component {
                             this.props.addToCart.map((cartItem)=>{
                                 return(
                                     <Cart 
-                                    openModal={this.openModal}
+                                    // openModal={this.openModal}
                                     key={cartItem.id}
                                     {...cartItem}
                                     onAddUnit={this.handleAddUnit.bind(this, cartItem.id)}

@@ -30,8 +30,8 @@ class OneProdCateg extends Component{
                                 <p className='OneProdCateg_P'> ${item.data.p_price} </p>
                             </div>
                             <div className='OneProdCateg_buttons'>
-                            <button className='OneProdCateg_button1  btn btn-info' onClick={() => this.props.handleOnAdd(item)} >Comprar</button>
-                            <button className='OneProdCateg_button1 OneProdCateg_button1_2 btn btn-danger' onClick={() => this.handleLog(item)} data-toggle="modal" data-target="#exampleModalCenter">Ver más</button>
+                                <button className='OneProdCateg_button1  btn btn-info' onClick={() => this.props.handleOnAdd(item)}>Comprar</button>
+                                <button className='OneProdCateg_button1 OneProdCateg_button1_2 btn btn-danger' onClick={() => this.handleLog(item)} data-toggle="modal" data-target="#exampleModalCenter">Ver más</button>
                             </div>
                             {/* Modal */}
                             <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -39,7 +39,7 @@ class OneProdCateg extends Component{
                                     <div className="modal-content">
                                         <div className="modal-body OMDmb">
                                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
+                                                <span aria-hidden="true">&times;</span>
                                             </button>
                                             <OneDescriptionModal oneproduct={this.state.data} />
                                         </div>
@@ -48,8 +48,7 @@ class OneProdCateg extends Component{
                             </div>
                             {/* cierre modal */}
                         </div>
-                    )):null
-                    
+                    )):null                
                 }
             </div>
         )

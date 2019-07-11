@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import { withFirebase } from '../../../Firebase'
+import * as actions from '../../../store/actions/index'
+import { bindActionCreators } from 'redux'
+import { compose } from 'recompose'
+import { connect } from 'react-redux'
 // import Header from '../../header/container/headercontainer'
 import OneDescription from './oneprod/onedescription';
 import MoreDescription from './oneprod/moredescription';
@@ -63,7 +67,11 @@ class Description extends Component {
     //     this.listener5();
     //     // this.listener4();
     // }
-    
+    addUnit=(product)=>{
+        this.props.actions.addToCart(product);
+        console.log('producto añadido desde cada producto')
+        console.log(product)
+    }
     
     
     handleClikc=event=>{
@@ -72,8 +80,11 @@ class Description extends Component {
     render(){
         return(
             <div>
-                <OneDescription oneproduct={this.state} />
-                <MoreDescription oneproduct={this.state} />
+                <OneDescription 
+                data={this.state} 
+                handleOnAddUnit={this.addUnit}
+                />
+                <MoreDescription data={this.state} />
                 {/* <Header /> */}
                 {/* <h1 onClick={this.handleClikc}>prueba prueba</h1>
                 <p>Nombre:</p>
@@ -84,4 +95,15 @@ class Description extends Component {
         )
     }
 }
-export default withFirebase(Description);
+const mapDispatchToProps=(dispatch)=>({
+    actions: bindActionCreators(actions, dispatch)
+})
+export default compose(
+    withFirebase,
+    connect(
+        null,
+        mapDispatchToProps,
+    ),
+)(Description)
+
+// export default withFirebase(Description);
