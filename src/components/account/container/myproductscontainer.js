@@ -16,17 +16,15 @@ class Myproducts extends Component{
         super(props);
         this.state={
             products:[],
+            inputValue_mybussinessname: '',
+            inputValue_mycell: '',
+            inputValue_mygps: '',
             inputValue_name: '',
             inputValue_categories: '',
             inputValue_price: '',
             inputValue_shortdetails: '',
-            // title_general_description1: '',
             details_general_description1: '',
-            // title_general_description2: '',
             details_general_description2: '',
-            // title_general_description3: '',
-            // details_general_description3: '',
-            // myubication: '',
             logistic_seller: '',
             edit: false,
             id: '',
@@ -124,11 +122,42 @@ class Myproducts extends Component{
                     console.log(error)
                 })
             : this.setState({ authUser:null });
-            // console.log(authUser.email)
+        })
+        this.listener5 = this.props.firebase.auth.onAuthStateChanged((authUser)=>{
+            authUser
+            ?
+            this.props.firebase
+                .dothisdb()
+                .collection('users')
+                .where('u_email', '==', authUser.email)
+                .onSnapshot( snapShot=>{
+                    let result = snapShot.docChanges() 
+                        this.setState({
+                            inputValue_mybussinessname: result.map(user=>{
+                                    return user.doc.data().u_mybussinessname
+                                }).toString()
+                            ,
+                            inputValue_mycell: result.map((user)=>{
+                                    return user.doc.data().u_cell
+                                }).toString()
+                            ,
+                            inputValue_mygps: result.map((user)=>{
+                                return user.doc.data().u_gps
+                            }).toString()
+                        })
+                },error=>{
+                    console.log(error)
+                })
+            :
+            console.log('error')
         })
     }
     componentWillUnmount(){
         this.listener3();
+        // this.listener5();
+    }
+    onConsole=()=>{
+        console.log(this.state)
     }
     getFile=(id)=>{
         let docRef = this.props.firebase.dothisdb().collection('products').doc(id)
@@ -141,13 +170,8 @@ class Myproducts extends Component{
                         inputValue_categories: doc.data().p_categories,
                         inputValue_price: doc.data().p_price,
                         inputValue_shortdetails: doc.data().p_shortdetails,
-                        // title_general_description1: doc.data().p_title_general_description1,
                         details_general_description1: doc.data().p_details_general_description1,
-                        // title_general_description2: doc.data().p_title_general_description2,
                         details_general_description2: doc.data().p_details_general_description2,
-                        // title_general_description3: doc.data().p_title_general_description3,
-                        // details_general_description3: doc.data().p_details_general_description3,
-                        // myubication: doc.data().p_myubication,
                         logistic_seller: doc.data().p_logistic_seller,
                         picture0: doc.data().p_principal_image,
                         picture2: doc.data().p_secundary_image2,
@@ -169,17 +193,16 @@ class Myproducts extends Component{
         })
     }
     action = event =>{
-        const { inputValue_name, 
+        const { 
+                inputValue_mybussinessname,
+                inputValue_mycell,
+                inputValue_mygps,
+                inputValue_name, 
                 inputValue_categories, 
                 inputValue_price,
                 inputValue_shortdetails,
-                // title_general_description1,
                 details_general_description1, 
-                // title_general_description2,
                 details_general_description2, 
-                // title_general_description3,
-                // details_general_description3, 
-                // myubication,
                 logistic_seller,
                 picture0,
                 picture2,
@@ -197,17 +220,15 @@ class Myproducts extends Component{
                 .add({
                     autor_uid: user.uid,
                     autor_email: user.email,
+                    p_mybussinessname: inputValue_mybussinessname,
+                    p_mycell: inputValue_mycell,
+                    p_mygps: inputValue_mygps,
                     p_name: inputValue_name,
                     p_categories: inputValue_categories,
                     p_price: inputValue_price,
                     p_shortdetails: inputValue_shortdetails,
-                    // p_title_general_description1: title_general_description1,
                     p_details_general_description1: details_general_description1,
-                    // p_title_general_description2: title_general_description2,
                     p_details_general_description2: details_general_description2,
-                    // p_title_general_description3: title_general_description3,
-                    // p_details_general_description3: details_general_description3,
-                    // p_myubication: myubication,
                     p_logistic_seller: logistic_seller,
                     p_principal_image: picture0,
                     p_secundary_image2: picture2,
@@ -216,17 +237,13 @@ class Myproducts extends Component{
                 .then(()=>{
                     console.log(`Producto: ${inputValue_name} de la categoria: ${inputValue_categories} agregado`)
                     this.setState({
+                        inputValue_mycell: '',
                         inputValue_name: '',
                         inputValue_categories: '',
                         inputValue_price: '',
                         inputValue_shortdetails: '',
-                        // title_general_description1: '',
                         details_general_description1: '',
-                        // title_general_description2: '',
                         details_general_description2: '',
-                        // title_general_description3: '',
-                        // details_general_description3: '',
-                        // myubication: '',
                         logistic_seller: '',
                         picture0: null,
                         uploadValue0: 0,
@@ -247,13 +264,8 @@ class Myproducts extends Component{
                 inputValue_categories, 
                 inputValue_price,
                 inputValue_shortdetails, 
-                // title_general_description1,
                 details_general_description1,
-                // title_general_description2,
                 details_general_description2,
-                // title_general_description3,
-                // details_general_description3,
-                // myubication,
                 logistic_seller,
                 picture0,
                 picture2,
@@ -268,13 +280,8 @@ class Myproducts extends Component{
                 p_categories: inputValue_categories,
                 p_price: inputValue_price,
                 p_shortdetails: inputValue_shortdetails,
-                // p_title_general_description1: title_general_description1,
                 p_details_general_description1: details_general_description1,
-                // p_title_general_description2: title_general_description2,
                 p_details_general_description2: details_general_description2,
-                // p_title_general_description3: title_general_description3,
-                // p_details_general_description3: details_general_description3,
-                // p_myubication: myubication,
                 p_logistic_seller: logistic_seller,
                 p_principal_image: picture0,
                 p_secundary_image2: picture2,
@@ -287,13 +294,8 @@ class Myproducts extends Component{
                     inputValue_categories: '',
                     inputValue_price: '',
                     inputValue_shortdetails: '',
-                    // title_general_description1: '',
                     details_general_description1: '',
-                    // title_general_description2: '',
                     details_general_description2: '',
-                    // title_general_description3: '',
-                    // details_general_description3: '',
-                    // myubication: '',
                     logistic_seller: '',
                     picture0: '',
                     uploadValue0: 0,
@@ -309,7 +311,6 @@ class Myproducts extends Component{
             })
 
     }
-    // deleteItem=(id, p_principal_image)=>{
     deleteItem=(id, p_principal_image,p_secundary_image2,p_secundary_image3,p_secundary_image4)=>{
         this.props.firebase
             .dothisdb().collection('products').doc(id).delete()
@@ -341,7 +342,8 @@ class Myproducts extends Component{
                 <Header />
                 <div className="Sellerprincipalbox">
                     <div className="SellerBox1">
-                        <ItemSeller />  
+                        <ItemSeller />
+                        {/* <p onClick={this.onConsole()}>consolelog</p>   */}
                     </div>
                     <div className="SellerBox2">
                         <UploadProducts 

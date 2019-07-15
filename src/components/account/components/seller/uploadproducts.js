@@ -7,23 +7,32 @@ import { withFirebase } from '../../../../Firebase'
 class UploadProducts extends Component {
     render(){
         const {
+            inputValue_mybussinessname,
+            inputValue_mycell,
+            inputValue_mygps,
             inputValue_name,
             inputValue_categories,
             inputValue_price,
             inputValue_shortdetails,
-            // title_general_description1,
             details_general_description1,
-            // title_general_description2,
             details_general_description2,
-            // title_general_description3,
-            // details_general_description3,
-            // myubication,
             logistic_seller,
         } = this.props.state; 
         return(
             <div className="UploadProductsPBox">
                 <h1 className="UploadTitleh1">Agregar o Editar productos</h1>
                 <form onSubmit={this.props.createProduct} >
+                    <h3>Datos del vendedor</h3>
+                    <div>
+                        <div className="UPB1">
+                            <p>Empresa:</p>
+                            <input name="inputValue_mybussinessname" value = {inputValue_mybussinessname} onChange={this.props.onActionChange} className="form-control form-control-sm" placeholder="Nombre de la empresa"  type="text" maxLength="150" required></input>
+                            <p>Teléfono:</p>
+                            <input name="inputValue_mycell" value = {inputValue_mycell} onChange={this.props.onActionChange} className="form-control form-control-sm" placeholder="Número de la empresa"  type="text" maxLength="150" required></input>
+                            <p>Dirección:</p>
+                            <input name="inputValue_mygps" value = {inputValue_mygps} onChange={this.props.onActionChange} className="form-control form-control-sm" placeholder="Dirección de la empresa"  type="text" maxLength="150" required></input>
+                        </div>
+                    </div>
                     <div className="UPB1">
                         <p>Nombre:</p>
                         <input name="inputValue_name" value = {inputValue_name} onChange={this.props.onActionChange} className="form-control form-control-sm" placeholder="Nombre del producto"  type="text" maxLength="150" required></input>

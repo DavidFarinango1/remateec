@@ -40,6 +40,9 @@ export function addToCart({id, data}){
       name: data.p_name,
       principal_image: data.p_principal_image,
       price: data.p_price,
+      cell: data.p_mycell,
+      bName: data.p_mybussinessname,
+      email: data.autor_email,
       units: 1
     }
   }
