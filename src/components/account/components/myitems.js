@@ -12,14 +12,17 @@ class ItemsSeller extends Component{
             authUser: null,
             username: '',
             image: "./images/users/usuario.png",
+            user_email: '',
+            admin: true,
         };
     }
     componentDidMount(){
         this.listener = this.props.firebase.auth.onAuthStateChanged(authUser =>{
             authUser
-            ? this.setState({ authUser, username: authUser.displayName })
+            ? this.setState({ authUser, username: authUser.displayName, user_email: authUser.email })
             : this.setState({ authUser:null });
-            // console.log(authUser)
+            console.log(this.state.user_email)
+            console.log(this.state.admin)
         })
         this.listener2 = this.props.firebase.auth.onAuthStateChanged(image =>{
             if(image){
@@ -32,10 +35,20 @@ class ItemsSeller extends Component{
                 return this.setState({image: "./images/users/usuario.png"});
             }
         })
+        this.listener3 = this.props.firebase.auth.onAuthStateChanged(authUser2 =>{
+            if(authUser2){
+                if(authUser2.email !== 'davidfarinango24.1995@gmail.com'){
+                    return this.setState({admin: false})
+                }else{
+                    return this.setState({admin: true});
+                }
+            }
+        })
     }
     componentWillUnmount(){
         this.listener();
         this.listener2();
+        this.listener3();
     }
     render(){
         return(
@@ -51,9 +64,27 @@ class ItemsSeller extends Component{
                         {/* </div> */}
                     </Link>
                     <Link to ={ROUTES.MYPRODUCTS}>
-                        {/* <div className="ItemSellerBox3"> */}
                             <p>Mis productos</p>
-                        {/* </div> */}
+                    </Link>
+                    <Link to ={ROUTES.MYSHOPCART}>
+                        <div>
+                        {/* {
+                            this.state.user_email(email=>{
+                                if(email=='davidfarinango24.1995@gmail.com'){
+                                    return this.setState({
+                                        admin: true,
+                                    })
+                                }else{
+                                    return this.setState({admin: false});
+                                }
+                            }) 
+                        } */}
+
+                        </div>
+                        {
+                            this.state.admin ?<p >Mis ventas</p>: null
+                        }
+                            {/* <p >Mis ventas</p> */}
                     </Link>
 
                 </div>

@@ -3,20 +3,26 @@ import ShoppingCartLogged from '../components/shoppingcartlogged.js';
 import CartContainer from '../../Cart/cart_container'
 import HeaderContainer from '../../header/container/headercontainer';
 import Footer from '../../footer/container/footer-container';
+import PayBox from '../components/paybox'
+import Cash from '../components/cash'
 
 import { connect } from 'react-redux'
+import { compose } from 'recompose'
 import * as actions from '../../../store/actions/index.js'
 import { bindActionCreators } from 'redux'
+import { withFirebase } from '../../../Firebase'
 
 import './scl.css'
 class ShoppingCartLoggedContainer extends Component{
     constructor(props){
         super(props);
         this.state={
-            sellOnLine: '',
+            sellOnLine: this.props.addToCart,
+            edit2: false,
         }
 
     }
+
     handleDeductUnit(id) {
         let units = -1;
         this.props.actions.updateItemUnits({id, units})
@@ -43,17 +49,40 @@ class ShoppingCartLoggedContainer extends Component{
     onSellClick=()=>{
         console.log(this.props.addToCart)
     }
-    readyToPay=(sell2)=>{
-        this.setState({
-            // sellOnLine: '1 zapato',
-            sellOnLine: this.props.addToCart,
-        })
-        this.sell2();
-        // console.log(this.state.sellOnLine)
-        // console.log(this.props.addToCart)
-    }
-    sell2=()=>{
+    readyToPay= event =>{
+        const {
+            sellOnLine,
+        }= this.state;
+        event.preventDefault();
+            this.props.firebase
+                .dothisdb()
+                .collection('shop')
+                .add({
+                    s_prod: sellOnLine,
+                })
+                .then(()=>{
+                    this.setState({
+                        s_prod: ''  
+                    })
+                    console.log('gracias por tu compra')
+
+                })
+                .catch((error)=>{
+                    console.log(error)
+                })
         console.log(this.state.sellOnLine)
+    }
+    onNext=(event)=>{
+        event.preventDefault();
+            this.setState({
+                edit2: true,
+            })
+    }
+    onPrevius=(event)=>{
+        event.preventDefault();
+        this.setState({
+            edit2: false,
+        })
     }
     render(){
         return(
@@ -98,10 +127,53 @@ class ShoppingCartLoggedContainer extends Component{
                             <p className="SCL-box-za">Subtotal ({this.totalProducts(this.props.addToCart)} productos):         ${this.totalAmount(this.props.addToCart)}</p>
                         </div> 
                     </div>
-                    <div className="SCL-box2">                
+                    <div className="SCL-box2">
+                        <h2>Elige tu método de pago</h2>
+                        <h5>Subtotal de productos ({this.totalProducts(this.props.addToCart)} productos)</h5>
+                        <h5>Total a pagar: ${this.totalAmount(this.props.addToCart)}</h5>
+                        <form onSubmit={this.onNext}>
+                            <div>
+                                {
+                                    this.state.edit2 ? <Cash buyProp={this.readyToPay}/> : <PayBox />
+                                }
+                            </div>
+                        {/* <button type="submit">Siguiente</button> */}
+                        {/* <button onClick={this.onPrevius}>Atras</button> */}
+
+                        </form>
+                        {/* <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <p>holi</p>
+                                </div>
+                                <div class="carousel-item">
+                                    <p>holi2</p>
+                                </div>
+                                <div class="carousel-item">
+                                    <p>holi3</p>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>     */}
+                    
+                        {/* <h2>Elige tu método de pago</h2>
+                        
+
                         <h4>Subtotal de productos ({this.totalProducts(this.props.addToCart)} productos)</h4>
                         <h4>Total a pagar: ${this.totalAmount(this.props.addToCart)}</h4>
-                        <button onClick={this.readyToPay}>Proceder al pago</button>
+                        <button onClick={this.readyToPay}>Proceder al pago</button> */}
                     </div>
                 </div>
                 <Footer />
@@ -121,6 +193,10 @@ function mapDispatchToProps(dispatch){
     }
 }
 
-export default connect(mapStateToProps
-    ,mapDispatchToProps
-    )(ShoppingCartLoggedContainer)
+export default compose(
+    withFirebase,
+    connect(
+        mapStateToProps,
+        mapDispatchToProps,
+    ),
+)(ShoppingCartLoggedContainer)
