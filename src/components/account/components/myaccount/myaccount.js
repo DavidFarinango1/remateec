@@ -41,15 +41,15 @@ class Myaccount extends Component {
                         this.setState({
                             mycell: result.map((user)=>{
                                     return user.doc.data().u_cell
-                                })
+                                }).toString()
                             ,
                             mygps: result.map((user)=>{
                                     return user.doc.data().u_gps
-                                })
+                                }).toString()
                             ,
                             mybussinessname: result.map((user)=>{
                                 return user.doc.data().u_mybussinessname
-                            })
+                            }).toString()
                         })
                     // })
                 },error=>{

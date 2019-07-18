@@ -63,28 +63,20 @@ class ItemsSeller extends Component{
                             <p>Mi cuenta</p>
                         {/* </div> */}
                     </Link>
+                    <Link to ={ROUTES.MYPURCHASE}>
+                        {/* <div className="ItemSellerBox2" > */}
+                            <p>Mis compras</p>
+                        {/* </div> */}
+                    </Link>
                     <Link to ={ROUTES.MYPRODUCTS}>
-                            <p>Mis productos</p>
+                        {
+                            this.state.admin ?<p >Mis productos</p>: null
+                        }
                     </Link>
                     <Link to ={ROUTES.MYSHOPCART}>
-                        <div>
-                        {/* {
-                            this.state.user_email(email=>{
-                                if(email=='davidfarinango24.1995@gmail.com'){
-                                    return this.setState({
-                                        admin: true,
-                                    })
-                                }else{
-                                    return this.setState({admin: false});
-                                }
-                            }) 
-                        } */}
-
-                        </div>
                         {
                             this.state.admin ?<p >Mis ventas</p>: null
                         }
-                            {/* <p >Mis ventas</p> */}
                     </Link>
 
                 </div>

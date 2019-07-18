@@ -4,6 +4,7 @@ export const HOME = '/';
 export const MYACCOUNT = '/myaccount';
 export const MYPRODUCTS = '/myproducts';
 export const MYSHOPCART = '/myshopcart';
+export const MYPURCHASE = '/mypurchases';
 
 
 export const SIGN_UP = '/signup';

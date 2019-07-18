@@ -19,10 +19,38 @@ class ShoppingCartLoggedContainer extends Component{
         this.state={
             sellOnLine: this.props.addToCart,
             edit2: false,
+            user: [],
+            authUser: null,
         }
 
     }
-
+    componentDidMount(){
+        this.listener8 = this.props.firebase.auth.onAuthStateChanged((authUser)=>{
+            authUser
+            ?
+            this.props.firebase
+                .dothisdb()
+                .collection('users')
+                .where('u_email', '==', authUser.email)
+                .onSnapshot((snapShot)=>{
+                    let userResult = snapShot.docChanges()
+                        this.setState({
+                            user: userResult.map((user)=>{
+                                return user.doc.data()
+                            }),
+                        })
+                    
+                },error=>{
+                    console.log(error)
+                })
+            :
+            console.log('error al consultar el usuario')
+        })
+        // console.log(this.state.user)
+    }
+    componentWillUnmount(){
+        this.listener8();
+    }
     handleDeductUnit(id) {
         let units = -1;
         this.props.actions.updateItemUnits({id, units})
@@ -52,25 +80,32 @@ class ShoppingCartLoggedContainer extends Component{
     readyToPay= event =>{
         const {
             sellOnLine,
+            user
         }= this.state;
         event.preventDefault();
+        // const user = this.props.firebase.auth.currentUser
+        // console.log(user)
             this.props.firebase
                 .dothisdb()
                 .collection('shop')
                 .add({
                     s_prod: sellOnLine,
+                    order_by: user, 
+                    order_at: new Date(),
                 })
                 .then(()=>{
                     this.setState({
-                        s_prod: ''  
+                        s_prod: ''
                     })
-                    console.log('gracias por tu compra')
+                    alert('gracias por tu compra')
+                    // console.log('gracias por tu compra')
 
                 })
                 .catch((error)=>{
                     console.log(error)
                 })
-        console.log(this.state.sellOnLine)
+        console.log(this.state.sellOnLine) 
+        console.log(this.state.user) 
     }
     onNext=(event)=>{
         event.preventDefault();

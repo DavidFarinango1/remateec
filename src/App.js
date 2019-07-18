@@ -10,6 +10,7 @@ import Home from './components/page/container/home'
 import SellerPrincipal from './components/account/container/sellerprincipal'
 import MyShopCartContainer from './components/account/container/myshopcartcontainer'
 import MyProductsContainer from './components/account/container/myproductscontainer'
+import MyPurchaseContainer from './components/account/container/mypurchasecontainer'
 import Prod from './components/products/container/descriptioncontainer'
 import SignUpPage from './components/logIn/SignUp';
 import SignInPage from './components/logIn/signin';
@@ -44,6 +45,7 @@ class App extends Component {
                   <Route exact path={ROUTES.MYACCOUNT} component={SellerPrincipal} />
                   <Route exact path={ROUTES.MYPRODUCTS} component={MyProductsContainer} />
                   <Route exact path={ROUTES.MYSHOPCART} component={MyShopCartContainer} />
+                  <Route exact path={ROUTES.MYPURCHASE} component={MyPurchaseContainer} />
                   <Route exact path='/product/:id' component={Prod} />
 
                   <Route path={ROUTES.SHOPPINGCART} component={ShoppingCart} />
