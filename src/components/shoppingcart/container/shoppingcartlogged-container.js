@@ -21,10 +21,54 @@ class ShoppingCartLoggedContainer extends Component{
             edit2: false,
             user: [],
             authUser: null,
+            name: '',
+            email: '',
+            mybussinessname: '',
+            mycell: '',
+            mygps: '',
+            edit3: false,
         }
 
     }
     componentDidMount(){
+        this.listener9 = this.props.firebase.auth.onAuthStateChanged(authUser =>{
+            authUser
+            ? this.setState({ 
+                            authUser, 
+                            name: authUser.displayName,  
+                            email: authUser.email, 
+                           })
+            : this.setState({ authUser:null});
+        })
+        this.listener10 = this.props.firebase.auth.onAuthStateChanged((authUser)=>{
+            authUser
+            ?
+            this.props.firebase
+                .dothisdb()
+                .collection('users')
+                .where('u_email', '==', authUser.email)
+                .onSnapshot( snapShot=>{
+                    let result = snapShot.docChanges()
+                        this.setState({
+                            mycell: result.map((user)=>{
+                                    return user.doc.data().u_cell
+                                }).toString()
+                            ,
+                            mygps: result.map((user)=>{
+                                    return user.doc.data().u_gps
+                                }).toString()
+                            ,
+                            mybussinessname: result.map((user)=>{
+                                return user.doc.data().u_mybussinessname
+                            }).toString()
+                        })
+                    // })
+                },error=>{
+                    console.log(error)
+                })
+            :
+            console.log('error')
+        })
         this.listener8 = this.props.firebase.auth.onAuthStateChanged((authUser)=>{
             authUser
             ?
@@ -49,6 +93,7 @@ class ShoppingCartLoggedContainer extends Component{
         // console.log(this.state.user)
     }
     componentWillUnmount(){
+        this.listener9();
         this.listener8();
     }
     handleDeductUnit(id) {
@@ -76,6 +121,7 @@ class ShoppingCartLoggedContainer extends Component{
     }
     onSellClick=()=>{
         console.log(this.props.addToCart)
+        console.log(this.state.user) 
     }
     readyToPay= event =>{
         const {
@@ -107,6 +153,12 @@ class ShoppingCartLoggedContainer extends Component{
         console.log(this.state.sellOnLine) 
         console.log(this.state.user) 
     }
+    readyToReturn= event=>{
+        event.preventDefault();
+            this.setState({
+                edit2: false,
+            })
+    }
     onNext=(event)=>{
         event.preventDefault();
             this.setState({
@@ -117,6 +169,11 @@ class ShoppingCartLoggedContainer extends Component{
         event.preventDefault();
         this.setState({
             edit2: false,
+        })
+    }
+    onChange2=event=>{
+        this.setState({
+            [event.target.name]: event.target.value
         })
     }
     render(){
@@ -169,7 +226,13 @@ class ShoppingCartLoggedContainer extends Component{
                         <form onSubmit={this.onNext}>
                             <div>
                                 {
-                                    this.state.edit2 ? <Cash buyProp={this.readyToPay}/> : <PayBox />
+                                    this.state.edit2 ? 
+                                    <Cash buyReturn={this.readyToReturn} buyProp={this.readyToPay} /> 
+                                    : 
+                                    <PayBox 
+                                    dataOrder={this.state}
+                                    onActionChange2={this.onChange2}
+                                    />
                                 }
                             </div>
                         {/* <button type="submit">Siguiente</button> */}
