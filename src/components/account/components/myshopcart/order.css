@@ -1,0 +1,8 @@
+.Orderbox{
+    display:flex;
+    justify-content: space-between;
+}
+.ordertotal{
+    border: 1px solid black;
+    margin-bottom: 1em;
+}

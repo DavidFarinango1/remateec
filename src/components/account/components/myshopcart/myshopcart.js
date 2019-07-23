@@ -14,6 +14,7 @@ class MyShopCart extends Component{
         this.listener7 = this.props.firebase
             .dothisdb()
             .collection('shop')
+            .orderBy('order_at', 'desc')
             .onSnapshot((snapShot)=>{
                 this.setState({
                     order: snapShot.docs.map((doc)=>{
@@ -35,14 +36,15 @@ class MyShopCart extends Component{
         return(
             <div className='MyaccountBOX'>
                 <h2 onClick={this.onLog}>Ventas</h2>
-                {
+                {/* {
                     this.state.order && this.state.order !== undefined ? this.state.order.map((item, key)=>(
-                        <div key={key}>{item.data.s_prod.map((item2)=>(
-                            <div>{item2.name}</div>
-                        ))}</div>
+                        // <div key={key}>{item.data.s_prod.map((item2)=>(
+                        //     <div>{item2.name}</div>
+                        // ))}</div>
+                        <Order data={item.data} key={key} />
                     )):null
-                }
-                <Order />
+                } */}
+                <Order order={this.state.order} />
             </div>
         )
     }
