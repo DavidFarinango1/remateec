@@ -126,7 +126,8 @@ class ShoppingCartLoggedContainer extends Component{
     readyToPay= event =>{
         const {
             sellOnLine,
-            user
+            user,
+            email,
         }= this.state;
         event.preventDefault();
         // const user = this.props.firebase.auth.currentUser
@@ -135,6 +136,7 @@ class ShoppingCartLoggedContainer extends Component{
                 .dothisdb()
                 .collection('shop')
                 .add({
+                    u_email: email,
                     s_prod: sellOnLine,
                     order_by: user, 
                     order_at: new Date(),
@@ -160,11 +162,72 @@ class ShoppingCartLoggedContainer extends Component{
             })
     }
     onNext=(event)=>{
-        event.preventDefault();
-            this.setState({
-                edit2: true,
+        const {
+            name,
+            email,
+            mybussinessname,
+            mycell,
+            mygps,
+            edit3,
+        }= this.state
+        event.preventDefault()
+        const user = this.props.firebase.auth.currentUser
+        // console.log(user.uid)
+        const id = user.uid
+        !edit3?
+        this.props.firebase
+            .dothisdb()
+            .collection('users')
+            .doc(id)
+            .set({
+                u_name: name,
+                u_email: email,
+                u_mybussinessname: mybussinessname,
+                u_cell: mycell,
+                u_gps: mygps,
+            })
+            .then(()=>{
+                // console.log('usuario creado')
+                // alert('Bienvenido Weyger, tu usuario a sido creado con éxito')
+                this.setState({
+                    edit2: true,
+                    edit3: true,
+                })
+            })
+            .catch((error)=>{
+                alert(error)
+            })
+            :this.update3();
+        // event.preventDefault();
+            // this.setState({
+            //     edit2: true,
+            // })
+    }
+    update3=()=>{
+        const {
+            mybussinessname,
+            mycell,
+            mygps,
+        }= this.state;
+        const id = this.props.firebase.auth.currentUser.uid
+        this.props.firebase
+            .dothisdb()
+            .collection('users')
+            .doc(id)
+            .update({
+                u_cell: mycell,
+                u_gps: mygps,
+                u_mybussinessname: mybussinessname,
+            })
+            .then(()=>{
+                console.log('usuario actualizado')
+                // alert('Usuario actualizado con éxito')
+            })
+            .catch((error)=>{
+                alert('el error es :'+ error)
             })
     }
+
     onPrevius=(event)=>{
         event.preventDefault();
         this.setState({
