@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import moment from 'moment'
 import 'moment/locale/es'
 
@@ -58,16 +57,6 @@ class MyPurchaseOrder extends Component{
                         </div> 
                     )):null
                 }
-                <h4>Pedido N°1</h4>
-                <div>
-                    Datos del vendedor
-                </div>
-                <div>
-                    Detalle del pedido
-                </div>
-                <div>
-                    Status
-                </div>
             </div>
         )
     }

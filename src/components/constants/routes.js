@@ -5,6 +5,7 @@ export const MYACCOUNT = '/myaccount';
 export const MYPRODUCTS = '/myproducts';
 export const MYSHOPCART = '/myshopcart';
 export const MYPURCHASE = '/mypurchases';
+export const MYCOMMENTS = '/mycomments';
 
 
 export const SIGN_UP = '/signup';

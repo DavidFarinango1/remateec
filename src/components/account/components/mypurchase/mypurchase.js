@@ -30,7 +30,7 @@ class MyPurchase extends Component {
             this.props.firebase
                 .dothisdb()
                 .collection('shop')
-                // .orderBy('order_at', 'desc')
+                .orderBy('order_at', 'desc')
                 .where(`u_email`, '==', authUser.email)
                 .onSnapshot((snapShot)=>{
                     this.setState({

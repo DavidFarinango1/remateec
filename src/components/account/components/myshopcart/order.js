@@ -4,7 +4,6 @@ import moment from 'moment'
 import 'moment/locale/es'
 moment.locale('es')
 class Order extends Component{
-    // console.log(this.props.order)
     render(){
         return(
             <div>
@@ -13,13 +12,8 @@ class Order extends Component{
                     <div className='ordertotal' key={key}>
                         <div>
                             <h4>Pedido #{item.id}</h4> 
-                            <h6>Fecha: {
-                                moment(item.data.order_at.toDate()).calendar()
-                                // moment.locale('es')
-                                } </h6>
-
+                            <h6>Fecha: {moment(item.data.order_at.toDate()).calendar()} </h6>
                         </div>
-
                         <div className='Orderbox'>
                             <div>
                                 <strong>Datos del comprador</strong>
@@ -54,50 +48,6 @@ class Order extends Component{
                     </div>
                     )):null
                 }
-                {/* <h4>Pedido N°1</h4> */}
-                {/* <div className='Orderbox'> */}
-                    {/* <div>
-                        <p>Datos del comprador</p>
-                        <br/>
-                        {
-                            this.props.order && this.props.order !== undefined ? this.props.order.map((item,key)=>(
-                                <div key={key}>{item.data.order_by.map((item2)=>(
-                                    <div>{item2.u_mybussinessname}</div>
-                                ))}
-                                </div>
-                            )):null
-                        }
-                    </div> */}
-                    {/* <div>
-                        Datos del comprador
-                        <p>{this.props.data.order_by[0].u_mybussinessname}</p>
-                        <p>{this.props.data.order_by[0].u_name}</p>
-                        <p>{this.props.data.order_by[0].u_cell}</p>
-                        <p>{this.props.data.order_by[0].u_email}</p>
-                        <p>{this.props.data.order_by[0].u_gps}</p>
-                    </div>
-                    <div>
-                        Detalle del pedido
-                        {
-                            this.props.data.s_prod.map((item,key)=>(
-                                <div>
-                                    <p>
-                                    {item.name}
-                                    </p>
-                                    <p>
-                                    {item.units}
-                                    </p>
-                                </div>
-                            ))
-                        }
-                    </div>
-                    <div>
-                        Status
-                        <p>pagado</p>
-                        <p>en entrga</p>
-                        <p>entregado</p>
-                    </div> */}
-                {/* </div> */}
             </div>
         )
     }

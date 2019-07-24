@@ -62,7 +62,6 @@ class ShoppingCartLoggedContainer extends Component{
                                 return user.doc.data().u_mybussinessname
                             }).toString()
                         })
-                    // })
                 },error=>{
                     console.log(error)
                 })
@@ -90,7 +89,6 @@ class ShoppingCartLoggedContainer extends Component{
             :
             console.log('error al consultar el usuario')
         })
-        // console.log(this.state.user)
     }
     componentWillUnmount(){
         this.listener9();
@@ -130,8 +128,6 @@ class ShoppingCartLoggedContainer extends Component{
             email,
         }= this.state;
         event.preventDefault();
-        // const user = this.props.firebase.auth.currentUser
-        // console.log(user)
             this.props.firebase
                 .dothisdb()
                 .collection('shop')
@@ -146,14 +142,10 @@ class ShoppingCartLoggedContainer extends Component{
                         s_prod: ''
                     })
                     alert('gracias por tu compra')
-                    // console.log('gracias por tu compra')
-
                 })
                 .catch((error)=>{
                     console.log(error)
                 })
-        console.log(this.state.sellOnLine) 
-        console.log(this.state.user) 
     }
     readyToReturn= event=>{
         event.preventDefault();
@@ -172,7 +164,6 @@ class ShoppingCartLoggedContainer extends Component{
         }= this.state
         event.preventDefault()
         const user = this.props.firebase.auth.currentUser
-        // console.log(user.uid)
         const id = user.uid
         !edit3?
         this.props.firebase
@@ -187,8 +178,6 @@ class ShoppingCartLoggedContainer extends Component{
                 u_gps: mygps,
             })
             .then(()=>{
-                // console.log('usuario creado')
-                // alert('Bienvenido Weyger, tu usuario a sido creado con éxito')
                 this.setState({
                     edit2: true,
                     edit3: true,
@@ -198,10 +187,6 @@ class ShoppingCartLoggedContainer extends Component{
                 alert(error)
             })
             :this.update3();
-        // event.preventDefault();
-            // this.setState({
-            //     edit2: true,
-            // })
     }
     update3=()=>{
         const {
@@ -220,8 +205,10 @@ class ShoppingCartLoggedContainer extends Component{
                 u_mybussinessname: mybussinessname,
             })
             .then(()=>{
-                console.log('usuario actualizado')
-                // alert('Usuario actualizado con éxito')
+                this.setState({
+                    edit2: true,
+                    edit3: true,
+                })
             })
             .catch((error)=>{
                 alert('el error es :'+ error)
@@ -298,43 +285,7 @@ class ShoppingCartLoggedContainer extends Component{
                                     />
                                 }
                             </div>
-                        {/* <button type="submit">Siguiente</button> */}
-                        {/* <button onClick={this.onPrevius}>Atras</button> */}
-
                         </form>
-                        {/* <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                            </ol>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <p>holi</p>
-                                </div>
-                                <div class="carousel-item">
-                                    <p>holi2</p>
-                                </div>
-                                <div class="carousel-item">
-                                    <p>holi3</p>
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>     */}
-                    
-                        {/* <h2>Elige tu método de pago</h2>
-                        
-
-                        <h4>Subtotal de productos ({this.totalProducts(this.props.addToCart)} productos)</h4>
-                        <h4>Total a pagar: ${this.totalAmount(this.props.addToCart)}</h4>
-                        <button onClick={this.readyToPay}>Proceder al pago</button> */}
                     </div>
                 </div>
                 <Footer />

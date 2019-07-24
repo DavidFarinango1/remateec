@@ -1,7 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { firestoreConnect } from 'react-redux-firebase'
-import { compose } from 'redux'
 import { withFirebase } from '../../../Firebase'
 import Header from '../../header/container/headercontainer'
 import ItemSeller from '../components/myitems'
@@ -343,7 +340,6 @@ class Myproducts extends Component{
                 <div className="Sellerprincipalbox">
                     <div className="SellerBox1">
                         <ItemSeller />
-                        {/* <p onClick={this.onConsole()}>consolelog</p>   */}
                     </div>
                     <div className="SellerBox2">
                         <UploadProducts 

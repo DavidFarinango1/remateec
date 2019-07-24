@@ -26,8 +26,9 @@ class FooterContainer extends Component{
         event.preventDefault()
             this.props.firebase
                 .dothisdb()
-                .collection('coments')
+                .collection('comments')
                 .add({
+                    date: new Date(),
                     contact_name: inputValue_contact_name,
                     contact_email: inputValue_contact_email,
                     contact_cell: inputValue_contact_cell,

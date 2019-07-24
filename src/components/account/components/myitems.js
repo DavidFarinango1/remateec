@@ -78,6 +78,11 @@ class ItemsSeller extends Component{
                             this.state.admin ?<p >Mis ventas</p>: null
                         }
                     </Link>
+                    <Link to ={ROUTES.MYCOMMENTS}>
+                        {
+                            this.state.admin ?<p >Mis comentarios</p>: null
+                        }
+                    </Link>
 
                 </div>
                 {/* <Link to ={ROUTES.MYSHOPPINGHISTORY}>
