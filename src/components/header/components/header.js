@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes'
 import './header.css';
 import { withFirebase } from '../../../Firebase'
+import { withRouter } from 'react-router-dom'
+import { compose } from 'recompose'
 import Navigation from '../../Navigation'
 
 
@@ -12,6 +14,7 @@ class Header extends Component{
         this.state = {
             authUser: null,
             image: "./images/users/usuario.png",
+            query: '',
         };
     }
     componentDidMount(){
@@ -35,6 +38,19 @@ class Header extends Component{
     componentWillUnmount(){
         this.listener();
         this.listener2();
+    }
+    onSearch=event=>{
+        // event.preventDefault();
+        // this.props.history.push(ROUTES.SIGN_IN);
+        // this.props.history.push(`/search/${this.state.query}`);
+        // this.props.history.push('/search/'+this.state.query);
+        this.props.history.push({pathname: '/search', search: `?query=${this.state.query}`})
+        console.log(this.state.query)
+    }
+    onActionChange3=event=>{
+        this.setState({
+            [event.target.name]: event.target.value
+        })
     }
     render(){
         return(
@@ -73,9 +89,9 @@ class Header extends Component{
                             </div>
                     </div>
                     <div className="header2 pb2">
-                        <form className="form-inline my-2 my-lg-0 justify-content-center">
+                        <form onSubmit={this.onSearch} className="form-inline my-2 my-lg-0 justify-content-center">
                             <a className="mr-10">Todas las categorias:</a>
-                            <input className="form-control mr-sm-8" type="search" placeholder="Busqueda a todos los productos" aria-label="Search" />
+                            <input name='query' value={this.state.query} onChange={this.onActionChange3} className="form-control mr-sm-8" type="search" placeholder="Busqueda a todos los productos" aria-label="Search" />
                             <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
                         </form>
                     </div>
@@ -89,4 +105,7 @@ class Header extends Component{
     }
 }
 
-export default withFirebase(Header);
+export default compose(
+    withFirebase,
+    withRouter,
+    )(Header);

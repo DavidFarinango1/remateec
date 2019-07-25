@@ -7,6 +7,7 @@ import logger from 'redux-logger';
 import {composeWithDevTools} from 'redux-devtools-extension';
 
 import Home from './components/page/container/home'
+import SearchPage from './components/search/container/searchpage'
 import SellerPrincipal from './components/account/container/sellerprincipal'
 import MyShopCartContainer from './components/account/container/myshopcartcontainer'
 import MyProductsContainer from './components/account/container/myproductscontainer'
@@ -49,6 +50,8 @@ class App extends Component {
                   <Route exact path={ROUTES.MYPURCHASE} component={MyPurchaseContainer} />
                   <Route exact path={ROUTES.MYCOMMENTS} component={MyCommentsContainer} />
                   <Route exact path='/product/:id' component={Prod} />
+                  {/* <Route exact path='/search/:query' component={SignInPage} /> */}
+                  <Route exact path='/search' component={SearchPage} />
 
                   <Route path={ROUTES.SHOPPINGCART} component={ShoppingCart} />
                   <Route exact path={ROUTES.SHOPPINGCARTLOGGED} component={ShoppingCartLogged} />
