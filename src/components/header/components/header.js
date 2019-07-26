@@ -2,6 +2,12 @@ import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes'
 import './header.css';
+import { List as list } from 'immutable';
+
+import { connect } from 'react-redux';
+import * as actions from '../../../store/actions/index';
+import { bindActionCreators } from 'redux';
+
 import { withFirebase } from '../../../Firebase'
 import { withRouter } from 'react-router-dom'
 import { compose } from 'recompose'
@@ -14,7 +20,10 @@ class Header extends Component{
         this.state = {
             authUser: null,
             image: "./images/users/usuario.png",
+            list: [ {nombre: 'perro', apellido: 'gato'},{nombre: 'perrito', apellido: 'gat'}, {nombre: 'perra', apellido: 'cat'}, {nombre: 'gato', apellido: 'cat'} ],
+            // list: [ 'perro', 'gato','perrito',  'gat', 'perra', 'cat'],
             query: '',
+            result: [],
         };
     }
     componentDidMount(){
@@ -34,23 +43,107 @@ class Header extends Component{
                 return this.setState({image: "/images/users/usuario.png"});
             }
         })
+        this.listener3 = 
+            this.props.firebase
+                .dothisdb()
+                .collection('products')
+                // .where('autor_uid' , '==', authUser.uid)
+                .onSnapshot((snapShots)=>{
+                    this.setState({
+                        list: snapShots.docs.map((doc)=>{
+                            return { 
+                                // id: doc.id, 
+                                data: doc.data()}
+                        })
+                    })
+                },error=>{
+                    console.log(error)
+                })
     }
     componentWillUnmount(){
         this.listener();
         this.listener2();
+        // this.listener3();
     }
     onSearch=event=>{
+        event.preventDefault()
+        let search = this.state.query
+        if(search){
+            let result = this.state.list.filter((item)=>{
+                return item.data.p_name.includes(search)
+            })
+            this.setState({
+                result,
+            })
+            console.log(this.state.result)
+        }else{
+            console.log('no hay nada')
+        }
+
+        // this.listener3 = 
+        //     this.props.firebase
+        //         .dothisdb()
+        //         .collection('products')
+        //         .where('p_name' , '==', search)
+        //         .onSnapshot((snapShots)=>{
+        //             this.setState({
+        //                 list: snapShots.docs.map((doc)=>{
+        //                     return { 
+        //                         // id: doc.id, 
+        //                         data: doc.data()}
+        //                 })
+        //             })
+        //         },error=>{
+        //             console.log(error)
+        //         })
+        // let searchResults = list()
+        // if (search){
+        //     const productList1 = this.state.list
+        //     searchResults= productList1.filter((item)=>(
+        //         item.toLowerCase().includes(search.toLowerCase())
+        //     ))
+        // }else{
+        //     console.log('no hay nada')
+        // }
+        // return{
+        //     search: searchResults,
+        // }
         // event.preventDefault();
         // this.props.history.push(ROUTES.SIGN_IN);
         // this.props.history.push(`/search/${this.state.query}`);
         // this.props.history.push('/search/'+this.state.query);
-        this.props.history.push({pathname: '/search', search: `?query=${this.state.query}`})
-        console.log(this.state.query)
+        // this.props.history.push({pathname: '/search', search: `?query=${this.state.query}`})
+        // console.log(this.state.query)
+        // const query = this.state.query
+        // if(query){
+        //     const list = this.state.list
+        //     const result = list.filter((item)=>(
+        //         item.toLowerCase().includes(query.toLowerCase())
+        //     ))
+        //     return(
+        //         this.setState({
+        //             result: result
+        //         })
+        //     )
+        //     // return result
+
+        // }else{
+        //     console.log('no hay nada')
+        // }
+        // return(
+        //     this.setState({
+        //         result: result
+        //     })
+        // )
     }
     onActionChange3=event=>{
         this.setState({
             [event.target.name]: event.target.value
         })
+    }
+    onLog2=e=>{
+        console.log(this.state.list)
+        console.log(this.state.result)
     }
     render(){
         return(
@@ -95,10 +188,21 @@ class Header extends Component{
                             <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
                         </form>
                     </div>
+                    <p onClick={this.onLog2}>console.log(this.state.list)</p>
                     <div className="header3 pb3">
                         <Navigation authUser={this.state.authUser} />
                         <img className="img_avatar"src ={this.state.image} id='avatar' alt="carro compras" height="35px" weight="35px" />
                     </div>
+                    {
+                        this.state.result.map((item)=>(
+                            <div>
+                                <p>{item.data.p_name}</p>
+                                <p>{item.data.p_price}</p>
+                                <br/>
+                                {/* <p>hol</p> */}
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
         )
