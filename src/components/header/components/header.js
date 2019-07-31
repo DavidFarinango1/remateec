@@ -20,11 +20,7 @@ class Header extends Component{
         this.state = {
             authUser: null,
             image: "./images/users/usuario.png",
-            list: [ {nombre: 'perro', apellido: 'gato'},{nombre: 'perrito', apellido: 'gat'}, {nombre: 'perra', apellido: 'cat'}, {nombre: 'gato', apellido: 'cat'} ],
-            // list: [ 'perro', 'gato','perrito',  'gat', 'perra', 'cat'],
             query: '',
-            result: [],
-            test: 'holi',
         };
     }
     componentDidMount(){
@@ -44,82 +40,21 @@ class Header extends Component{
                 return this.setState({image: "/images/users/usuario.png"});
             }
         })
-        this.listener3 = 
-            this.props.firebase
-                .dothisdb()
-                .collection('products')
-                // .where('autor_uid' , '==', authUser.uid)
-                .onSnapshot((snapShots)=>{
-                    this.setState({
-                        list: snapShots.docs.map((doc)=>{
-                            return { 
-                                // id: doc.id, 
-                                data: doc.data()}
-                        })
-                    })
-                },error=>{
-                    console.log(error)
-                })
     }
     componentWillUnmount(){
         this.listener();
-        this.listener2();
-        // this.listener3();
     }
     onSearch=event=>{
-        // event.preventDefault()
-        // let search = this.state.query
-        // this.props.actions.searchProduct(this.state.query)
         if(this.state.query){
             this.props.history.push('/search/'+this.state.query)
         }else{
             this.props.history.push('/')
         }
-        // console.log(this.state.query)
-        // this.props.history.push({pathname: '/search', search: `?query=${this.state.query}`})
-        // desde aqui si vale
-        // let search = this.state.query
-        // if(search){
-        //     let result = this.state.list.filter((item)=>{
-        //         // const value = item.data.p_name.includes(search)
-        //         let value = item.data.p_name.includes(search)
-        //             // if(value==true){
-        //             //     return value
-        //             // }else{
-        //             //     return 
-        //             // }
-        //         // return this.props.actions.searchProduct(value)
-        //         return value
-        //     })
-        //     this.setState({
-        //         result,
-        //         // onSearch: true,
-        //     }, ()=>{
-        // this.props.history.push({pathname: `/search/${this.state.query}`})
-        // console.log('resultados')
-        //     })
-        //     // this.props.actions.searchProduct(result)    
-        // }else{
-        //     console.log('no hay nada')
-        //     // this.setState({
-        //     //     result: item[{}],
-        //     // })
-        // }
-        // hasta aqui si vale
-
     }
     onActionChange3=event=>{
         this.setState({
             [event.target.name]: event.target.value
         })
-    }
-    onLog2=e=>{
-        e.preventDefault();
-        console.log(this.state.query)
-        // console.log(this.state.result)
-        // this.props.actions.searchProduct(this.state.test)
-        // this.props.history.push({pathname: '/search', search: `?query=${this.state.query}`})
-
     }
     render(){
         return(
@@ -164,20 +99,10 @@ class Header extends Component{
                             <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
                         </form>
                     </div>
-                    <p onClick={this.onLog2}>console.log(this.state.list)</p>
                     <div className="header3 pb3">
                         <Navigation authUser={this.state.authUser} />
                         <img className="img_avatar"src ={this.state.image} id='avatar' alt="carro compras" height="35px" weight="35px" />
                     </div>
-                    {
-                        this.state.result.map((item)=>(
-                            <div>
-                                <p>{item.data.p_name}</p>
-                                <p>{item.data.p_price}</p>
-                                <br/>
-                            </div>
-                        ))
-                    }
                 </div>
             </div>
         )

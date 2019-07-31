@@ -39,7 +39,6 @@ class App extends Component {
             {/* <Provider store={store}> */}
                 <div>
                   <Route exact path={ROUTES.HOME} component={Home} />
-                  {/* <Route exact path='/:id' component={Home} /> */}
                   
                   <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
                   <Route exact path={ROUTES.SIGN_IN} component={SignInPage} />
@@ -51,7 +50,6 @@ class App extends Component {
                   <Route exact path={ROUTES.MYPURCHASE} component={MyPurchaseContainer} />
                   <Route exact path={ROUTES.MYCOMMENTS} component={MyCommentsContainer} />
                   <Route exact path='/product/:id' component={Prod} />
-                  {/* <Route exact path='/search/:query' component={SignInPage} /> */}
                   <Route exact path='/search/:id' component={SearchPage} />
 
                   <Route path={ROUTES.SHOPPINGCART} component={ShoppingCart} />
