@@ -17,62 +17,76 @@ class Search extends Component{
     }
     componentDidMount(){
 
-        // this.listener0 = 
-        //     this.props.firebase
-        //         .dothisdb()
-        //         .collection('products')
-        //         // .where('autor_uid' , '==', authUser.uid)
-        //         .onSnapshot((snapShots)=>{
-        //             let search = this.state.query
-        //             this.setState({
-        //                 list: snapShots.docs.map((doc)=>{
-        //                     return { 
-        //                         // id: doc.id, 
-        //                         data: doc.data()}
-        //                 })
-        //             })
-        //             // let list = snapShots.docs.map((doc)=>{
-        //             //     return{data:doc.data()}
-        //             // })
-        //             if(search){
-        //                 let result = this.state.list.filter((item)=>{
-        //                     let value = item.data.p_name.includes(search)
-        //                     return value
-        //                 })
-        //                 this.setState({
-        //                     result,
-        //                 })
-        //             }else{
-        //                 console.log('no hay nada')
-        //             }
-        //             // this.setState({
-        //             //     list: snapShots.docs.map((doc)=>{
-        //             //         return { 
-        //             //             // id: doc.id, 
-        //             //             data: doc.data()}
-        //             //     })
-        //             // })
-        //         },error=>{
-        //             console.log(error)
-        //         })
+        this.listener0 = 
+            this.props.firebase
+                .dothisdb()
+                .collection('products')
+                // .where('autor_uid' , '==', authUser.uid)
+                .onSnapshot((snapShots)=>{
+                    let search = this.state.query
+                    this.setState({
+                        list: snapShots.docs.map((doc)=>{
+                            return { 
+                                // id: doc.id, 
+                                data: doc.data()}
+                        })
+                    }, ()=>{
+                        console.log(this.state.list)
+                        if(search){
+                            let result = this.state.list.filter((item)=>{
+                                return item.data.p_name.includes(search)
+                            })
+                            this.setState({
+                                result,
+                            })
+                        }else{
+                            console.log('no hay nada')
+                        }
+                    }
+                    
+                    )
+                    // let list = snapShots.docs.map((doc)=>{
+                    //     return{data:doc.data()}
+                    // })
+                    // if(search){
+                    //     let result = this.state.list.filter((item)=>{
+                    //         let value = item.data.p_name.includes(search)
+                    //         return value
+                    //     })
+                    //     this.setState({
+                    //         result,
+                    //     })
+                    // }else{
+                    //     console.log('no hay nada')
+                    // }
+                    // this.setState({
+                    //     list: snapShots.docs.map((doc)=>{
+                    //         return { 
+                    //             // id: doc.id, 
+                    //             data: doc.data()}
+                    //     })
+                    // })
+                },error=>{
+                    console.log(error)
+                })
 
         // desde aqui si vale
-        let search = this.state.query
-        if(search){
-            let result = this.state.list.filter((item)=>{
-                // const value = item.data.p_name.includes(search)
-                const value = item.nombre.includes(search)
-                // return this.props.actions.searchProduct(value)
-                return value
-            })
-            this.setState({
-                result,
-            })
-            // this.props.actions.searchProduct(result)    
-            // console.log(result)
-        }else{
-            console.log('no hay nada')
-        }
+        // let search = this.state.query
+        // if(search){
+        //     let result = this.state.list.filter((item)=>{
+        //         // const value = item.data.p_name.includes(search)
+        //         const value = item.nombre.includes(search)
+        //         // return this.props.actions.searchProduct(value)
+        //         return value
+        //     })
+        //     this.setState({
+        //         result,
+        //     })
+        //     // this.props.actions.searchProduct(result)    
+        //     // console.log(result)
+        // }else{
+        //     console.log('no hay nada')
+        // }
         // hasta aqui si vale
     
     }
@@ -109,7 +123,11 @@ class Search extends Component{
                 <p onClick={this.onL}>this.state.result</p>
                 {
                     this.state.result.map((item)=>(
-                        <p>hola</p>
+                        <div>
+                            <p>{item.data.p_name}</p>
+                            <p>{item.data.p_price}</p>
+                            <img src={item.data.p_principal_image} alt='imagen principal' width='100px'/>
+                        </div>
                     ))                 
                     
                 }
