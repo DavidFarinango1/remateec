@@ -24,6 +24,7 @@ class Header extends Component{
             // list: [ 'perro', 'gato','perrito',  'gat', 'perra', 'cat'],
             query: '',
             result: [],
+            test: 'holi',
         };
     }
     componentDidMount(){
@@ -66,75 +67,46 @@ class Header extends Component{
         // this.listener3();
     }
     onSearch=event=>{
-        event.preventDefault()
-        let search = this.state.query
-        if(search){
-            let result = this.state.list.filter((item)=>{
-                return item.data.p_name.includes(search)
-            })
-            this.setState({
-                result,
-            })
-            console.log(this.state.result)
+        // event.preventDefault()
+        // let search = this.state.query
+        // this.props.actions.searchProduct(this.state.query)
+        if(this.state.query){
+            this.props.history.push('/search/'+this.state.query)
         }else{
-            console.log('no hay nada')
+            this.props.history.push('/')
         }
-
-        // this.listener3 = 
-        //     this.props.firebase
-        //         .dothisdb()
-        //         .collection('products')
-        //         .where('p_name' , '==', search)
-        //         .onSnapshot((snapShots)=>{
-        //             this.setState({
-        //                 list: snapShots.docs.map((doc)=>{
-        //                     return { 
-        //                         // id: doc.id, 
-        //                         data: doc.data()}
-        //                 })
-        //             })
-        //         },error=>{
-        //             console.log(error)
-        //         })
-        // let searchResults = list()
-        // if (search){
-        //     const productList1 = this.state.list
-        //     searchResults= productList1.filter((item)=>(
-        //         item.toLowerCase().includes(search.toLowerCase())
-        //     ))
-        // }else{
-        //     console.log('no hay nada')
-        // }
-        // return{
-        //     search: searchResults,
-        // }
-        // event.preventDefault();
-        // this.props.history.push(ROUTES.SIGN_IN);
-        // this.props.history.push(`/search/${this.state.query}`);
-        // this.props.history.push('/search/'+this.state.query);
-        // this.props.history.push({pathname: '/search', search: `?query=${this.state.query}`})
         // console.log(this.state.query)
-        // const query = this.state.query
-        // if(query){
-        //     const list = this.state.list
-        //     const result = list.filter((item)=>(
-        //         item.toLowerCase().includes(query.toLowerCase())
-        //     ))
-        //     return(
-        //         this.setState({
-        //             result: result
-        //         })
-        //     )
-        //     // return result
-
+        // this.props.history.push({pathname: '/search', search: `?query=${this.state.query}`})
+        // desde aqui si vale
+        // let search = this.state.query
+        // if(search){
+        //     let result = this.state.list.filter((item)=>{
+        //         // const value = item.data.p_name.includes(search)
+        //         let value = item.data.p_name.includes(search)
+        //             // if(value==true){
+        //             //     return value
+        //             // }else{
+        //             //     return 
+        //             // }
+        //         // return this.props.actions.searchProduct(value)
+        //         return value
+        //     })
+        //     this.setState({
+        //         result,
+        //         // onSearch: true,
+        //     }, ()=>{
+        // this.props.history.push({pathname: `/search/${this.state.query}`})
+        // console.log('resultados')
+        //     })
+        //     // this.props.actions.searchProduct(result)    
         // }else{
         //     console.log('no hay nada')
+        //     // this.setState({
+        //     //     result: item[{}],
+        //     // })
         // }
-        // return(
-        //     this.setState({
-        //         result: result
-        //     })
-        // )
+        // hasta aqui si vale
+
     }
     onActionChange3=event=>{
         this.setState({
@@ -142,8 +114,12 @@ class Header extends Component{
         })
     }
     onLog2=e=>{
-        console.log(this.state.list)
-        console.log(this.state.result)
+        e.preventDefault();
+        console.log(this.state.query)
+        // console.log(this.state.result)
+        // this.props.actions.searchProduct(this.state.test)
+        // this.props.history.push({pathname: '/search', search: `?query=${this.state.query}`})
+
     }
     render(){
         return(
@@ -199,7 +175,6 @@ class Header extends Component{
                                 <p>{item.data.p_name}</p>
                                 <p>{item.data.p_price}</p>
                                 <br/>
-                                {/* <p>hol</p> */}
                             </div>
                         ))
                     }
@@ -208,8 +183,16 @@ class Header extends Component{
         )
     }
 }
-
+function mapDispatchToProps(dispatch){
+    return{
+        
+        actions: bindActionCreators(actions, dispatch)
+    }
+}
 export default compose(
     withFirebase,
     withRouter,
-    )(Header);
+    connect(
+        null,
+        mapDispatchToProps
+    ))(Header);

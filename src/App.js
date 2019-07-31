@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
 import {createStore, applyMiddleware} from 'redux';
-import {Provider} from 'react-redux';
-import {Map as map} from 'immutable';
 import logger from 'redux-logger';
 import {composeWithDevTools} from 'redux-devtools-extension';
+import {Provider} from 'react-redux';
+import {Map as map} from 'immutable';
 
 import Home from './components/page/container/home'
 import SearchPage from './components/search/container/searchpage'
@@ -39,6 +39,7 @@ class App extends Component {
             {/* <Provider store={store}> */}
                 <div>
                   <Route exact path={ROUTES.HOME} component={Home} />
+                  {/* <Route exact path='/:id' component={Home} /> */}
                   
                   <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
                   <Route exact path={ROUTES.SIGN_IN} component={SignInPage} />
@@ -51,7 +52,7 @@ class App extends Component {
                   <Route exact path={ROUTES.MYCOMMENTS} component={MyCommentsContainer} />
                   <Route exact path='/product/:id' component={Prod} />
                   {/* <Route exact path='/search/:query' component={SignInPage} /> */}
-                  <Route exact path='/search' component={SearchPage} />
+                  <Route exact path='/search/:id' component={SearchPage} />
 
                   <Route path={ROUTES.SHOPPINGCART} component={ShoppingCart} />
                   <Route exact path={ROUTES.SHOPPINGCARTLOGGED} component={ShoppingCartLogged} />

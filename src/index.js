@@ -2,7 +2,11 @@ import React from 'react';
 import {render} from 'react-dom';
 import Firebase, {FirebaseContext} from './Firebase';
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+// import { createStore } from 'redux'
+import {createStore, applyMiddleware} from 'redux';
+import logger from 'redux-logger';
+import {composeWithDevTools} from 'redux-devtools-extension';
+
 import reducer from './store/reducers/index'
 import * as serviceWorker from './serviceWorker.js';
 import App from './App.js';
@@ -11,6 +15,10 @@ const app = document.getElementById('root');
 
 const store = createStore(
   reducer,
+  // map(),
+  // composeWithDevTools(
+  //     applyMiddleware(logger)
+  // )
 )
 
 render(

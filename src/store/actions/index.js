@@ -8,11 +8,11 @@ import {
   DELETE_FROM_CART
 } from '../action-types/index';
 // son funciones que regresan acciones
-export function searchProduct(query) {
+export function searchProduct(value) {
   return {
     type: SEARCH_PRODUCT,
     payload: {
-      query,
+      value
     }
   }
 }
