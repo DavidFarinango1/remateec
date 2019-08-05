@@ -18,6 +18,9 @@ class OneProdCateg extends Component{
     render(){
         return(
             <div className="OneProdCateg">
+                <p className="OneProd_title">
+                    Todos los productos
+                </p>
                 {
                     this.props.products2 && this.props.products2 !== undefined ? this.props.products2.map((item,key)=>(
                         <div className='OneProdCateg_box' key={key}>

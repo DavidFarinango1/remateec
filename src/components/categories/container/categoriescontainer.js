@@ -64,9 +64,9 @@ class CategoriesContainer extends Component{
     render(){
         return(
             <div className="CateCont">
-                <div className="CateCont1">
+                {/* <div className="CateCont1">
                     <h3>Todos los productos</h3>
-                </div>
+                </div> */}
                 <div className="CateCont2">
                     <div className="CateCont2_1">
                         <OneProdCateg 
