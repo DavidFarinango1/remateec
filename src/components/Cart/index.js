@@ -24,35 +24,39 @@ class Cart extends Component{
                     }}
                     id={this.props.id}
                 > */}
-                <Link to={'/product/' + this.props.id}>
-                    <div className="Cart1">
-                        <img 
-                        className="Cart1_1"
-                        src={this.props.principal_image} 
-                        alt='img prod.'  
-                        // onClick={this.handleClick}
-                        />
+                <div className="Cart0_a">
+                    <Link to={'/product/' + this.props.id}>
+                        <div className="Cart1">
+                            <img 
+                            className="Cart1_1"
+                            src={this.props.principal_image} 
+                            alt='img prod.'  
+                            // onClick={this.handleClick}
+                            />
+                        </div>
+                    </Link>
+                    <div className="Cart2">
+                        {/* <h4 className="Cart2_1">{this.props.name}</h4> */}
+                        <h4 className="Cart2_2">Precio: ${this.totalProduct()}</h4>
+                        <h4 className="Cart2_2">Units: {this.props.units}</h4>
                     </div>
-                </Link>
-                <div className="Cart2">
-                    {/* <h4 className="Cart2_1">{this.props.name}</h4> */}
-                    <h4 className="Cart2_2">Precio: ${this.totalProduct()}</h4>
-                    <h4 className="Cart2_2">Units: {this.props.units}</h4>
                 </div>
-                <div className="Cart3">
-                    <button 
-                    type="button"
-                    className="Opb1 btn btn-light" size= "10px"
-                    onClick={() => this.props.onAddUnit()}
-                    >+</button>
-                    <button 
-                    type="button"
-                    className="Opb2 btn btn-light" size= "10px"
-                    onClick={() => this.props.onDeductUnit()}
-                    >-</button>
-                </div>
-                <div className="Cart4">
-                    <button type="button" className="Opb3 btn btn-light" onClick={() => this.props.handleDeleteFromCart()}>Quitar producto</button>
+                <div className="Cart0_b">
+                    <div className="Cart3">
+                        <button 
+                        type="button"
+                        className="Opb1 btn btn-light" size= "10px"
+                        onClick={() => this.props.onAddUnit()}
+                        >+</button>
+                        <button 
+                        type="button"
+                        className="Opb2 btn btn-light" size= "10px"
+                        onClick={() => this.props.onDeductUnit()}
+                        >-</button>
+                    </div>
+                    <div className="Cart4">
+                        <button type="button" className="Opb3 btn btn-light" onClick={() => this.props.handleDeleteFromCart()}>Quitar producto</button>
+                    </div>
                 </div>
             </div>
         )

@@ -1,14 +1,16 @@
-.OneProdCateg{
-    padding-top: 1em;
-    padding-bottom: .7em;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.OneProd_title{
+    margin: .3em;
+    margin-bottom: 0;  
 }
 .OneProdCateg_title{
     text-align: center;
     padding: .5em 0 0 0;
     text-size-adjust: 1em;
+}
+.OneProd_products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .OneProdCateg_box{
     /* border: 1.5px solid rgb(0, 0, 0);s */

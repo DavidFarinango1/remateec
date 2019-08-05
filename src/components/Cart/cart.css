@@ -7,20 +7,28 @@
     display:flex;
     margin-bottom: .55em;
 }
+.Cart0_a{
+    display: flex;
+}
+.Cart0_b{
+    display: flex;
+}
 .Cart_title{
-    margin: .2em;
-    font-size: 1.2em;
+    margin: .3em;
+    font-size: 1.5em;
     font-weight: 700;
 }
 .Cart_title2{
     font-weight: 400;
+}
+.Cart_title3{
+    font-size: 1.2em;
 }
 .Cart1_1{
     margin: 0 0 0 5px;
     height: 50px;
     width: 50px;
     text-align: center;
-    border: 1px solid black;
     display: flex;
 }
 .Cart2 h4{
@@ -62,4 +70,13 @@
     padding: 0;
     width: 6.5em;
     margin-right: 5px;
+}
+@media screen and (max-width:1024px){
+    .Opb3{
+        width: auto;
+        margin-right: 0;
+    }
+}
+@media screen and (max-width:768px){
+    
 }

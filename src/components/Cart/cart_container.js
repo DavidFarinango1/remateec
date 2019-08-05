@@ -37,7 +37,7 @@ class CartContainer extends Component {
             return(
                 <div>
                     <div className ="Cart">
-                        <h1 className="Cart_title">CARRITO DE COMPRAS</h1>
+                        <h1 className="Cart_title">Carrito de compras</h1>
                         <p className="Cart_title2">({this.totalProducts(this.props.addToCart)} productos)</p>
                         {
                             this.props.addToCart.map((cartItem)=>{
@@ -53,7 +53,7 @@ class CartContainer extends Component {
                                 )
                             })
                         }
-                        <h1 className="Cart_title">Total a pagar: ${this.totalAmount(this.props.addToCart)} </h1>
+                        <h1 className="Cart_title3">Total a pagar: ${this.totalAmount(this.props.addToCart)}</h1>
                     </div>
                 </div> 
             )        

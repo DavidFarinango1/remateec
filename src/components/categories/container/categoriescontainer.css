@@ -12,6 +12,23 @@
 .CateCont3{
     width: 20%;
     background: white;
-    /* border-radius: 5px; */
+    border-radius: 20px;
     margin-right: 1em;
+}
+@media screen and (max-width:1024px){
+    .CateCont2_1{
+        margin-right: .5em;
+        margin-left: .5em;
+    }
+    .CateCont3{
+        margin-right: .5em;
+    }
+}
+@media screen and (max-width:768px){
+    .CateCont2_1{
+        width: 100%;
+    }
+    .CateCont3{
+        display:none;
+    }
 }
