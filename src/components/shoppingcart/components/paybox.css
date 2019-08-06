@@ -1,0 +1,53 @@
+.PayBox_details h1{
+    font-size: 1.5em;
+    margin: .5em 0;
+}
+.PayBox_det_1{
+    display:flex;
+}
+.PayBox_det_1 p{
+    margin-bottom: .5em;
+}
+.PayBox_det_1_strong{
+    margin: 0 .5em 0 1em;
+}
+.PayBox_det_1_input{
+    width: 150px;
+    padding: .1em;
+    height: 28px;
+}
+.PayBox_det_1_strong2{
+    margin: .4em;
+}
+.PayBox_det_1_input2{
+    width: 95%;
+    height: 28px;
+    display: inline-flex;
+}
+.PayBox_det_2{
+    font-size: 1.2em;
+    text-align: initial;
+    margin: .3em 0 .3em .9em;
+}
+.PayBox_det_2p{
+    margin-top: 0;
+    margin-bottom: .2em;
+    text-align: initial;
+    margin-left: 1em;
+}
+.PayBox_form{
+    text-align: end;
+    margin-right: 2em;
+    margin-bottom: .3em;
+}
+.PayBox_form_label{
+    margin: 0 2em;
+    font-weight: 600;
+}
+.PayBox_form_input{
+    height: 1.1em;
+    width: 1.1em;
+}
+.PayBox_det_submit{
+    margin-bottom: 1em;
+}

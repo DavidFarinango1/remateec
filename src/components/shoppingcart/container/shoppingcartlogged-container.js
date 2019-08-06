@@ -270,9 +270,9 @@ class ShoppingCartLoggedContainer extends Component{
                         </div> 
                     </div>
                     <div className="SCL-box2">
-                        <h2>Elige tu método de pago</h2>
+                        {/* <h2>Elige tu método de pago</h2>
                         <h5>Subtotal de productos ({this.totalProducts(this.props.addToCart)} productos)</h5>
-                        <h5>Total a pagar: ${this.totalAmount(this.props.addToCart)}</h5>
+                        <h5>Total a pagar: ${this.totalAmount(this.props.addToCart)}</h5> */}
                         <form onSubmit={this.onNext}>
                             <div>
                                 {
@@ -282,6 +282,8 @@ class ShoppingCartLoggedContainer extends Component{
                                     <PayBox 
                                     dataOrder={this.state}
                                     onActionChange2={this.onChange2}
+                                    onTotalProducts={this.totalProducts(this.props.addToCart)}
+                                    onTotalAmount={this.totalAmount(this.props.addToCart)}
                                     />
                                 }
                             </div>

@@ -1,11 +1,3 @@
-/* .SCL-principalbox{
-    display: flex;
-
-}
-.SCL-box1{
-    width: 75%;
-} */
-
 .SHL-principalbox{
     border: 1.5px solid rgb(0, 0, 0);
     border-radius: 3px;
@@ -113,4 +105,17 @@
 }
 .SHL-h-word{
     margin: 0;
+}
+@media screen and (max-width:1024px){
+    .SHL1_1{
+        height: auto;
+    }
+    .SHL-principalbox{
+        grid-template-rows: 2fr .7fr 1.3fr .8fr;
+    }
+}
+@media screen and (max-width:768px){
+    .SHL-principalbox{
+        grid-template-rows: 2fr .7fr 2fr .8fr;
+    }
 }

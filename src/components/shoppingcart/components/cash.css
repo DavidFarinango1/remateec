@@ -1,0 +1,16 @@
+.Cash_img_logo{
+    width: 60px;
+    margin-top: 1em;
+}
+.Cash_p{
+    margin-top: .2em;
+    font-size: 1.2em;
+}
+.Cash_details{
+    margin: 1em .2em;
+}
+.Cash_buttons{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1em;
+}

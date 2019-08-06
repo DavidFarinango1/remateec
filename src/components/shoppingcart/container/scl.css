@@ -73,8 +73,8 @@
     text-align: center;
     width: 25%;
     margin-left: 10px;
-    border: 1.5px solid rgb(0, 0, 0);
-    border-radius: 3px;
+    /* border: 1.5px solid rgb(0, 0, 0); */
+    border-radius: 13px;
     background: white;
     height: max-content;
 }
@@ -88,4 +88,20 @@
     display: flex;
     justify-content: flex-end;
     margin: 5px 30px;
+}
+@media screen and (max-width:1024px){
+    .SCL-box1{
+        width: 70%;
+    }
+    .SCL-box2{
+        width: 30%;
+    }
+}
+@media screen and (max-width:768px){
+    .SCL-box1{
+        width: 65%;
+    }
+    .SCL-box2{
+        width: 35%;
+    }
 }

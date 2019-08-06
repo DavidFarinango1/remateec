@@ -1,33 +1,38 @@
 import React, { Component } from 'react'
-
+import './paybox.css'
 class PayBox extends Component{
     render(){
         return(
             <div>
-                <div>
-                    <h5 onClick={this.datosF}>Datos para la factura</h5>
-                    <h4>Nombre:</h4>
-                    <p>{this.props.dataOrder.name}</p>
-                    <h4>Correo:</h4>
-                    <p>{this.props.dataOrder.email}</p>
+                <div className="PayBox_details">
+                    <h1>Datos para el comprobante</h1>
+                    <div className="PayBox_det_1">
+                        <p className="PayBox_det_1_strong"><strong>Nombre:</strong></p>
+                        <p>{this.props.dataOrder.name}</p>
+                    </div>
+                    <div className="PayBox_det_1">
+                        <p className="PayBox_det_1_strong"><strong>Empresa:</strong></p>
+                        <input className="PayBox_det_1_input form-control mr-sm-8" name="mybussinessname" value={this.props.dataOrder.mybussinessname} type="text" onChange={this.props.onActionChange2}  maxLength="200" data-length="200" required></input>
+                    </div>
+                    <div className="PayBox_det_1">
+                        <p className="PayBox_det_1_strong"><strong>Mi celular:</strong></p>
+                        <input className="PayBox_det_1_input form-control mr-sm-8" name="mycell" value={this.props.dataOrder.mycell} type="text" onChange={this.props.onActionChange2} maxLength="15" data-length="15" required></input>
+                    </div>
                     <div>
-                        <h4>Nombre de la empresa:</h4>
-                        <input className="myaccinput1 form-control mr-sm-8" name="mybussinessname" value={this.props.dataOrder.mybussinessname} type="text" onChange={this.props.onActionChange2}  maxLength="200" data-length="200" required></input>
+                        <p className="PayBox_det_1_strong2 "><strong>Mi dirección de entrega:</strong></p>
+                        <input className="PayBox_det_1_input2 form-control mr-sm-8" name="mygps" value={this.props.dataOrder.mygps} type="text" onChange={this.props.onActionChange2}  maxLength="200" data-length="200" required></input>
                     </div>
                     <div >
-                        <h4>Mi número de teléfono:</h4>
-                        <input className="myaccinput1 form-control mr-sm-8" name="mycell" value={this.props.dataOrder.mycell} type="text" onChange={this.props.onActionChange2} maxLength="15" data-length="15" required></input>
-                    </div>
-                    <div>
-                        <h4>Mi dirección, para las compras realizadas y para sus ventas:</h4>
-                        <input className="myaccinput2 form-control mr-sm-8" name="mygps" value={this.props.dataOrder.mygps} type="text" onChange={this.props.onActionChange2}  maxLength="200" data-length="200" required></input>
+                        <h4 className="PayBox_det_2">Detalle:</h4>
+                        <p className="PayBox_det_2p">Subtotal de productos <strong>({this.props.onTotalProducts} productos)</strong></p>
+                        <p className="PayBox_det_2p">Total a pagar: <strong>${this.props.onTotalAmount}</strong></p>
                     </div>
                 </div>
-                <div className="form-group form-check">
-                    <label className="form-check-label" htmlFor="exampleCheck1">Efectivo</label>
-                    <input type="checkbox" className="form-check-input" id="exampleCheck1" required/>
+                <div className="form-group form-check PayBox_form">
+                    <label className="form-check-label PayBox_form_label" htmlFor="exampleCheck1">Efectivo</label>
+                    <input type="checkbox" className="form-check-input PayBox_form_input" id="exampleCheck1" required/>
                 </div>
-                <button type="submit">Siguiente</button>
+                <button type="submit" className="btn btn-outline-primary PayBox_det_submit">Siguiente</button>
             </div>
         )
     }
