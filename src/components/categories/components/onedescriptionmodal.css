@@ -22,7 +22,8 @@
     background: white;
 }
 .ODM-PBbox1 img{
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    margin: 2px
 }
 .ODM-PBbox2 img{
     width: auto;
@@ -44,10 +45,34 @@
 @media screen and (max-width:1024px){
 }
 @media screen and (max-width: 768px){
+    .ODM-PBbox2 img{
+        height: 150px;
+    }
 }
+@media screen and (max-width: 576px){
+    /* .ODM-PBbox2 img{
+        height: 100px;
+    }
+    .ODM-PBbox1 img {
+        width: 30px;
+        height: 30px;
+    }
+    .ODM-PBboxb{
+        padding: 6px;
+    } */
+}
+/* @media (min-width: 186px){
+    .modal-dialog {
+        margin: 1.75rem auto !important;
+    }
+} */
 @media screen and (max-width: 480px){
-
+    .modalwid {
+        max-width: 75% !important;
+    }
 }
 @media screen and (max-width: 320px){
-
+    .modalwid {
+        max-width: 90% !important;
+    }
 }

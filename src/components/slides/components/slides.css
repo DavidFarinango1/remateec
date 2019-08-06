@@ -2,9 +2,7 @@
     position: relative;
 }
 .slide-box img{
-    height: 20em;
-    
-    /* object-fit: cover; */
+    height: 16em;
 }
 .slide_control{
     height: 70% !important;
@@ -35,6 +33,18 @@
 .slide1{
     z-index: 0;
 }
+@media screen and (max-width: 768px){
+    .slide-box img{
+        height: 11em;
+    }
+    .slide_title{
+        width: 60%;
+        padding: .2em;
+    }
+    .slide_title h3{
+        font-size: 1.5em;
+    }
+}
 @media screen and (max-width: 576px){
     .slide-box{
         display: grid;
@@ -56,5 +66,9 @@
 @media screen and (max-width: 320px){
     .slide-box img{
         height: 100px;
+    }
+    .slide_title h3{
+        font-size: 1em;
+        padding: 0;
     }
 }

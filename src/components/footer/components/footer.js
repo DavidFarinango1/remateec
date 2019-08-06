@@ -39,7 +39,7 @@ class Footer extends React.Component{
                 <section className="contact-box2">
                     {/* <h3>Siguenos en nuestras redes sociales:</h3><br /> */}
                     <h3>Contáctanos directamente al:</h3><br />
-                    <div>
+                    <div className="contact_boxp">
                         <h4>Teléfonos:</h4><br />
                         <p>0996114197/2581496</p>< br/> <br />
                         <h4>Correo:</h4><br />

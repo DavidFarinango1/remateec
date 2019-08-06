@@ -14,50 +14,17 @@ class Description extends Component {
         this.state ={
             data: [],
             id: '',
-            // autor_email: '',
-            // p_name: '',
-            // p_categories: '',
-            // p_price: '',
-            // p_shortdetails: '',
-            // // p_title_general_description1: '',
-            // p_details_general_description1: '',
-            // // p_title_general_description2: '',
-            // p_details_general_description2: '',
-            // // p_title_general_description3: '',
-            // // p_details_general_description3: '',
-            // // p_myubication: '',
-            // p_logistic_seller: '',
-            // p_principal_image: '',
-            // p_secundary_image2: '',
-            // p_secundary_image3: '',
         }
     }
     componentDidMount(){
         const id = this.props.id
         this.listener5 = this.props.firebase.dothisdb().collection('products').doc(id).get()
-
             .then((doc)=>{
                 console.log('documento tomado')
                 if(doc.exists){
                     this.setState({
                         data: doc.data(),
                         id: doc.id,
-                        // autor_email: doc.data().autor_email,
-                        // p_name: doc.data().p_name,
-                        // p_categories: doc.data().p_categories,
-                        // p_price: doc.data().p_price ,
-                        // p_shortdetails: doc.data().p_shortdetails ,
-                        // // p_title_general_description1: doc.data().p_title_general_description1 ,
-                        // p_details_general_description1: doc.data().p_details_general_description1 ,
-                        // // p_title_general_description2: doc.data().p_title_general_description2 ,
-                        // p_details_general_description2: doc.data().p_details_general_description2 ,
-                        // // p_title_general_description3: doc.data().p_title_general_description3 ,
-                        // // p_details_general_description3: doc.data().p_details_general_description3,
-                        // p_myubication: doc.data().p_myubication ,
-                        // p_logistic_seller: doc.data().p_logistic_seller ,
-                        // p_principal_image: doc.data().p_principal_image ,
-                        // p_secundary_image2: doc.data().p_secundary_image2 ,
-                        // p_secundary_image3: doc.data().p_secundary_image3 ,
                     })
                 }else{
                     console.log('el documento no existe')    
@@ -67,17 +34,9 @@ class Description extends Component {
                 console.log(error)
             })
     }
-    // componentWillUnmount(){
-    //     this.listener5();
-    //     // this.listener4();
-    // }
     addUnit=(product)=>{
         this.props.actions.addToCart(product);
-        console.log('producto añadido desde cada producto')
-        console.log(product)
-    }
-    
-    
+    }   
     handleClikc=event=>{
         console.log(this.props.id)
     }
@@ -88,7 +47,7 @@ class Description extends Component {
                 proddetails={this.state} 
                 handleOnAddUnit={this.addUnit}
                 />
-                {/* <MoreDescription data={this.state} /> */}
+                <MoreDescription proddetails={this.state} />
                 {/* <Header /> */}
                 {/* <h1 onClick={this.handleClikc}>prueba prueba</h1>
                 <p>Nombre:</p>
@@ -109,5 +68,3 @@ export default compose(
         mapDispatchToProps,
     ),
 )(Description)
-
-// export default withFirebase(Description);

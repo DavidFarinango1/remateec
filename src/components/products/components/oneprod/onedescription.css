@@ -54,7 +54,7 @@
 .slide-box2 img{
     height: 300px;
     /* width: 0px; */
-    object-fit: cover;
+    /* object-fit: cover; */
 }
 .slide1a{
     display: flex;
@@ -93,7 +93,24 @@
 @media screen and (max-width:1024px){
 }
 @media screen and (max-width: 768px){
+    .slide-box2 img{
+        height: 150px;
+        /* width: 200px; */
+        /* object-fit: cover; */
+    }
 }
+@media screen and (max-width: 576px){
+    .PBbox.a{display:none;}
+    .principal-box{
+        display:grid;
+        grid-template-columns: 2fr 1fr;
+        grid-gap: 10px;
+        margin: 15px 15px 0 15px; 
+        /* height: 300px; */
+        grid-template-areas: "central venta"
+    }
+}
+
 @media screen and (max-width: 480px){
     .principal-box{
         display:grid;
@@ -115,6 +132,24 @@
         margin: 2px;
         justify-content: center;
 
+    }
+}
+@media screen and (max-width: 425px){
+    .PBbox1 img {
+        width: 50px;
+        height: 50px;
+        margin: 0 .1em;
+    }
+    .principal-box{
+        display: grid;
+        grid-template-columns: 2fr 1.3fr;
+        grid-gap: 5px;
+        margin: 10px 2px 0 2px;
+        height: auto;
+    }
+    .PBbox2 img{
+        width: 180px;
+        /* height: 200px; */
     }
 }
 @media screen and (max-width: 320px){

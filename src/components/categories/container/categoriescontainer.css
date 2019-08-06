@@ -32,3 +32,8 @@
         display:none;
     }
 }
+@media screen and (max-width:320px){
+    .CateCont2{
+        margin-top: .5em;
+    }
+}

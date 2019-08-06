@@ -234,7 +234,6 @@ class Myproducts extends Component{
                 .then(()=>{
                     console.log(`Producto: ${inputValue_name} de la categoria: ${inputValue_categories} agregado`)
                     this.setState({
-                        inputValue_mycell: '',
                         inputValue_name: '',
                         inputValue_categories: '',
                         inputValue_price: '',

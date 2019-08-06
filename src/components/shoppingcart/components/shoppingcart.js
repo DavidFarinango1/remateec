@@ -19,7 +19,7 @@ class ShoppingCart extends Component{
                 <div className="LIbotons">
                     <h4>Realiza tus compras en:</h4>
                     <Link to=''>
-                        <button className="LIboton">Weygo</button>
+                        <button className="btn btn-success">Weygo</button>
                     </Link>
                 </div>
                 <Footer />

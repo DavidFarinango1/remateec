@@ -87,6 +87,12 @@
         margin: .1em;
         font-size: .7em;
     }
+    .contact_boxp p{
+        margin-bottom: 0;
+    }
+    .socialprincipal{
+        display: none;
+    }
 }
 @media screen and (max-width: 320px){
     .catalogimg{

@@ -11,3 +11,19 @@
 /* .shopCartM{
     justify-content: center;
 } */
+@media screen and (max-width: 576px){
+    .shopCartimg{
+        margin: 3em 0 1em;
+    }
+    .shopCartimg h1{
+        font-size: 2em;
+    }
+    .shopCartM h2{
+        font-size: 1.5em;
+    }
+}
+@media screen and (max-width: 320px){
+    .shopCartimg{
+        margin: 1.2em 0 0.8em;
+    }
+}
