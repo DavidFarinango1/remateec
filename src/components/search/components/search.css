@@ -1,0 +1,57 @@
+.Search-result{
+    font-size: 1.4em;
+    margin: .5em;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.15);
+    padding-bottom: .3em;
+}
+.Search-principalbox{
+    border-bottom: 1px solid rgb(0, 0, 0, 0.15);
+    margin: .5em;
+    height: max-content;
+    display: grid;
+    grid-template-columns: 1.5fr 5fr 1.5fr;
+    grid-template-rows: 1.1fr 1fr 1fr 1fr;
+    grid-template-areas: "a b f"
+                         "a c f"
+                         "a d f"
+                         "a e f"
+    
+    ;
+    grid-gap: 3px;
+}
+.s-a{
+    grid-area: a;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.s-b{
+    grid-area: b;
+    font-weight: 750;
+}
+.s-b p{
+    margin-bottom: 0.4em;
+}
+.s-c{
+    grid-area: c;
+}
+.s-c p{
+    margin-bottom: 0.4em;
+}
+.s-d{
+    grid-area: d;
+}
+.s-d p{
+    margin-bottom: 0.4em;
+}
+.s-e{
+    grid-area: e;
+}
+.s-e p{
+    margin-bottom: 0.4em;
+}
+.s-f{
+    grid-area: f;
+    align-items: center;
+    display: flex;
+}

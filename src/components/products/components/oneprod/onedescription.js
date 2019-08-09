@@ -61,7 +61,8 @@ class Onedescription extends PureComponent{
                 {/* <Link to='/ShoppingCart/Logged'> */}
                 <div className="PBbutton-sell">
                     <button 
-                    className="PBventa"
+                    // className="PBventa"
+                    type="button" className="btn btn-outline-primary"
                     onClick={() => this.props.handleOnAddUnit(this.props.proddetails)}
                     >
                     Agregar al carrito
