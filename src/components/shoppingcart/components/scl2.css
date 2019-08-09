@@ -62,6 +62,14 @@
     background-color: #bbbcbf !important;
     color: white !important;
 }
+.SHL-e-button2hidden{
+    background-color: #E3E6EA !important;
+    padding: 0 5px;
+}
+.SHL-e-button2hidden:hover{
+    background-color: #bbbcbf !important;
+    color: white !important;
+}
 .SHL-e-word{
     margin: 0;
 }
@@ -106,6 +114,9 @@
 .SHL-h-word{
     margin: 0;
 }
+.SHL-e-button2hidden{
+    display:none
+}
 @media screen and (max-width:1024px){
     .SHL1_1{
         height: auto;
@@ -117,5 +128,52 @@
 @media screen and (max-width:768px){
     .SHL-principalbox{
         grid-template-rows: 2fr .7fr 2fr .8fr;
+    }
+    .SHL1_1{
+        width: 6em;
+    }
+    .SHL-c-word{
+        font-size: small;
+    }
+    .SHL-d-word{
+        font-size: small;
+    }
+    .SHL-e-button{
+        font-size: small;
+        margin-bottom: .1em;
+    }
+    .SHL-principalbox {
+        grid-template-rows: 1.2fr .5fr 1.2fr .8fr;
+    }
+    .SHL-f-word{
+        font-size: small;
+    }
+    .SHLbox-g button{
+        font-size: xx-small;
+    }
+    .SHL-g-word{
+        font-size: small;
+        margin: 3px;
+    }
+    .SHL-h-word{
+        font-size: small;
+    }
+}
+@media screen and (max-width:320px){
+    .SHL-principalbox{
+        grid-template-areas: "a c f g h"
+                             "a d f g h"
+                             "a d f g h"
+                             "b e f g h";
+        grid-template-rows: 1.1fr .5fr 1.2fr .8fr;
+        }
+    .SHL-e-button{
+        display:none
+    }
+    .SHL-e-button2hidden{
+        display: block
+    }
+    .SCL-principalbox {
+        margin: .2em;
     }
 }

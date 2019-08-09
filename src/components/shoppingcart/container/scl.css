@@ -104,4 +104,78 @@
     .SCL-box2{
         width: 35%;
     }
+    .SCL-a-w{
+        font-size: 1.1em;
+        padding-left: .3em;
+    }
+    .SCL-b-w{
+        font-size: .8em;
+    }
+    .SCL-c-w{
+        font-size: .8em;
+    }
+    .SCL-d-w{
+        font-size: .8em;
+    }
+
+}
+@media screen and (max-width:425px){
+    #blockContainer {
+        display: table;
+    }
+    #blockA {
+        display: table-footer-group;
+    }
+    #blockB {
+        display: block;
+        margin-bottom: 1em !important;
+        width: 100%;
+        margin: 0;
+    }
+    .SCLimageccontainer{
+        margin: .25em;
+    }
+    .SCLimage{
+        width: 90%;
+    }
+    .PayBox_details h1 {
+        font-size: 1em;
+        margin: .1em 0;
+    }
+    .PayBox_det_1 p {
+        margin-bottom: .2em;
+        font-size: small;
+    }
+    .PayBox_det_1_input {
+        height: 1.4em;
+        font-size: smaller;
+    }
+    .PayBox_det_1_strong2 {
+        margin: 0;
+        font-size: smaller;
+    }
+    .PayBox_det_2 {
+        font-size: 1em;
+    }
+    .PayBox_det_2p {
+        margin-bottom: 0;
+        font-size: smaller;
+    }
+    .PayBox_form{
+        font-size: smaller;
+    }
+    .PayBox_det_submit {
+        margin-bottom: .1em;
+        font-size: smaller;
+        padding: .3em;
+    }
+    .SHL1_1 {
+        width: 4em;
+        margin: .2em;
+    }
+}
+@media screen and (max-width:320px){
+    .SCLimage {
+        display: none;
+    }
 }

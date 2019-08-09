@@ -233,8 +233,8 @@ class ShoppingCartLoggedContainer extends Component{
                 <div className="SCLimageccontainer">
                     <img className="SCLimage" src = "./images/weygo/weygo-gracias-por-la-compra.png" alt="gracias por su compra" />
                 </div>
-                <div className="SCL-principalbox">
-                    <div className="SCL-box1">
+                <div id="blockContainer" className="SCL-principalbox">
+                    <div id="blockA" className="SCL-box1">
                         <div className="SCL-box-x">
                             <div className="SCL-a">
                                 <p className="SCL-a-w" onClick={this.onSellClick}>Carrito</p>    
@@ -269,7 +269,7 @@ class ShoppingCartLoggedContainer extends Component{
                             <p className="SCL-box-za">Subtotal ({this.totalProducts(this.props.addToCart)} productos):         ${this.totalAmount(this.props.addToCart)}</p>
                         </div> 
                     </div>
-                    <div className="SCL-box2">
+                    <div id="blockB" className="SCL-box2">
                         {/* <h2>Elige tu método de pago</h2>
                         <h5>Subtotal de productos ({this.totalProducts(this.props.addToCart)} productos)</h5>
                         <h5>Total a pagar: ${this.totalAmount(this.props.addToCart)}</h5> */}

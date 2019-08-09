@@ -44,6 +44,7 @@ class ShoppingCartLogged extends Component{
                 </div>
                 <div className="SHLbox-e">
                     <button type="button" className="btn btn-light SHL-e-button" onClick={() => this.props.handleDeleteFromCart()}>Quitar producto</button>   
+                    <button type="button" className="btn btn-light SHL-e-button2hidden" onClick={() => this.props.handleDeleteFromCart()}>Quitar</button>   
                 </div>
                 <div className="SHLbox-f">
                     <p className="SHL-f-word">${this.props.price}</p>
