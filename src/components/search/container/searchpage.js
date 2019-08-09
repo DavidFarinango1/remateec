@@ -9,7 +9,7 @@ const SearchPageContainer = (props) => {
     return(
         <div>
             <Header />
-            <div className="SCLimageccontainer">
+            <div className="SPCimageccontainer">
                 <img className="SCLimage" src = "/images/weygo/weygo-gracias-por-la-compra.png" alt="gracias por su compra" />
             </div>
             <div className="CateCont2">

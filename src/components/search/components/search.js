@@ -81,7 +81,8 @@ class Search extends Component{
                                     <p>Disponible</p>
                                 </div>
                                 <div className="s-f">
-                                    <button type="button" className="btn btn-outline-primary" onClick={() => this.addUnit(item)}>Agregar al carrito</button>
+                                    <button type="button" className="btn btn-outline-primary btn1in" onClick={() => this.addUnit(item)}>Agregar al carrito</button>
+                                    <button type="button" className="btn btn-outline-primary btn2in" onClick={() => this.addUnit(item)}>Agregar</button>
                                 </div>
                             </div>
                         ))                                    
