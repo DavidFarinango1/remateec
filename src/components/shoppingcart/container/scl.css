@@ -5,7 +5,6 @@
 }
 .SCLimage{
     border-radius: 3px;
-    border: 1px solid grey;
     width: 70%;
 }
 .SCL-principalbox{
@@ -79,7 +78,7 @@
 }
 
 .SCL-box-z{
-    border: 1.5px solid rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0, .3);
     border-radius: 3px;
     background: white;
 }

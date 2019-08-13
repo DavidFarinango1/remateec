@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
 import * as ROUTES from '../constants/routes';
-// import SignOutButton from '../logIn/SignOut';
 import { connect } from 'react-redux'
 import * as actions from '../../store/actions/index'
 import { bindActionCreators } from 'redux';
@@ -53,4 +52,3 @@ class NavigationNonAuth extends Component{
   export default connect(mapStateToProps
     ,mapDispatchToProps
     )(NavigationNonAuth)
-// export default NavigationNonAuth;
