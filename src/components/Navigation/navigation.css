@@ -35,3 +35,11 @@
     margin: 0;
     font-size: 16px;
 }
+.Navnonauthcontainer{
+    position: relative;
+}
+.Navnonauthp{
+    position: absolute;
+    top: 0;
+    left: 50%;
+}

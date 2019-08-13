@@ -1,10 +1,10 @@
 body{
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#b7c1c5+0,606e7e+100 */
-    background: rgb(183,193,197); /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover,  rgba(183,193,197,1) 0%, rgba(96,110,126,1) 100%); /* FF3.6-15 */
-    background: -webkit-radial-gradient(center, ellipse cover,  rgba(183,193,197,1) 0%,rgba(96,110,126,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at center,  rgba(183,193,197,1) 0%,rgba(96,110,126,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7c1c5', endColorstr='#606e7e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background: rgb(232, 237, 238); /* Old browsers */
+    /* background: -moz-radial-gradient(center, ellipse cover,  rgba(183,193,197,1) 0%, rgba(96,110,126,1) 100%);
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba(183,193,197,1) 0%,rgba(96,110,126,1) 100%); 
+    background: radial-gradient(ellipse at center,  rgba(183,193,197,1) 0%,rgba(96,110,126,1) 100%); */
+    /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7c1c5', endColorstr='#606e7e',GradientType=1 ); */
 
     /* background-color: white; */
     /* font-family: 'Oswald', sans-serif; */
