@@ -17,6 +17,7 @@ import Prod from './components/products/container/descriptioncontainer'
 import SignUpPage from './components/logIn/SignUp';
 import SignInPage from './components/logIn/signin';
 import PasswordForgetPage from './components/logIn/PasswordForget';
+import Privacity from './components/privacity/container/privacitycontainer'
 import ShoppingCart from './components/shoppingcart/container/shoppingcart-container'
 import ShoppingCartLogged from './components/shoppingcart/container/shoppingcartlogged-container'
 
@@ -43,6 +44,7 @@ class App extends Component {
                   <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
                   <Route exact path={ROUTES.SIGN_IN} component={SignInPage} />
                   <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
+                  <Route path={ROUTES.PRIVACITY} component={Privacity} />
 
                   <Route exact path={ROUTES.MYACCOUNT} component={SellerPrincipal} />
                   <Route exact path={ROUTES.MYPRODUCTS} component={MyProductsContainer} />

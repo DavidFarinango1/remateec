@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
+import * as ROUTES from '../../constants/routes'
 import './footer.css';
 
 class Footer extends React.Component{
@@ -54,6 +56,11 @@ class Footer extends React.Component{
                 </section>
             </div>
             <footer className="footer">
+                <div className="footerp">
+                    <Link to={ROUTES.PRIVACITY}>
+                        <p className="navbar-brand footerp2">Aviso de privacidad</p>
+                    </Link>
+                </div>
                 <p>Pagina diseñada por: Ing. David Farinango</p>
             </footer>
         </div>
