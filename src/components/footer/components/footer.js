@@ -60,6 +60,9 @@ class Footer extends React.Component{
                     <Link to={ROUTES.PRIVACITY}>
                         <p className="navbar-brand footerp2">Aviso de privacidad</p>
                     </Link>
+                    <Link to={ROUTES.TERMSANDCONDITIONS}>
+                        <p className="navbar-brand footerp2">Terminos y condiciones</p>
+                    </Link>
                 </div>
                 <p>Pagina diseñada por: Ing. David Farinango</p>
             </footer>

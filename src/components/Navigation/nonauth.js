@@ -23,7 +23,7 @@ class NavigationNonAuth extends Component{
               <p className="navbar-brand">Mi carrito</p>
             </Link>
             <div className="Navnonauthcontainer">
-                <img className="Navnonauthimg" src ="/images/others/carrito3.PNG" alt="carro compras" height="40px"/>
+                <img className="Navnonauthimg" src ="/images/others/carrito3.png" alt="carro compras" height="40px"/>
                 <p className="Navnonauthp badge badge-pill badge-light">{this.totalProducts(this.props.addToCart)}</p>
             </div>
           </div>

@@ -112,7 +112,7 @@ class SignUpFormBase extends Component {
       <div className="SUP">
         <div className="SUPregister">
           <div className = "SUPLIheader">
-              <img src= "./images/weygo/logo.PNG" height="66px"></img>
+              <img src= "./images/weygo/logo.png" height="66px"></img>
               <h1>Weygo</h1>
           </div>
           <form id="formulariot" onSubmit={this.onSubmit}>

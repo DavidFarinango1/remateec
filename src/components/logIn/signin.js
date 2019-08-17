@@ -70,15 +70,41 @@ class SignInFormBase extends Component{
     }
     onClickFacebook = event => {
         this.props.firebase
-            .doSignInWithFacebook()
-            .then((result)=>{
+            .doSignInWithFacebook(), ()=>{
+                
+                this.props.firebase
+                    .doSignInWithFacebookRedirect()
+                    .then((result)=>{
+                if (result.credential) {
                 console.log(result)
-                this.props.history.push(ROUTES.HOME);
-                alert(`Bienvenido ${result.user.displayName}`)
-            })
-            .catch((error)=>{
-                console.log(error)
-            })
+                        this.props.history.push(ROUTES.HOME);
+                        alert(`Bienvenido ${result.user.displayName}`)
+                }
+                    })
+                    .catch((error)=>{
+                        console.log(error)
+                    })
+            }
+            // .then(function(result) {
+            //     if (result.credential) {
+            //       // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+            //       var token = result.credential.accessToken;
+            //       // ...
+            //     }
+            //     // The signed-in user info.
+            //     var user = result.user;
+            //     console.log(user)
+            //   }).catch(function(error) {
+            //     // Handle Errors here.
+            //     var errorCode = error.code;
+            //     var errorMessage = error.message;
+            //     // The email of the user's account used.
+            //     var email = error.email;
+            //     // The firebase.auth.AuthCredential type that was used.
+            //     var credential = error.credential;
+            //     console.log(errorCode)
+            //     // ...
+            //   });
 
     }
     render(){
@@ -88,7 +114,7 @@ class SignInFormBase extends Component{
         return(
             <div className= "SIP1">
                 <div className = "SIP1header">
-                    <img src= "./images/weygo/logo.PNG" height="66px"></img>
+                    <img src= "./images/weygo/logo.png" height="66px"></img>
                     <h1>Weygo</h1>
                 {/* </div>
                 <div className="SIP1info"> */}
@@ -122,8 +148,8 @@ class SignInFormBase extends Component{
                         <SignUpLink />
                     </div>
                     <h3>También puedes iniciar sesión con:</h3>
-                    <section className="socialprincipal">
-                        <img onClick={this.onClickFacebook} src= "./images/social/facebook_icon.png" alt = "facebook" width="30px"/>
+                    <section className="signinsocial">
+                        {/* <img onClick={this.onClickFacebook} src= "./images/social/facebook_icon.png" alt = "facebook" width="30px"/> */}
                         <img onClick={this.onClickGoogle} src= "./images/social/google_icon.png" alt = "google" width="30px"/>
                         {/* <img src= "./images/social/twitter.png" alt = "twitter" width="30px"/> */}
                     </section>

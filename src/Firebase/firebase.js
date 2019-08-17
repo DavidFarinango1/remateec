@@ -44,7 +44,11 @@ class Firebase {
         this.auth.signInWithPopup(this.googleProvider);
 
     doSignInWithFacebook = ()=>
-        this.auth.signInWithPopup(this.facebookProvider);
+        // this.auth.signInWithPopup(this.facebookProvider);
+        this.auth.signInWithRedirect(this.facebookProvider)
+    
+    doSignInWithFacebookRedirect =()=>
+        this.auth.getRedirectResult();
 
     dothisdb = ()=>
         this.db

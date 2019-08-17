@@ -10,7 +10,7 @@ class ShoppingCart extends Component{
             <div className="ShopCart">
                 <HeaderContainer />
                 <div className = "shopCartimg">
-                    <img src= "./images/others/carrito3.PNG" height="66px"></img>
+                    <img src= "./images/others/carrito3.png" height="66px"></img>
                     <h1>Carrito</h1>
                 </div>
                 <div className="shopCartM">

@@ -5,7 +5,7 @@ class Cash extends Component{
         return(
             <div>
                 <div>
-                    <img className="Cash_img_logo" src={`/images/weygo/logo.PNG`} alt='logo' />
+                    <img className="Cash_img_logo" src={`/images/weygo/logo.png`} alt='logo' />
                     <p className="Cash_p"><strong>Ventasquito</strong></p>
                 </div>
                 <p className="Cash_details">
