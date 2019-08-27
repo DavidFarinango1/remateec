@@ -107,6 +107,7 @@ class Myproducts extends Component{
             this.props.firebase
                 .dothisdb()
                 .collection('products')
+                .orderBy('date', 'desc')
                 .where('autor_uid' , '==', authUser.uid)
                 .onSnapshot((snapShots)=>{
                     const user = this.props.firebase.auth.currentUser
@@ -150,7 +151,7 @@ class Myproducts extends Component{
         })
     }
     componentWillUnmount(){
-        this.listener3();
+        // this.listener3();
         // this.listener5();
     }
     onConsole=()=>{
@@ -215,6 +216,7 @@ class Myproducts extends Component{
                 .dothisdb()
                 .collection('products')
                 .add({
+                    date: new Date(),
                     autor_uid: user.uid,
                     autor_email: user.email,
                     p_mybussinessname: inputValue_mybussinessname,
@@ -272,6 +274,7 @@ class Myproducts extends Component{
             .collection('products')
             .doc(id)
             .update({
+                date: new Date(),
                 p_name: inputValue_name,
                 p_categories: inputValue_categories,
                 p_price: inputValue_price,

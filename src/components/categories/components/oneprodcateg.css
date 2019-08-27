@@ -1,6 +1,9 @@
 .OneProd_title{
-    margin: .3em;
+    padding: .3em;
     margin-bottom: 0;  
+}
+.OneProdCateg{
+    margin-bottom: 1em;
 }
 .OneProdCateg_title{
     text-align: center;

@@ -5,7 +5,10 @@ import { bindActionCreators } from 'redux'
 import { compose } from 'recompose'
 import { connect } from 'react-redux'
 
-import OneProdCateg from '../components/oneprodcateg';
+import Rec_added_prods from '../components/rec_added_prods';
+import StationeryProds from '../components/stationery_prods';
+import TechProds from '../components/tech_prods';
+import OthersProds from '../components/others_prods';
 import './categoriescontainer.css'
 import CartContainer from '../../Cart/cart_container'
 
@@ -69,15 +72,36 @@ class CategoriesContainer extends Component{
                 </div> */}
                 <div className="CateCont2">
                     <div className="CateCont2_1">
-                        <OneProdCateg 
+                        <Rec_added_prods 
                         products2={this.state.products}
                         handleOnAdd={this.dispachAddToCart}
                         />
                     </div>
+                    <div className="CateCont2_1">
+                        <StationeryProds 
+                        products2={this.state.products}
+                        handleOnAdd={this.dispachAddToCart}
+                        />
+                    </div>
+                    <div className="CateCont2_1">
+                        <TechProds 
+                        products2={this.state.products}
+                        handleOnAdd={this.dispachAddToCart}
+                        />
+                    </div>
+                    <div className="CateCont2_1">
+                        <OthersProds 
+                        products2={this.state.products}
+                        handleOnAdd={this.dispachAddToCart}
+                        />
+                    </div>
+                    {/* <div className="CateCont3">
+                        <CartContainer />
+                    </div> */}
+                </div>
                     <div className="CateCont3">
                         <CartContainer />
                     </div>
-                </div>
             </div>
         )
     }
