@@ -30,14 +30,28 @@
     }
 }
 @media screen and (max-width:768px){
-    .CateCont2_1{
+    .CateCont2{
         width: 100%;
     }
     .CateCont3{
         display:none;
     }
+    .OneProdCateg {
+        margin-bottom: .7em;
+    }
 }
 @media screen and (max-width:320px){
+    .CateCont {
+        margin-top: .5em;
+    }
+    .OneProdCateg {
+        margin-bottom: .5em;
+    }
+}
+@media screen and (max-width:320px){
+    .CateCont {
+        margin-top: 0;
+    }
     .CateCont2{
         margin-top: .5em;
     }

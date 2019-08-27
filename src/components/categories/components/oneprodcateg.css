@@ -86,13 +86,19 @@
 .modalwid{
     max-width: 50% !important;
 }
+@media screen and (max-width: 992px){
+    .OneProd_title {
+        padding: .2em;
+        font-size: 1.4em;
+    }
+}
 @media screen and (max-width: 768px){
+    .OneProdCateg_pi_img {
+        width: 136px;
+        height: 136px;
+    }
     .OneProd_title{
         font-size: 1.35em;
-    }
-    .OneProdCateg_pi_img{
-        width: 140px;
-        height: 140px;
     }
     .OneProdCateg_buttons{
         left: 13px;
@@ -100,11 +106,5 @@
     .OneProdCateg_button1{
         margin: 0 1px;
         padding: .3em;
-    }
-}
-@media screen and (max-width: 768px){
-    .OneProdCateg_pi_img {
-        width: 136px;
-        height: 136px;
     }
 }

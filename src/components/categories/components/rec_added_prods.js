@@ -3,18 +3,7 @@ import { Link } from 'react-router-dom'
 import './oneprodcateg.css'
 import OneDescriptionModal from './oneDescriptionModal'
 
-class OneProdCateg extends Component{
-    constructor(props){
-        super(props);
-        this.state={
-            data: '',
-        }
-    }
-    handleLog=(product)=>{
-        this.setState({
-            data: product.data,
-        })
-    }
+class RecAddedProds extends Component{
     render(){
         return(
             <div className="OneProdCateg">
@@ -37,7 +26,7 @@ class OneProdCateg extends Component{
                                 </div>
                                 <div className='OneProdCateg_buttons'>
                                     <button className='OneProdCateg_button1  btn btn-info' onClick={() => this.props.handleOnAdd(item)}>Comprar</button>
-                                    <button className='OneProdCateg_button1 OneProdCateg_button1_2 btn btn-danger' onClick={() => this.handleLog(item)} data-toggle="modal" data-target="#exampleModalCenter">Ver más</button>
+                                    <button className='OneProdCateg_button1 OneProdCateg_button1_2 btn btn-danger' onClick={() => this.props.openModal2(item)} data-toggle="modal" data-target="#exampleModalCenter">Ver más</button>
                                 </div>
                                 <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div className="modal-dialog modal-dialog-centered modalwid" role="document">
@@ -46,7 +35,7 @@ class OneProdCateg extends Component{
                                                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
-                                                <OneDescriptionModal oneproduct={this.state.data} />
+                                                <OneDescriptionModal oneproduct={this.props.data_modal} />
                                             </div>
                                         </div>
                                     </div>
@@ -59,4 +48,4 @@ class OneProdCateg extends Component{
         )
     }
 }
-export default OneProdCateg;
+export default RecAddedProds;

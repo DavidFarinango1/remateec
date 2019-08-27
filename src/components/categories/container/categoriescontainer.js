@@ -16,7 +16,10 @@ class CategoriesContainer extends Component{
     constructor(props){
         super(props);
         this.state={
-            products:[],
+            recently_added_prods:[],
+            stationery_prods:[],
+            tech_prods:[],
+            others_prods:[],
             inputValue_name: '',
             inputValue_categories: '',
             inputValue_price: '',
@@ -38,6 +41,7 @@ class CategoriesContainer extends Component{
             picture2: null,
             uploadValue3: 0,
             picture3: null,
+            data: '',
         };
     }
     componentDidMount(){
@@ -45,11 +49,59 @@ class CategoriesContainer extends Component{
             this.props.firebase
                 .dothisdb()
                 .collection('products')
-                // .where('autor_uid' , '==', authUser.uid)
+                .orderBy('date', 'desc')
+                .limit(3)
                 .onSnapshot((snapShots)=>{
-                    const user = this.props.firebase.auth.currentUser
                     this.setState({
-                        products: snapShots.docs.map((doc)=>{
+                        recently_added_prods: snapShots.docs.map((doc)=>{
+                            return { id: doc.id, data: doc.data()}
+                        })
+                    })
+                },error=>{
+                    console.log(error)
+                })
+        this.listener7 =     
+            this.props.firebase
+                .dothisdb()
+                .collection('products')
+                .orderBy('date', 'desc')
+                .where('p_categories' , '==', 'Papeleria')
+                .limit(3)
+                .onSnapshot((snapShots)=>{
+                    this.setState({
+                        stationery_prods: snapShots.docs.map((doc)=>{
+                            return { id: doc.id, data: doc.data()}
+                        })
+                    })
+                },error=>{
+                    console.log(error)
+                })
+        this.listener8 =     
+            this.props.firebase
+                .dothisdb()
+                .collection('products')
+                .orderBy('date', 'desc')
+                .where('p_categories' , '==', 'Tecnologia')
+                .limit(3)
+                .onSnapshot((snapShots)=>{
+                    this.setState({
+                        tech_prods: snapShots.docs.map((doc)=>{
+                            return { id: doc.id, data: doc.data()}
+                        })
+                    })
+                },error=>{
+                    console.log(error)
+                })
+        this.listener9 =     
+            this.props.firebase
+                .dothisdb()
+                .collection('products')
+                .orderBy('date', 'desc')
+                .where('p_categories' , '==', 'Otros')
+                .limit(3)
+                .onSnapshot((snapShots)=>{
+                    this.setState({
+                        others_prods: snapShots.docs.map((doc)=>{
                             return { id: doc.id, data: doc.data()}
                         })
                     })
@@ -57,8 +109,10 @@ class CategoriesContainer extends Component{
                     console.log(error)
                 })
     }
-    componentWillUnmount(){
-        this.listener6();
+    openModal=(prod)=>{
+        this.setState({
+            data: prod.data,
+        })
     }
     dispachAddToCart=(product)=> {
         this.props.actions.addToCart(product);
@@ -73,26 +127,34 @@ class CategoriesContainer extends Component{
                 <div className="CateCont2">
                     <div className="CateCont2_1">
                         <Rec_added_prods 
-                        products2={this.state.products}
+                        products2={this.state.recently_added_prods}
                         handleOnAdd={this.dispachAddToCart}
+                        openModal2={this.openModal}
+                        data_modal={this.state.data}
                         />
                     </div>
                     <div className="CateCont2_1">
                         <StationeryProds 
-                        products2={this.state.products}
+                        products2={this.state.stationery_prods}
                         handleOnAdd={this.dispachAddToCart}
+                        openModal2={this.openModal}
+                        data_modal={this.state.data}
                         />
                     </div>
                     <div className="CateCont2_1">
                         <TechProds 
-                        products2={this.state.products}
+                        products2={this.state.tech_prods}
                         handleOnAdd={this.dispachAddToCart}
+                        openModal2={this.openModal}
+                        data_modal={this.state.data}
                         />
                     </div>
                     <div className="CateCont2_1">
                         <OthersProds 
-                        products2={this.state.products}
+                        products2={this.state.others_prods}
                         handleOnAdd={this.dispachAddToCart}
+                        openModal2={this.openModal}
+                        data_modal={this.state.data}
                         />
                     </div>
                     {/* <div className="CateCont3">
