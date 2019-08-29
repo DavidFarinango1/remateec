@@ -50,7 +50,7 @@ class CategoriesContainer extends Component{
                 .dothisdb()
                 .collection('products')
                 .orderBy('date', 'desc')
-                .limit(3)
+                // .limit(3)
                 .onSnapshot((snapShots)=>{
                     this.setState({
                         recently_added_prods: snapShots.docs.map((doc)=>{
@@ -64,9 +64,9 @@ class CategoriesContainer extends Component{
             this.props.firebase
                 .dothisdb()
                 .collection('products')
-                .orderBy('date', 'desc')
+                // .orderBy('date', 'desc')
                 .where('p_categories' , '==', 'Papeleria')
-                .limit(3)
+                // .limit(3)
                 .onSnapshot((snapShots)=>{
                     this.setState({
                         stationery_prods: snapShots.docs.map((doc)=>{
@@ -80,9 +80,9 @@ class CategoriesContainer extends Component{
             this.props.firebase
                 .dothisdb()
                 .collection('products')
-                .orderBy('date', 'desc')
+                // .orderBy('date', 'desc')
                 .where('p_categories' , '==', 'Tecnologia')
-                .limit(3)
+                // .limit(3)
                 .onSnapshot((snapShots)=>{
                     this.setState({
                         tech_prods: snapShots.docs.map((doc)=>{
@@ -96,9 +96,9 @@ class CategoriesContainer extends Component{
             this.props.firebase
                 .dothisdb()
                 .collection('products')
-                .orderBy('date', 'desc')
+                // .orderBy('date', 'desc')
                 .where('p_categories' , '==', 'Otros')
-                .limit(3)
+                // .limit(3)
                 .onSnapshot((snapShots)=>{
                     this.setState({
                         others_prods: snapShots.docs.map((doc)=>{

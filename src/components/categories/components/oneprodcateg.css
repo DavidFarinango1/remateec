@@ -1,3 +1,74 @@
+/* prueba */
+.button_next{
+    position: absolute;
+    z-index: 1;
+    top: 37%;
+    right: 0;
+    font-weight: 600;
+    border: 0 !important;
+    padding: 5px 10px !important;
+    opacity: .85 !important;
+}
+.button_next:hover{
+    background-color: white;
+    opacity: 1 !important;
+}
+.button_previous{
+    position: absolute;
+    z-index: 1;
+    top: 37%;
+    left: 0;
+    font-weight: 600;
+    border: 0 !important;
+    padding: 5px 10px !important;
+    opacity: .85 !important;
+}
+.button_previous:hover{
+    background-color: white;
+    opacity: 1 !important;
+}
+.cards-slider-wrapper{
+    display: flex;
+    position: absolute;
+    transition: transform 250ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.card2{
+    flex: 1;
+    min-width: 180px;
+}
+.cards-slider{
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    height: 190px;
+}
+.sronlu{
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0,0,0,0);
+        white-space: nowrap;
+        border: 0;
+}
+.cards-slider2{
+    /* overflow: hidden; */
+    /* position: relative; */
+    margin: 0 auto;
+    height: 190px;
+}
+.cards-slider-wraper2{
+    overflow-x: auto;
+    display: flex;
+    /* position: absolute; */
+}
+.OneProdCateg2{
+    margin-bottom: 2em;
+}
+/* hasta aqui prueba */
+
+
 .OneProd_title{
     padding: .3em;
     margin-bottom: 0;  
