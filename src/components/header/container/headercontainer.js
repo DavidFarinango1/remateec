@@ -6,6 +6,7 @@ class HeaderContainer extends Component {
         return(
             <div>
                 <Header  />
+                <p>Holi</p>
             </div>    
         )
     }
