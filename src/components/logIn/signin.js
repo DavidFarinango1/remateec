@@ -147,10 +147,10 @@ class SignInFormBase extends Component{
                         <PasswordForgetLink/>
                         <SignUpLink />
                     </div>
-                    <h3>También puedes iniciar sesión con:</h3>
+                    {/* <h3>También puedes iniciar sesión con:</h3> */}
                     <section className="signinsocial">
                         {/* <img onClick={this.onClickFacebook} src= "./images/social/facebook_icon.png" alt = "facebook" width="30px"/> */}
-                        <img onClick={this.onClickGoogle} src= "./images/social/google_icon.png" alt = "google" width="30px"/>
+                        {/* <img onClick={this.onClickGoogle} src= "./images/social/google_icon.png" alt = "google" width="30px"/> */}
                         {/* <img src= "./images/social/twitter.png" alt = "twitter" width="30px"/> */}
                     </section>
                 </div>               

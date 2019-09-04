@@ -8,6 +8,10 @@
     width: 100%;
     justify-content: center;
     margin: 0;
+    /* max-height: max-content; */
+    height: -webkit-fill-available;
+    /* align-items: center; */
+    align-content: center;
 }
 .SIP1header{
     background: #F8F9FA;
