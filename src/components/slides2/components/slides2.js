@@ -1,5 +1,5 @@
 import React from 'react';
-import './slides.css';
+import './slides2.css';
 import { Link } from 'react-router-dom'
 class Slides extends React.Component{
     evento=()=>{

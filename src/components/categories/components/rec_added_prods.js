@@ -33,12 +33,23 @@ class RecAddedProds extends Component{
     render(){
         return(
             <div className="OneProdCateg">
+                    <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                            <div className="modal-dialog modal-dialog-centered modalwid" role="document">
+                                                <div className="modal-content">
+                                                    <div className="modal-body OMDmb">
+                                                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                        <OneDescriptionModal oneproduct={this.props.data_modal} />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                                            
                 <div>
                     <h3 className="OneProd_title">
                         Agregados recientemente:
                     </h3>
                 </div>
-                {/* <div className="OneProd_products"> */}
                     <div className="cards-slider" >
                         <button type="button" className="btn btn-light button_next" onClick={this.suma}>></button>
                         <button type="button" className="btn btn-light button_previous" onClick={this.resta}>&lt;</button>
@@ -60,26 +71,27 @@ class RecAddedProds extends Component{
                                             <button className='OneProdCateg_button1  btn btn-info' onClick={() => this.props.handleOnAdd(item)}>Comprar</button>
                                             <button className='OneProdCateg_button1 OneProdCateg_button1_2 btn btn-danger' onClick={() => this.props.openModal2(item)} data-toggle="modal" data-target="#exampleModalCenter">Ver más</button>
                                         </div>
-                                        {/* <a className="carousel-control-prev slide_control" href="#carouselindicator1" role="button" data-slide="prev">
-                                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                                            <span className="sr-only">Previous</span>
-                                        </a>
-                                        <a className="carousel-control-next slide_control" href="#carouselindicator1" role="button" data-slide="next">
-                                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                                            <span className="sr-only">Next</span>
-                                        </a> */}
-                                        <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                            <div className="modal-dialog modal-dialog-centered modalwid" role="document">
-                                                <div className="modal-content">
-                                                    <div className="modal-body OMDmb">
-                                                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
+                                        {/* <div>
+                                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
                                                         </button>
-                                                        <OneDescriptionModal oneproduct={this.props.data_modal} />
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        ...
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                    </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 )):null                
                             }

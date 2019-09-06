@@ -13,6 +13,8 @@ import MyShopCartContainer from './components/account/container/myshopcartcontai
 import MyProductsContainer from './components/account/container/myproductscontainer'
 import MyPurchaseContainer from './components/account/container/mypurchasecontainer'
 import MyCommentsContainer from './components/account/container/mycommentscontainer'
+import SchoolContainer from './components/school/container/school_container'
+
 import Prod from './components/products/container/descriptioncontainer'
 import SignUpPage from './components/logIn/SignUp';
 import SignInPage from './components/logIn/signin';
@@ -53,6 +55,7 @@ class App extends Component {
                   <Route exact path={ROUTES.MYSHOPCART} component={MyShopCartContainer} />
                   <Route exact path={ROUTES.MYPURCHASE} component={MyPurchaseContainer} />
                   <Route exact path={ROUTES.MYCOMMENTS} component={MyCommentsContainer} />
+                  <Route exact path={ROUTES.SCHOOL} component={SchoolContainer} />
                   <Route exact path='/product/:id' component={Prod} />
                   <Route exact path='/search/:id' component={SearchPage} />
 

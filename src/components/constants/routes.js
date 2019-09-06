@@ -6,7 +6,7 @@ export const MYPRODUCTS = '/mis-productos';
 export const MYSHOPCART = '/mis-ventas';
 export const MYPURCHASE = '/mis-compras';
 export const MYCOMMENTS = '/mis-comentarios';
-
+export const SCHOOL = '/listas-de-utiles';
 
 export const SIGN_UP = '/signup';
 export const SIGN_IN = '/signin';

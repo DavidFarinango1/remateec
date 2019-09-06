@@ -19,6 +19,20 @@ class StationeryProds extends Component{
     render(){
         return(
             <div className="OneProdCateg2">
+                <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div className="modal-dialog modal-dialog-centered modalwid" role="document">
+                        <div className="modal-content">
+                            <div className="modal-body OMDmb">
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <OneDescriptionModal oneproduct={this.props.data_modal} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
                 <div>
                     <h3 className="OneProd_title">
                         Utiles escolares y suministros de oficina:
@@ -41,7 +55,7 @@ class StationeryProds extends Component{
                                         <button className='OneProdCateg_button1  btn btn-info' onClick={() => this.props.handleOnAdd(item)}>Comprar</button>
                                         <button className='OneProdCateg_button1 OneProdCateg_button1_2 btn btn-danger' onClick={() => this.props.openModal2(item)} data-toggle="modal" data-target="#exampleModalCenter">Ver más</button>
                                     </div>
-                                    <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    {/* <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                         <div className="modal-dialog modal-dialog-centered modalwid" role="document">
                                             <div className="modal-content">
                                                 <div className="modal-body OMDmb">
@@ -52,7 +66,7 @@ class StationeryProds extends Component{
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                             )):null                
                         }

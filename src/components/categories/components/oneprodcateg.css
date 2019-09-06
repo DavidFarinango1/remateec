@@ -115,6 +115,7 @@
 .OneProdCateg_pi_img{
     width: 180px;
     height: 180px;
+    object-fit: contain;
 }
 .OneProdCateg_price{
     grid-area: d;

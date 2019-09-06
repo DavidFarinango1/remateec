@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux'
 import { compose } from 'recompose'
 import { connect } from 'react-redux'
 
+import OneDescriptionModal from '../components/oneDescriptionModal'
 import Rec_added_prods from '../components/rec_added_prods';
 import StationeryProds from '../components/stationery_prods';
 import TechProds from '../components/tech_prods';
@@ -121,9 +122,6 @@ class CategoriesContainer extends Component{
     render(){
         return(
             <div className="CateCont">
-                {/* <div className="CateCont1">
-                    <h3>Todos los productos</h3>
-                </div> */}
                 <div className="CateCont2">
                     <div className="CateCont2_1">
                         <Rec_added_prods 
@@ -133,6 +131,7 @@ class CategoriesContainer extends Component{
                         data_modal={this.state.data}
                         />
                     </div>
+                    
                     <div className="CateCont2_1">
                         <StationeryProds 
                         products2={this.state.stationery_prods}
@@ -157,9 +156,6 @@ class CategoriesContainer extends Component{
                         data_modal={this.state.data}
                         />
                     </div>
-                    {/* <div className="CateCont3">
-                        <CartContainer />
-                    </div> */}
                 </div>
                     <div className="CateCont3">
                         <CartContainer />

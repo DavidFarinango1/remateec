@@ -33,7 +33,7 @@ class Search extends Component{
                     }, ()=>{
                         if(search){
                             let result = this.state.list.filter((item)=>{
-                                return item.data.p_name.includes(search)
+                                return item.data.p_name.toLowerCase().includes(search.toLowerCase())
                             })
                             this.setState({
                                 result,

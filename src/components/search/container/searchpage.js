@@ -12,15 +12,15 @@ const SearchPageContainer = (props) => {
             <div className="SPCimageccontainer">
                 <img className="SCLimage" src = "/images/weygo/weygo-gracias-por-la-compra.png" alt="gracias por su compra" />
             </div>
-            <div className="CateCont2">
-                    <div className="CateCont2_1">
+            <div className="CateCont2_search">
+                    <div className="CateCont2_1_search">
                         <Search id={id} />
                         {/* <OneProdCateg 
                         products2={this.state.products}
                         handleOnAdd={this.dispachAddToCart}
                         /> */}
                     </div>
-                    <div className="CateCont3">
+                    <div className="CateCont3_search">
                         <CartContainer />
                     </div>
             </div>

@@ -1,0 +1,21 @@
+.School-principal{
+    display: grid;
+    justify-content: center;
+    margin-top: 1em;
+}
+.School-card1{
+    justify-content: center;
+    display: flex;
+    width: 100% !important;
+}
+.School-card2{
+    justify-content: center;
+    display: flex;
+    width: 100% !important;
+}
+.card1_1{
+    width: 70% !important;
+}
+.card1_2{
+    width: 70% !important;
+}

@@ -53,8 +53,8 @@
 }
 .slide-box2 img{
     height: 300px;
-    /* width: 0px; */
-    /* object-fit: cover; */
+    width: 300px;
+    object-fit: contain;
 }
 .slide1a{
     display: flex;

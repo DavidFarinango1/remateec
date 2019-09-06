@@ -14,12 +14,12 @@ class ShoppingCart extends Component{
                     <h1>Carrito</h1>
                 </div>
                 <div className="shopCartM">
-                    <h2>Ingresa a tu cuenta y registrate para empezar a comprar</h2> 
+                    <h2>Ingresa a tu cuenta y registrate para empezar a comprar:</h2> 
                 </div>
                 <div className="LIbotons">
-                    <h4>Realiza tus compras en:</h4>
-                    <Link to=''>
-                        <button className="btn btn-success">Weygo</button>
+                    {/* <h4>Realiza tus compras en:</h4> */}
+                    <Link to='/signin'>
+                        <button className="btn btn-success">Ingresar o registrarse</button>
                     </Link>
                 </div>
                 <Footer />
