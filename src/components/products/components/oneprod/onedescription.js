@@ -1,13 +1,54 @@
-import React, {PureComponent} from 'react';
+import React, {Component} from 'react';
+import ReactImageZoom from 'react-image-zoom'
 import {Link} from 'react-router-dom';
 import './onedescription.css';
+// const imagesPath = {
+//     minus: this.props.proddetails.data.p_principal_image,
+//     plus: this.props.proddetails.data.p_secundary_image2
+//   }
+// const props = {width: 400, height: 250, zoomWidth: 500};    
 
-class Onedescription extends PureComponent{
+class Onedescription extends Component{
+    constructor(props){
+        super(props);
+        this.state={
+            img0: this.props.proddetails.data.p_principal_image,
+            contador: '',
+            first: true
+        }
+    }
+    // componentDidMount(){
+    //     this.listener7 = this.setState({
+    //         contador: this.props.proddetails.data.p_principal_image,
+            
+    //     })
+    // }
+    onClick1=()=>{
+        this.setState({
+            contador: this.props.proddetails.data.p_principal_image,
+            first: false,
+        })
+        console.log('1')
+    }
+    // componentWillUnmount(){
+    //     this.listener7()
+    // }
+    onClick2=()=>{
+        this.setState({
+            contador: this.props.proddetails.data.p_secundary_image2,
+            first: false,
+        })
+        console.log('2')
+    }
+    onClick3=()=>{
+        this.setState({
+            contador: this.props.proddetails.data.p_secundary_image3,
+            first: false,
+        })
+        console.log('3')
+    }
     render(){
         return(
-            // <div>
-            //     {this.props.proddetails.data.p_name}
-            // </div>
             <div className="principal-box">
             <div className="PBbox a">
                 <div className="PBdetails-title">Detalles del producto:</div>
@@ -16,39 +57,19 @@ class Onedescription extends PureComponent{
             <div className="PBbox b">
                 <div className="PBproduct prueba">{this.props.proddetails.data.p_name}</div>
                 <div className="PBbox1">
-                    <img src ={this.props.proddetails.data.p_principal_image} alt="producto" height="40px" weight="40px" />
-                    <img src ={this.props.proddetails.data.p_secundary_image2} alt="producto" height="40px" weight="40px" />
-                    <img src ={this.props.proddetails.data.p_secundary_image3} alt="producto" height="40px" weight="40px" />
+                    <img src ={this.props.proddetails.data.p_principal_image}  onClick={this.onClick1} alt="producto" height="40px" weight="40px" />
+                    <img src ={this.props.proddetails.data.p_secundary_image2} onClick={this.onClick2} alt="producto" height="40px" weight="40px" />
+                    <img src ={this.props.proddetails.data.p_secundary_image3} onClick={this.onClick3} alt="producto" height="40px" weight="40px" />
                 </div>
-                {/* <div className="PBbox2"> */}
                 <div className="slide-box2 PBbox2">
-                    {/* <img src ={this.props.proddetails.data.p_principal_image} alt="producto" height="200px" weight="200px" /> */}
-                    <div id="carouselindicator1" className="carousel slide slide1a" data-ride="carousel">
-                        <ol className="carousel-indicators">
-                            <li data-target="#carouselindicator1" data-slide-to="0" className="active"></li>
-                            <li data-target="#carouselindicator1" data-slide-to="1"></li>
-                            <li data-target="#carouselindicator1" data-slide-to="2"></li>
-                        </ol>
-                        <div className="carousel-inner">
-                            <div className="carousel-item active">
-                            <img src={this.props.proddetails.data.p_principal_image} className="d-block" alt="Slide1" />
-                            </div>
-                            <div className="carousel-item">
-                            <img src={this.props.proddetails.data.p_secundary_image2} className="d-block" alt="Slide2" />
-                            </div>
-                            <div className="carousel-item">
-                            <img src={this.props.proddetails.data.p_secundary_image3} className="d-block" alt="Slide3" />
-                            </div>
-                        </div>
-                        <a className="carousel-control-prev" href="#carouselindicator1" role="button" data-slide="prev">
-                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span className="sr-only">Previous</span>
-                        </a>
-                        <a className="carousel-control-next" href="#carouselindicator1" role="button" data-slide="next">
-                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span className="sr-only">Next</span>
-                        </a>
-                    </div>
+                    {/* <ReactImageZoom {...props}  img={"/images/users/usuario.png"} /> */}
+                    {/* <ReactImageZoom {...props} div={{backgroundImage: `url(${this.props.proddetails.data.p_principal_image})`}}  /> */}
+                    {
+                        this.state.first? 
+                        <div className="aaaaaaaaaa zoom" style={{backgroundImage: `url(${this.props.proddetails.data.p_principal_image})`}}></div>
+                        :
+                        <div className="aaaaaaaaaa zoom" style={{backgroundImage: `url(${this.state.contador})`}}></div>
+                    }
                 </div>
             </div>
             <div className="PBbox c">

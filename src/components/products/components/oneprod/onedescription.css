@@ -1,4 +1,21 @@
 /* inicio primer caja */
+.aaaaaaaaaa{
+    height: 300px;
+    width:300px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.zoom{
+    transition: transform .2s;
+}
+.zoom:hover,
+      .zoom:focus {
+      -ms-transform: scale(3); /* IE  */
+      -webkit-transform: scle(3); /* Safari */
+      transform: scale(3); 
+      background-color: rgba(0,0,0,.5)
+      }
 .principal-box{
     display:grid;
     grid-template-columns: 1fr 2fr 1fr;

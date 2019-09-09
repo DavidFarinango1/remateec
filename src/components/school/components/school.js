@@ -97,9 +97,10 @@ class School extends Component{
                     <div className="School-card1">
                         <div className="card mb-3 card1_1">
                             <div className="row no-gutters">
-                                <div className="col-md-4">
+                                <div className="col-md-4 school-whap-img">
                                 {/* <!-- Button trigger modal --> */}
-                                    <img src="..." data-toggle="modal" data-target="#exampleModalCenter" className="card-img" alt="..." />
+                                {/* <a href="https://www.freepik.es/fotos-vectores-gratis/icono">Vector de Icono creado por freepik - www.freepik.es</a> */}
+                                    <img src="/images/social/Click_Aqui.png" data-toggle="modal" data-target="#exampleModalCenter" className="card-img" alt="..." />
                                 {/* <!-- Modal --> */}
                                     <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                         <div className="modal-dialog modal-dialog-centered" role="document">
