@@ -24,7 +24,6 @@ class Myaccount extends Component {
                             email: authUser.email, 
                            })
             : this.setState({ authUser:null});
-            // console.log(authUser)
         })
         this.listener4 = this.props.firebase.auth.onAuthStateChanged((authUser)=>{
             authUser
@@ -48,7 +47,6 @@ class Myaccount extends Component {
                                 return user.doc.data().u_mybussinessname
                             }).toString()
                         })
-                    // })
                 },error=>{
                     console.log(error)
                 })
@@ -58,7 +56,6 @@ class Myaccount extends Component {
     }
     componentWillUnmount(){
         this.listener3();
-        // this.listener4();
     }
 onActionChangeReal= event =>{
     this.setState({
@@ -76,7 +73,6 @@ createUser = event =>{
     }= this.state
     event.preventDefault()
     const user = this.props.firebase.auth.currentUser
-    // console.log(user.uid)
     const id = user.uid
     !edit2?
     this.props.firebase
@@ -91,7 +87,6 @@ createUser = event =>{
             u_gps: mygps,
         })
         .then(()=>{
-            // console.log('usuario creado')
             alert('Bienvenido Weyger, tu usuario a sido creado con éxito')
             this.setState({
                 edit2: true,
@@ -120,7 +115,6 @@ update2=()=>{
             u_mybussinessname: mybussinessname,
         })
         .then(()=>{
-            // console.log('usuario actualizado')
             alert('Usuario actualizado con éxito')
         })
         .catch((error)=>{

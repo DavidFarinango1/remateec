@@ -11,7 +11,8 @@ import { compose } from 'recompose'
 import * as actions from '../../../store/actions/index.js'
 import { bindActionCreators } from 'redux'
 import { withFirebase } from '../../../Firebase'
-
+import { withRouter } from 'react-router-dom'
+import * as ROUTES from '../../constants/routes'
 import './scl.css'
 class ShoppingCartLoggedContainer extends Component{
     constructor(props){
@@ -27,6 +28,7 @@ class ShoppingCartLoggedContainer extends Component{
             mycell: '',
             mygps: '',
             edit3: false,
+            totalAmount: this.totalAmount(this.props.addToCart)
         }
 
     }
@@ -107,9 +109,9 @@ class ShoppingCartLoggedContainer extends Component{
     }
     totalAmount(cartArray) {
         return cartArray.reduce((acum, item) => {
-            acum += item.price * item.units;
-            return acum;
-        }, 0);
+                acum += item.price * item.units;
+                return acum;
+            }, 0);
     }
     totalProducts(cartArray){
         return cartArray.reduce((acum, item)=>{
@@ -126,6 +128,7 @@ class ShoppingCartLoggedContainer extends Component{
             sellOnLine,
             user,
             email,
+            totalAmount,
         }= this.state;
         event.preventDefault();
             this.props.firebase
@@ -136,12 +139,14 @@ class ShoppingCartLoggedContainer extends Component{
                     s_prod: sellOnLine,
                     order_by: user, 
                     order_at: new Date(),
+                    total_order: totalAmount,
                 })
                 .then(()=>{
                     this.setState({
                         s_prod: ''
                     })
                     alert('gracias por tu compra')
+                    this.props.history.push(ROUTES.MYPURCHASE)
                 })
                 .catch((error)=>{
                     console.log(error)
@@ -266,13 +271,10 @@ class ShoppingCartLoggedContainer extends Component{
                             }
                         </div>
                         <div className="SCL-box-z">
-                            <p className="SCL-box-za">Subtotal ({this.totalProducts(this.props.addToCart)} productos):         ${this.totalAmount(this.props.addToCart)}</p>
+                            <p className="SCL-box-za">Subtotal ({this.totalProducts(this.props.addToCart)} productos):         ${Number(this.totalAmount(this.props.addToCart).toFixed(2))}</p>
                         </div> 
                     </div>
                     <div id="blockB" className="SCL-box2">
-                        {/* <h2>Elige tu método de pago</h2>
-                        <h5>Subtotal de productos ({this.totalProducts(this.props.addToCart)} productos)</h5>
-                        <h5>Total a pagar: ${this.totalAmount(this.props.addToCart)}</h5> */}
                         <form onSubmit={this.onNext}>
                             <div>
                                 {
@@ -308,6 +310,7 @@ function mapDispatchToProps(dispatch){
 }
 
 export default compose(
+    withRouter,
     withFirebase,
     connect(
         mapStateToProps,

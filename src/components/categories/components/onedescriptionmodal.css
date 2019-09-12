@@ -22,8 +22,12 @@
     background: white;
 }
 .ODM-PBbox1 img{
-    /* border: 1px solid black; */
+    width: 40px;
+    object-fit: contain;
     margin: 2px
+}
+.ODM-PBbox1 img:hover{
+    cursor: pointer;
 }
 .ODM-PBbox2 img{
     width: auto;
@@ -48,31 +52,46 @@
     .ODM-PBbox2 img{
         height: 150px;
     }
+    .ODM-principal-box{
+        display:grid;
+        border-radius:  5px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 4fr 2fr;
+        grid-template-areas: "odmname odmimages"
+                             "odmdetails odmdetails";
+    }
+    .ODM-PBboxa,.ODM-PBboxb{
+        padding: 5px 5px 0px 5px;
+    }
+    .imgzoom2{
+        width:  150px !important;
+        height: 150px !important;
+    }
 }
-@media screen and (max-width: 576px){
-    /* .ODM-PBbox2 img{
-        height: 100px;
-    }
-    .ODM-PBbox1 img {
-        width: 30px;
-        height: 30px;
-    }
-    .ODM-PBboxb{
-        padding: 6px;
-    } */
-}
-/* @media (min-width: 186px){
-    .modal-dialog {
-        margin: 1.75rem auto !important;
-    }
-} */
 @media screen and (max-width: 480px){
     .modalwid {
         max-width: 75% !important;
     }
+    .imgzoom2{
+        width:  100px !important;
+        height: 100px !important;
+
+    }
+    .ODM-PBbox1 img{
+        /* border: 1px solid black; */
+        width: 20px !important;
+        /* object-fit: contain; */
+        margin: 1px
+    }
+    .ODM-PBproduct,.ODM-PBprecio{
+        font-size: .6em;
+    }
+    .PBdetails-descriptionmodal{
+        font-size: .7em !important;
+    }
 }
 @media screen and (max-width: 320px){
     .modalwid {
-        max-width: 90% !important;
+        max-width: 80% !important;
     }
 }

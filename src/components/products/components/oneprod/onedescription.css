@@ -11,9 +11,9 @@
 }
 .zoom:hover,
       .zoom:focus {
-      -ms-transform: scale(3); /* IE  */
-      -webkit-transform: scle(3); /* Safari */
-      transform: scale(3); 
+      -ms-transform: scale(2.5); /* IE  */
+      -webkit-transform: scle(2.5); /* Safari */
+      transform: scale(2.5); 
       background-color: rgba(0,0,0,.5)
       }
 .principal-box{
@@ -57,6 +57,9 @@
 .PBbox1 img{
     margin: 0px .9em;
     object-fit: scale-down;
+}
+.PBbox1 img:hover{
+    cursor: pointer;
 }
 /* .PBbox2 img{
     width: auto;

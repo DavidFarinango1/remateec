@@ -4,7 +4,6 @@ import { compose } from 'recompose';
 import './signup.css'
 import { withFirebase } from '../../Firebase';
 import * as ROUTES from '../constants/routes';
-// import '../LogIn/components/generallogin.css';
 const SignUpPage = () => (
   <div>
     <SignUpForm />
@@ -38,55 +37,18 @@ class SignUpFormBase extends Component {
             }
             
             authUser.user.sendEmailVerification(configuracion).catch(error=>{
-              console.log(error+'no vale el intento')
+              this.setState({error})
             })
             this.props.firebase.doSignOut()
-            alert('Bienvenido Weyger, por favor realiza el proceso de verificacion en tu correo')
+            alert('Bienvenido a Ventasquito.com, por favor realiza el proceso de verificacion en tu correo electrónico para poder empezar')
             this.props.history.push(ROUTES.HOME);
             console.log('1='+authUser.user.uid)
-            // const useruid = authUser.user.uid
-            // this.props.firebase
-            //   .dothisdb()
-            //   .collection('users')
-            //   .doc(useruid)
-            //   .set({
-
-            //   // })
-            //   // .collection('users')
-            //   // .add({
-            //     u_name : username,
-            //     u_email : email,
-            //   })
-            //   .then((docRef)=>{
-            //     console.log('usuario agregado correctamente UID es: 2='+ docRef.id )
-            //   })
-            //   .catch((error)=>{
-            //     console.log(error)
-            //   })
               event.preventDefault();
         })
         .catch(error => {
-            console.log(error +'al crear el usuario')
+            this.setState({error})
         });
       event.preventDefault()
-      // this.props.firebase
-      //   .dothisdb()
-      //   .doc(useruid)
-      //   .set({
-
-      //   // })
-      //   // .collection('users')
-      //   // .add({
-      //     u_name : username,
-      //     u_email : email,
-      //   })
-      //   .then((docRef)=>{
-      //     console.log('usuario agregado correctamente UID es: '+ docRef.id )
-      //   })
-      //   .catch((error)=>{
-      //     console.log(error)
-      //   })
-      //   event.preventDefault();
   }
 
   onChange = event => {
@@ -112,8 +74,8 @@ class SignUpFormBase extends Component {
       <div className="SUP">
         <div className="SUPregister">
           <div className = "SUPLIheader">
-              <img src= "./images/weygo/logo.png" height="66px"></img>
-              <h1>Weygo</h1>
+              <img src= "./images/weygo/logo.PNG" height="66px"></img>
+              <h1>Ventasquito</h1>
           </div>
           <form id="formulariot" onSubmit={this.onSubmit}>
             <div className="LIinfo">

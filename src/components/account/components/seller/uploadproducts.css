@@ -29,11 +29,6 @@
 }
 .UPBprincipal{
     grid-area: principal;
-    /* display: grid;
-    grid-template-rows: 80% 3% 17%;
-    grid-template-areas: "img1"
-                         "loader1"
-                         "button1"; */
 }
 .gridboximg{
     display: grid;
@@ -60,20 +55,15 @@
     background: #007b;
     position: relative;
 }
-/* #UPB3input:hover{
-    cursor: pointer;
-} */
 #UPB3input p{
     color: #fff;
     text-align: center;
-    /* font-size: 20px; */
     margin: 0;
     font-size: 100%;
 }
 #UPB3input2 p{
     color: #fff;
     text-align: center;
-    /* font-size: 20px; */
     margin: 0;
     font-size: .6em;
 }

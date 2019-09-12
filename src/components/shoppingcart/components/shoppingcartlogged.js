@@ -55,7 +55,7 @@ class ShoppingCartLogged extends Component{
                     <button type="button" className="btn btn-light SHLplus" onClick={() => this.props.onAddUnit()}>+</button>
                 </div>
                 <div className="SHLbox-h">
-                    <p className="SHL-h-word">${this.totalProduct()}</p>
+                    <p className="SHL-h-word">${Number(this.totalProduct().toFixed(2))}</p>
                 </div>
             </div>
         )

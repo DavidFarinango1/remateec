@@ -45,8 +45,8 @@ class PasswordForgetFormBase extends Component {
             <div className="PWFORGET">
                 <div className="PWFORGETFORM">
                     <div className = "PWFORGETheader">
-                        <img src= "./images/weygo/logo.png" height="66px"></img>
-                        <h1>Weygo</h1>
+                        <img src= "./images/weygo/logo.PNG" height="66px"></img>
+                        <h1>Ventasquito</h1>
                     </div>
                     <form onSubmit={this.onSubmit}>
                     <input

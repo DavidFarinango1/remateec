@@ -96,7 +96,7 @@ class UploadProducts extends Component {
                         <div className="UPB6-a">
                             <h4>Descripción 1</h4>
                             {/* <input name="title_general_description1" value={title_general_description1} className="form-control form-control-sm" type="text" onChange={this.props.onActionChange} placeholder='Titulo general descripción 1:' required></input> */}
-                            <textarea name="details_general_description1" value={details_general_description1} className="form-control form-control-sm" onChange={this.props.onActionChange} maxLength="500" data-length="500" rows="3" placeholder='Detalle general descripción 1:' required></textarea>
+                            <textarea name="details_general_description1" value={details_general_description1} className="form-control form-control-sm" onChange={this.props.onActionChange} maxLength="1000" data-length="1000" rows="3" placeholder='Detalle general descripción 1:' required></textarea>
                         </div>
                         <div className="UPB6-b">
                             <h4>Descripción 2</h4>
@@ -116,7 +116,7 @@ class UploadProducts extends Component {
                     <div className="UPB8">
                         <p>Forma de Envio:</p>
                         <select name="logistic_seller" value={logistic_seller} onChange={this.props.onActionChange} className="custom-select custom-select-sm">
-                            <option value="None" selected>Escoge la forma de enviar tus productos</option>
+                            <option value="None" selected>A través de weygo</option>
                             <option value="Personal">Personal</option>
                             <option value="A_traves_de_weygo">A través de Weygo</option>
                         </select>

@@ -8,11 +8,21 @@ class Slides extends React.Component{
     render(){
         return(
             <div className="slide-box ">
-                <div className="slide_title">
-                    <h3>Listas de Utiles y demás cotizaciones</h3>
-                <Link to={'/listas-de-utiles'}>
-                    <h3>Click Aqui</h3>
-                                </Link>
+                <div>
+                    <div className="slide_title1">
+                        <h3>Listas de Utiles y demás cotizaciones</h3>
+                    <Link to={'/listas-de-utiles'}>
+                        <h3>Click Aqui</h3>
+                                    </Link>
+
+                    </div>
+                    <div className="slide_title2">
+                        <h3>¿Que productos necesitas?</h3>
+                        <a href="#footer1">
+                            <h3>Click Aqui</h3> 
+                        </a>
+
+                    </div>
 
                 </div>
             

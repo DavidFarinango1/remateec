@@ -45,15 +45,15 @@ class OneDescriptionModal extends PureComponent{
                 <div className="ODM-PBbox2">
                 {
                     this.state.first? 
-                    <div className="aaaaaaaaaa zoom" style={{backgroundImage: `url(${this.props.oneproduct.p_principal_image})`}}></div>
+                    <div className="aaaaaaaaaa zoom imgzoom2" style={{backgroundImage: `url(${this.props.oneproduct.p_principal_image})`}}></div>
                     :
-                    <div className="aaaaaaaaaa zoom" style={{backgroundImage: `url(${this.state.contador})`}}></div>
+                    <div className="aaaaaaaaaa zoom imgzoom2" style={{backgroundImage: `url(${this.state.contador})`}}></div>
                 }
                     {/* <img src ={this.props.oneproduct.p_principal_image} alt="producto" height="200px" weight="200px" /> */}
                 </div>
             </div>
             <div className="ODM-PBboxc">
-                <div className="PBdetails-description">{this.props.oneproduct.p_shortdetails}</div>
+                <div className="PBdetails-descriptionmodal">{this.props.oneproduct.p_shortdetails}</div>
             </div>
         </div>
         )

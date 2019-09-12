@@ -2,12 +2,6 @@ import React, {Component} from 'react'
 import './cart.css'
 import {Link} from 'react-router-dom'
 class Cart extends Component{
-    // handleClick=(event)=>{
-    //     // console.log(this.props.id);
-    //     console.log(this.props);
-    //     // this.props.openModal(this.props.id);
-    // }
-
     totalProduct(product){
         var a = this.props.price
         var b = this.props.units
@@ -18,12 +12,6 @@ class Cart extends Component{
     render(){
         return(        
             <div className="Cart0">
-                {/* <Link to={{
-                    pathname: '/products',
-                    search: `?id=${this.props.id}`,
-                    }}
-                    id={this.props.id}
-                > */}
                 <div className="Cart0_a">
                     <Link to={'/product/' + this.props.id}>
                         <div className="Cart1">
@@ -31,13 +19,11 @@ class Cart extends Component{
                             className="Cart1_1"
                             src={this.props.principal_image} 
                             alt='img prod.'  
-                            // onClick={this.handleClick}
                             />
                         </div>
                     </Link>
                     <div className="Cart2">
-                        {/* <h4 className="Cart2_1">{this.props.name}</h4> */}
-                        <h4 className="Cart2_2">Precio: ${this.totalProduct()}</h4>
+                        <h4 className="Cart2_2">Precio: ${Number(this.totalProduct().toFixed(2))}</h4>
                         <h4 className="Cart2_2">Units: {this.props.units}</h4>
                     </div>
                 </div>

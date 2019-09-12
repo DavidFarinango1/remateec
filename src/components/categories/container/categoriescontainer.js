@@ -5,14 +5,25 @@ import { bindActionCreators } from 'redux'
 import { compose } from 'recompose'
 import { connect } from 'react-redux'
 
-import OneDescriptionModal from '../components/oneDescriptionModal'
 import Rec_added_prods from '../components/rec_added_prods';
 import StationeryProds from '../components/stationery_prods';
 import TechProds from '../components/tech_prods';
 import OthersProds from '../components/others_prods';
 import './categoriescontainer.css'
 import CartContainer from '../../Cart/cart_container'
+import styled from 'styled-components'
 
+const Container = styled.div`
+    background-color: #444;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    top: ${props => props.top}px;
+    right: 16px;
+    z-index: 99999;
+    transition: top 0.5s ease;
+    height: 100 vh;
+`;
 class CategoriesContainer extends Component{
     constructor(props){
         super(props);
@@ -43,6 +54,8 @@ class CategoriesContainer extends Component{
             uploadValue3: 0,
             picture3: null,
             data: '',
+            top: -100,
+            productsState: false,
         };
     }
     componentDidMount(){
@@ -67,7 +80,6 @@ class CategoriesContainer extends Component{
                 .collection('products')
                 // .orderBy('date', 'desc')
                 .where('p_categories' , '==', 'Papeleria')
-                // .limit(3)
                 .onSnapshot((snapShots)=>{
                     this.setState({
                         stationery_prods: snapShots.docs.map((doc)=>{
@@ -118,10 +130,24 @@ class CategoriesContainer extends Component{
     dispachAddToCart=(product)=> {
         this.props.actions.addToCart(product);
         console.log(product)
+        this.showNotification();
+        this.setState({productsState: true})
+    }
+    showNotification=()=>{
+        this.setState({
+            top: 16,
+        },()=>{
+            setTimeout(()=>{
+                this.setState({
+                    top:-100,
+                })
+            },1000)
+        });
     }
     render(){
         return(
             <div className="CateCont">
+                <Container top={this.state.top}> Agregado al carrito <i className="fa fa-bell"></i></Container>
                 <div className="CateCont2">
                     <div className="CateCont2_1">
                         <Rec_added_prods 
@@ -158,7 +184,7 @@ class CategoriesContainer extends Component{
                     </div>
                 </div>
                     <div className="CateCont3">
-                        <CartContainer />
+                        <CartContainer products={this.state.productsState} />
                     </div>
             </div>
         )

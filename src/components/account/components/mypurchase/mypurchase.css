@@ -1,0 +1,25 @@
+.MypurhaseOrderbox{
+    display: block;
+
+}
+.MypOBD{
+    display: flex;
+    justify-content: space-between;
+    font-size: small;
+}
+.MypOBDp p{
+    margin: 0 1em;
+    text-align: initial;
+}
+.MypOBDpdescription{
+    display: flex;
+    font-size: small;
+    justify-content: space-between;
+    margin: 0 5px;
+}
+.MypOBDpdescription2{
+    display: flex;
+    font-size: small;
+    justify-content: space-between;
+    margin: 0 1em;
+}

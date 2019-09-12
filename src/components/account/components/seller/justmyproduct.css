@@ -7,10 +7,6 @@
     background: white;
     display: grid;
     margin: 10px;
-    /* width: 610px; */
-    /* height: 250px; */
-    /* grid-template-columns: repeat(6, 1fr); */
-    /* grid-template-rows: repeat(3, 1fr); */
     grid-template-areas: "a a a"
                          "b b b"
                          "c c c"

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import moment from 'moment'
 import 'moment/locale/es'
-
 class MyPurchaseOrder extends Component{
     render(){
         return(
@@ -18,40 +17,46 @@ class MyPurchaseOrder extends Component{
 
                             </div>
 
-                            <div className='Orderbox'>
-                                <div>
-                                    <strong>Datos del vendedor</strong>
-                                    <p>{item.data.order_by[0].u_mybussinessname}</p>
-                                    <p>{item.data.order_by[0].u_name}</p>
-                                    <p>{item.data.order_by[0].u_cell}</p>
-                                    <p>{item.data.order_by[0].u_email}</p>
-                                    <p>{item.data.order_by[0].u_gps}</p>
+                            <div className='MypurhaseOrderbox'>
+                                <div className="MypOBD">
+                                    <div className="MypOBDp">
+                                        <strong>Datos del vendedor</strong>
+                                        <p><strong>Empresa: </strong>{item.data.order_by[0].u_mybussinessname}</p>
+                                        <p><strong>Contacto: </strong>{item.data.order_by[0].u_cell}</p>
+                                    </div>
+                                    <div>
+                                        <p><strong>Status</strong>: En proceso</p>
+                                        <p><strong>Total a pagar: </strong>{parseFloat(item.data.total_order).toFixed(2)}</p>
+                                    </div>
                                 </div>
                                 <div>
-                                    <strong>Detalle del pedido</strong>
+                                    <div>
+                                        <strong>Detalle del pedido</strong>
+                                    </div>
+                                    <div className="MypOBDpdescription">
+                                        <p><strong>Cantidad</strong></p>
+                                        <p><strong>Descripción</strong></p>
+                                        <p><strong>Precio Unit.</strong></p>
+                                        <p><strong>Precio Total</strong></p>
+                                    </div>
                                     {
                                         item.data.s_prod.map((item,key)=>(
-                                            <div key={key}>
+                                            <div className="MypOBDpdescription2" key={key}>
+                                                <p>
+                                                {item.units}
+                                                </p>
                                                 <p>
                                                 {item.name}
                                                 </p>
                                                 <p>
-                                                {item.bName}
-                                                {item.cell}
-                                                {item.email}
+                                                {parseFloat(item.price).toFixed(2)}
                                                 </p>
                                                 <p>
-                                                {item.units}
+                                                {parseFloat(item.units*item.price).toFixed(2)}
                                                 </p>
                                             </div>
                                         ))
                                     }
-                                </div>
-                                <div>
-                                    <strong>Status</strong>
-                                    <p>pagado</p>
-                                    <p>en entrga</p>
-                                    <p>entregado</p>
                                 </div>
                             </div>
                         </div> 

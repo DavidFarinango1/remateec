@@ -22,21 +22,39 @@
     top: 1em !important;
     
 }
-.slide_title{
-    width: 60%;
-    left: 50%;
-    bottom: 0;
-    transform: translate(-50%,-0%);
+.slide_title1{
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
     position: absolute;
     z-index: 1;
     background: white;
-    /* padding: .5em; */
+    padding: 0 2.5em;
     border-radius: 5px;
-    opacity: 0.8;
-    /* margin-bottom: 5px; */
-
+    opacity: 0.99;
+    top: 210px;
+    margin-left: 16%;
+    font-size: .55em;
 }
-.slide_title h3{
+.slide_title2{
+    width: max-content;
+    position: absolute;
+    z-index: 1;
+    background: white;
+    padding: 0 2.5em;
+    border-radius: 5px;
+    opacity: 0.99;
+    top: 210px;
+    margin-right: 16%;
+    right: 0;
+    font-size: .55em;
+}
+.slide_title1 h3{
+    font-size: 2em;
+    text-align: center;
+    font-weight: 600;
+}
+.slide_title2 h3{
     font-size: 2em;
     text-align: center;
     font-weight: 600;
@@ -48,11 +66,20 @@
     .slide-box img{
         height: 11em;
     }
-    .slide_title{
-        width: 60%;
+    .slide_title1{
+        /* width: 60%; */
         padding: .2em;
+        top:126px
     }
-    .slide_title h3{
+    .slide_title2{
+        /* width: 60%; */
+        padding: .2em;
+        top: 126px
+    }
+    .slide_title1 h3{
+        font-size: 1.5em;
+    }
+    .slide_title2 h3{
         font-size: 1.5em;
     }
 }
@@ -69,15 +96,50 @@
         height: 150px;
     }
 }
+@media screen and (max-width: 480px){
+    .slide_title1{
+        margin-left: 7%;
+        top: 73%;
+    }
+    .slide_title2{
+        margin-right: 7%;
+        top: 73%;
+    }
+    .slide_title1 h3 {
+        /* font-size: 1.5em; */
+        margin-bottom: .1em;
+    }
+    .slide_title2 h3 {
+        /* font-size: 1.5em; */
+        margin-bottom: .1em;
+    }
+}
+
 @media screen and (max-width: 425px){
-    .slide_title{
+    /* .slide_title1{
         width: 50%;
         padding: 0;
     }
-    .slide_title h3{
+    .slide_title1 h3{
         font-size: 1em;
         padding: 0;
         margin: .1em;
+    } */
+    .slide_title1{
+        margin-left: 4%;
+        /* top: 73%; */
+    }
+    .slide_title2{
+        margin-right: 4%;
+        /* top: 73%; */
+    }
+    .slide_title1 h3 {
+        font-size: 1.3em;
+        
+    }
+    .slide_title2 h3 {
+        font-size: 1.3em;
+        
     }
     .slide-box img{
         height: 120px;
@@ -86,5 +148,13 @@
 @media screen and (max-width: 320px){
     .slide-box img{
         height: 100px;
+    }
+    .slide_title1 h3 {
+        font-size: 1em;
+        
+    }
+    .slide_title2 h3 {
+        font-size: 1em;
+        
     }
 }

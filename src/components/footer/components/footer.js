@@ -10,10 +10,15 @@ class Footer extends React.Component{
             inputValue_contact_email,
             inputValue_contact_cell,
             inputValue_contact_message,
+            inputValue_more_products,
         } = this.props.state; 
         return(
         <div className="footercontainer">
             <div className="contact">
+                <div className='contact1_1sub'>
+                <h4>Ayúdanos a mejorar!</h4>
+                </div>
+                <div className='contact1_2sub'>
                 <section className="contact-box1">
                     <h3>Comentarios y sugerencias:</h3>
                     <section className="contact-box-client">
@@ -38,6 +43,18 @@ class Footer extends React.Component{
                         </form>
                     </section>
                 </section>
+                <section id='footer1' className="contact-box1_1">
+                    <h4>¿Que productos necesitas?</h4>
+                    <section className="contact-box-client">
+                        <form onSubmit={this.props.createComentAboutProduct} className="client">
+                            <section className="client-info">
+                                <h5> Productos:</h5>
+                                <input name="inputValue_more_products" value = {inputValue_more_products} onChange={this.props.onActionChangProducts} className="form-control mr-sm-8 footerbutton" type="text" maxLength="100" size="50px" required/>
+                            </section>
+                            <button type="submit" className="btn btn-light"><strong>Enviar</strong></button> 
+                        </form>
+                    </section>
+                </section>
                 <section className="contact-box2">
                     {/* <h3>Siguenos en nuestras redes sociales:</h3><br /> */}
                     <h3>Contáctanos directamente al:</h3><br />
@@ -54,6 +71,7 @@ class Footer extends React.Component{
                         <a href="" className="social-link1 Github"></a> */}
                     </section>
                 </section>
+                </div>
             </div>
             <footer className="footer">
                 <div className="footerp">

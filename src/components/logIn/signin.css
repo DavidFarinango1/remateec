@@ -41,3 +41,9 @@
     margin: .5em 1.5em;
     width: 40px;
 }
+.SignIn_problems{
+    max-width: fit-content;
+    margin: 0;
+    opacity: .85;
+    font-size: .8em;
+}

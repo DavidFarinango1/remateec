@@ -1,7 +1,5 @@
 .Cart{
     text-align: center;
-    /* border: 1px solid grey; */
-    /* display: flex; */
 }
 .Cart0{
     display:flex;
@@ -30,6 +28,7 @@
     width: 50px;
     text-align: center;
     display: flex;
+    object-fit: contain;
 }
 .Cart2 h4{
     font-size: .8em
@@ -76,7 +75,4 @@
         width: auto;
         margin-right: 0;
     }
-}
-@media screen and (max-width:768px){
-    
 }

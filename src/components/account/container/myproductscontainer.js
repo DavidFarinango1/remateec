@@ -150,10 +150,6 @@ class Myproducts extends Component{
             console.log('error')
         })
     }
-    componentWillUnmount(){
-        // this.listener3();
-        // this.listener5();
-    }
     onConsole=()=>{
         console.log(this.state)
     }
@@ -228,7 +224,7 @@ class Myproducts extends Component{
                     p_shortdetails: inputValue_shortdetails,
                     p_details_general_description1: details_general_description1,
                     p_details_general_description2: details_general_description2,
-                    p_logistic_seller: logistic_seller,
+                    p_logistic_seller: 'Weygo Logistics',
                     p_principal_image: picture0,
                     p_secundary_image2: picture2,
                     p_secundary_image3: picture3,

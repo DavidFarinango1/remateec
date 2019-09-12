@@ -85,11 +85,6 @@ class ItemsSeller extends Component{
                     </Link>
 
                 </div>
-                {/* <Link to ={ROUTES.MYSHOPPINGHISTORY}>
-                    <div className="SB1-e">
-                        <p className="userb1">Mis pedidos</p>
-                    </div>
-                </Link> */}
             </div>
         )
     }

@@ -1,9 +1,22 @@
 .contact{
-    display: flex;
+    display: block;
     background-color: #273B47;
     margin-top: 1em;
     color: white;
     padding-top: 10px;
+}
+.contact1_1sub{
+    background-color: rgba(0,0,0,0.35)
+}
+.contact1_1sub h4{
+    text-align: center;
+    font-size: 2em;
+}
+.contact1_2sub{
+    display:flex;
+}
+.contact-box1_1{
+    text-align: center;
 }
 .contact-box1{
     width: 50%;
@@ -85,6 +98,9 @@
     }
 }
 @media screen and (max-width: 480px){
+    .contact1_2sub{
+        display: block;
+    }
     .contact{
         display: block;
     }

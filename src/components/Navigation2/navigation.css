@@ -1,0 +1,45 @@
+.Navi_Link{
+    text-decoration: none;
+    margin-right: 30px;
+    color:black;
+}
+.Navi_cart{
+    display: flex;
+    /* margin-right: 30px; */
+}
+.Navi_text{
+    margin: 0;
+    margin-right: 8px;
+    align-items: center;
+    display:flex;
+    font-size: 20px;
+}
+.imglogged{
+    border-radius: 10%
+}
+.Navi_Link2{
+    text-decoration: none;
+    margin-right: 5px;
+    color:black;
+}
+.Navi_signIn{
+    margin-right:8px;
+}
+.Navi_Link3{
+    text-decoration: none;
+    margin-right: 5px;
+    color:black;
+    display: flex;
+}
+.Navi_account{
+    margin: 0;
+    font-size: 16px;
+}
+.Navnonauthcontainer{
+    position: relative;
+}
+.Navnonauthp{
+    position: absolute;
+    top: 0;
+    left: 50%;
+}

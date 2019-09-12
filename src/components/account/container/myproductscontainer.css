@@ -8,16 +8,10 @@
 }
 .SellerBox1{
     grid-area: SellerBox1;
-    /* background-color: white;
-    border-radius:  5px; */
 }
 .SellerBox2{
     grid-area: SellerBox2;
-    /* background-color: white;
-    border-radius:  5px; */
 }
 .SellerBox3{
     grid-area: SellerBox3;
-    /* background-color: white;
-    border-radius:  5px; */
 }

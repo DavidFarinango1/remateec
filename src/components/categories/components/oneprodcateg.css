@@ -164,6 +164,18 @@
         font-size: 1.4em;
     }
 }
+@media screen and (max-width: 575px){
+    .modalwid{
+        max-width: 40%!important;
+        margin-left: 20%;
+    }
+}
+@media screen and (max-width: 480px){
+    .modalwid{
+        max-width: 53%!important;
+        margin-left: 12%;
+    }
+}
 @media screen and (max-width: 768px){
     .OneProdCateg_pi_img {
         width: 136px;

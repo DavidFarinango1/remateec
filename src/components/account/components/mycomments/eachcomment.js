@@ -4,12 +4,6 @@ import 'moment/locale/es'
 moment.locale('es')
 
 class Coments extends Component{
-    // constructor(props){
-    //     super(props);
-    //     this.state={
-    //         comment: [],
-    //     }
-    // }
     render(){
         return(
             <div>
