@@ -13,6 +13,10 @@ export const SIGN_IN = '/signin';
 export const PASSWORD_FORGET = '/pw-forget';
 export const PRIVACITY = '/politicas-de-privacidad';
 export const TERMSANDCONDITIONS = '/terminos-y-condiciones';
+export const STATIONERY = '/productos-papeleria';
+export const CLOTHES = '/productos-ropa';
+export const TECH = '/productos-tecnologia';
+export const BLOG = '/acerca-de-nosotros';
 
 export const SHOPPINGCART = '/mi-carrito-non-auth';
 export const SHOPPINGCARTLOGGED = '/mi-carrito-auth-successful';

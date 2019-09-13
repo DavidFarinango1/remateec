@@ -15,10 +15,6 @@ const SearchPageContainer = (props) => {
             <div className="CateCont2_search">
                     <div className="CateCont2_1_search">
                         <Search id={id} />
-                        {/* <OneProdCateg 
-                        products2={this.state.products}
-                        handleOnAdd={this.dispachAddToCart}
-                        /> */}
                     </div>
                     <div className="CateCont3_search">
                         <CartContainer />

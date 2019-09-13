@@ -1,0 +1,87 @@
+.Subheader1{
+    background-color:#f8f9fa!important;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'a b';
+    /* border-top: 1px solid rgb(0, 0, 0, .2);
+    border-bottom: 1px solid rgb(0, 0, 0, .2); */
+}
+.Sh1_1{
+    grid-area: a;
+    border: 1px solid rgb(255, 255, 255);
+}
+.Sh1_1:hover{
+    border: 1px solid rgb(0, 0, 0, .2);
+}
+.Sh1_2{
+    grid-area: b;
+    display: flex;
+    justify-content: center;
+}
+.Sh1_2:hover{
+    border: 1px solid rgb(0, 0, 0, .2);
+    /* border-bottom: 1px solid rgb(0, 0, 0, .2); */
+}
+.Sh1_3{
+    grid-area: c;
+    display: flex;
+    justify-content: center;
+}
+.Sh1_3:hover{
+    border: 1px solid rgb(0, 0, 0, .2);
+}
+.Sh1_4{
+    grid-area: d;
+    display: flex;
+    justify-content: center;
+}
+.Sh1_4:hover{
+    border: 1px solid rgb(0, 0, 0, .2);
+}
+.Sh1_1_1{
+    list-style: none;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    text-align: center;
+}
+.DDMenu{
+    left: 38% !important;
+}
+.DDA{
+    padding: 0 !important;
+    color: black;
+    width: 100%;
+}
+.DDA:hover{
+    font-weight: bold !important;
+    color:black;
+}
+.dropdown-item:hover{
+    color: green;
+    cursor: pointer;
+    /* background-color: rgba(0,0,0) */
+    background-color: rgba(0,0,0,.08);
+}
+.SH1p{
+    margin-bottom: 0;
+    color: black;
+    width: 100%;
+    text-align: center;
+}
+.SH1p p{
+    margin-bottom: 0;
+    /* width: 100%;
+    text-align: center; */
+    /* color: black; */
+}
+.SH1p:hover{
+    text-decoration: none !important;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+}
+/* .Sh1_4:hover{
+    text-decoration: none !important;
+    font-weight: bold;
+} */

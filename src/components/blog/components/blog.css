@@ -1,0 +1,24 @@
+.BlogHeader{
+    display: flex;
+    justify-content: center;
+    /* background-image: url('./images/others/O7GZJO0.jpg'); */
+    /* background-image: url('../../../../public/images/users/usuario.png'); */
+}
+.BlogSB1{
+    background-color: white;
+    color: black;
+    display: flex;
+    margin: 1.5em;
+    /* width: 90%; */
+    border: rgba(0,0,0,.3);
+}
+.BSB1_1{
+    width: 50%
+}
+.BSB1_2{
+    width: 50%
+}
+.Blogimg{
+    width: 100%;
+    height: 20em;
+}
