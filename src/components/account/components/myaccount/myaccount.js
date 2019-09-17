@@ -136,7 +136,7 @@ update2=()=>{
                     <h4>Correo:</h4>
                     <p>{this.state.email}</p>
                     <div>
-                        <h4>Nombre de la empresa:</h4>
+                        <h4>Número de cédula:</h4>
                         <input className="myaccinput1 form-control mr-sm-8" name="mybussinessname" value={mybussinessname} type="text" onChange={this.onActionChangeReal}  maxLength="200" data-length="200" required></input>
                     </div>
                     <div >

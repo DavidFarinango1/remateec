@@ -44,7 +44,7 @@ class Footer extends React.Component{
                     </section>
                 </section>
                 <section id='footer1' className="contact-box1_1">
-                    <h4>¿Que productos necesitas?</h4>
+                    <h4>¿Que productos quisieras ver?</h4>
                     <section className="contact-box-client">
                         <form onSubmit={this.props.createComentAboutProduct} className="client">
                             <section className="client-info">

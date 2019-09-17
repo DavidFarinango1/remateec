@@ -33,6 +33,7 @@ class PayBox extends Component{
                     <input type="checkbox" className="form-check-input PayBox_form_input" id="exampleCheck1" required/>
                 </div>
                 <button type="submit" className="btn btn-outline-primary PayBox_det_submit">Siguiente</button>
+                <p className='SignIn_problems' >Tus datos solo serán requeridos una vez y estan a tu completa disposición para cualquier modificación o eliminación.<br/> Tu compra es 100% segura y privada.<br/> Gracias por preferirnos! </p>
             </div>
         )
     }

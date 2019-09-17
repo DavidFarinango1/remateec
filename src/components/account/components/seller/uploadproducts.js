@@ -26,11 +26,11 @@ class UploadProducts extends Component {
                     <div>
                         <div className="UPB1">
                             <p>Empresa:</p>
-                            <input name="inputValue_mybussinessname" value = {inputValue_mybussinessname} onChange={this.props.onActionChange} className="form-control form-control-sm" placeholder="Nombre de la empresa"  type="text" maxLength="150" required></input>
+                            <input name="inputValue_mybussinessname" value = {inputValue_mybussinessname} onChange={this.props.onActionChange} className="form-control form-control-sm" placeholder="Nombre"  type="text" maxLength="150" required></input>
                             <p>Teléfono:</p>
-                            <input name="inputValue_mycell" value = {inputValue_mycell} onChange={this.props.onActionChange} className="form-control form-control-sm" placeholder="Número de la empresa"  type="text" maxLength="150" required></input>
+                            <input name="inputValue_mycell" value = {inputValue_mycell} onChange={this.props.onActionChange} className="form-control form-control-sm" placeholder="Número decédula"  type="text" maxLength="150" required></input>
                             <p>Dirección:</p>
-                            <input name="inputValue_mygps" value = {inputValue_mygps} onChange={this.props.onActionChange} className="form-control form-control-sm" placeholder="Dirección de la empresa"  type="text" maxLength="150" required></input>
+                            <input name="inputValue_mygps" value = {inputValue_mygps} onChange={this.props.onActionChange} className="form-control form-control-sm" placeholder="Dirección"  type="text" maxLength="150" required></input>
                         </div>
                     </div>
                     <div className="UPB1">
@@ -42,6 +42,7 @@ class UploadProducts extends Component {
                         <select name="inputValue_categories" value={inputValue_categories} onChange={this.props.onActionChange} className="custom-select custom-select-sm" >
                             <option value="None" selected>Escoge la categoria</option>
                             <option value="Tecnologia">Tecnologia</option>
+                            <option value="Ropa">Ropa</option>
                             <option value="Libros">Libros</option>
                             <option value="Papeleria">Papeleria</option>
                             <option value="Otros">Otros</option>

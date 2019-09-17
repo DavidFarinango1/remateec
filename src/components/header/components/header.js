@@ -84,8 +84,7 @@ class Header extends Component{
                                         <li>Después haz click en Registrate ahora</li>
                                         <li>Una vez registrado te llegara a tu correo personal un enlace que verificará tu cuenta</li>
                                         <li>Verifica tu cuenta e ingresa a ventasquito.com con tu correo y contraseña</li>
-                                        <li>Luego haz click en Mi cuenta y registra tu información personal la cual es totalmente privada, la puedes editar cuando quieras</li>
-                                        <li>Una vez agregada la información puedes empezar a publicar tus productos o empezar a comprar.</li>
+                                        <li>Y listo ya puedes empezar a comprar.</li>
                                         <h5>Ventasquito agradece tu registro.</h5>
                                     </div>
                                 </div>

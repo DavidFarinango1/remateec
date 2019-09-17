@@ -43,3 +43,10 @@
     top: 0;
     left: 50%;
 }
+.SignHover{
+    color: blue !important;
+}
+.SignHover:hover{
+    cursor: pointer !important;
+    font-weight: bold   !important;
+}

@@ -129,6 +129,7 @@ class ShoppingCartLoggedContainer extends Component{
             user,
             email,
             totalAmount,
+            // status,
         }= this.state;
         event.preventDefault();
             this.props.firebase
@@ -140,6 +141,7 @@ class ShoppingCartLoggedContainer extends Component{
                     order_by: user, 
                     order_at: new Date(),
                     total_order: totalAmount,
+                    o_status: 'En proceso',
                 })
                 .then(()=>{
                     this.setState({

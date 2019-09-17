@@ -13,12 +13,29 @@
     border: rgba(0,0,0,.3);
 }
 .BSB1_1{
-    width: 50%
+    width: 50%;
+}
+.iconHeart{
+    color: cadetblue;
+    font-size: 2em;
+}
+.BSB1_2P{
+    padding: 1em 3em 0 3em;
+    opacity: .7;
+    font-size: large;
+    font-family: cursive;
+    margin-bottom: 0
+}
+.BSB1_2H{
+    font-family: cursive;
+    font-size: 2em;
 }
 .BSB1_2{
-    width: 50%
+    width: 50%;
+    text-align: center;
+    padding-top: 2em;
 }
 .Blogimg{
     width: 100%;
-    height: 20em;
+    height: 21em;
 }

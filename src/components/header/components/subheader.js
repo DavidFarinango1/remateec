@@ -8,6 +8,9 @@ class Subheader extends Component {
     toStationery=()=>{
         this.props.history.push(ROUTES.STATIONERY)
     }
+    toHome=()=>{
+        this.props.history.push(ROUTES.HOME)
+    }
     toClothes=()=>{
         this.props.history.push(ROUTES.CLOTHES)
     }
@@ -20,6 +23,13 @@ class Subheader extends Component {
     render(){
         return(
             <div className="Subheader1">
+                <div className="Sh1_3">
+                    {/* <Link className='SH1p' to=''> */}
+                        <p className='SH1p' onClick={this.toHome}>
+                        Home
+                        </p>
+                    {/* </Link> */}
+                </div>
                 <div className="Sh1_1">
                     <li className="nav-item dropdown Sh1_1_1">
                         <a className="nav-link dropdown-toggle DDA" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

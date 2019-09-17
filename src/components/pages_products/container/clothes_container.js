@@ -40,7 +40,7 @@ class ClothesContainer extends Component{
                 .dothisdb()
                 .collection('products')
                 // .orderBy('date', 'desc')
-                .where('p_categories' , '==', 'Otros')
+                .where('p_categories' , '==', 'Ropa')
                 // .limit(3)
                 .onSnapshot((snapShots)=>{
                     this.setState({

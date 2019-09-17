@@ -9,6 +9,7 @@ import Rec_added_prods from '../components/rec_added_prods';
 import StationeryProds from '../components/stationery_prods';
 import TechProds from '../components/tech_prods';
 import OthersProds from '../components/others_prods';
+import ClothesProds from '../components/clothes_prods';
 import './categoriescontainer.css'
 import CartContainer from '../../Cart/cart_container'
 import styled from 'styled-components'
@@ -32,6 +33,7 @@ class CategoriesContainer extends Component{
             stationery_prods:[],
             tech_prods:[],
             others_prods:[],
+            clothes_products: [],
             inputValue_name: '',
             inputValue_categories: '',
             inputValue_price: '',
@@ -121,6 +123,22 @@ class CategoriesContainer extends Component{
                 },error=>{
                     console.log(error)
                 })
+        this.listener10 =     
+            this.props.firebase
+                .dothisdb()
+                .collection('products')
+                // .orderBy('date', 'desc')
+                .where('p_categories' , '==', 'Ropa')
+                // .limit(3)
+                .onSnapshot((snapShots)=>{
+                    this.setState({
+                        clothes_products: snapShots.docs.map((doc)=>{
+                            return { id: doc.id, data: doc.data()}
+                        })
+                    })
+                },error=>{
+                    console.log(error)
+                })
     }
     openModal=(prod)=>{
         this.setState({
@@ -158,6 +176,14 @@ class CategoriesContainer extends Component{
                         />
                     </div>
                     
+                    <div className="CateCont2_1">
+                        <ClothesProds 
+                        products2={this.state.clothes_products}
+                        handleOnAdd={this.dispachAddToCart}
+                        openModal2={this.openModal}
+                        data_modal={this.state.data}
+                        />
+                    </div>
                     <div className="CateCont2_1">
                         <StationeryProds 
                         products2={this.state.stationery_prods}

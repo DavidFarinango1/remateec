@@ -20,12 +20,20 @@ class MyPurchaseOrder extends Component{
                             <div className='MypurhaseOrderbox'>
                                 <div className="MypOBD">
                                     <div className="MypOBDp">
-                                        <strong>Datos del vendedor</strong>
-                                        <p><strong>Empresa: </strong>{item.data.order_by[0].u_mybussinessname}</p>
+                                        <strong>Datos del comprador:</strong>
+                                        <p><strong>Cédula: </strong>{item.data.order_by[0].u_mybussinessname}</p>
                                         <p><strong>Contacto: </strong>{item.data.order_by[0].u_cell}</p>
                                     </div>
+                                    <div className="MypOBDp">
+                                        <strong>Datos del vendedor:</strong>
+                                        <p><strong>Cédula: </strong>1724157258</p>
+                                        <p><strong>Contacto: </strong>0996114197</p>
+                                    </div>
                                     <div>
-                                        <p><strong>Status</strong>: En proceso</p>
+                                        {/* <p><strong>Status:</strong>En proceso</p> */}
+                                        {/* <p><strong>Status:</strong>{item.data.o_status}</p> */}
+                                        {/* <p><strong>Status:</strong><span className="badge badge-pill badge-info">{item.data.o_status}</span></p> */}
+                                        <p><strong>Status:</strong><span className="badge badge-pill badge-info">{item.data.o_status}</span></p>
                                         <p><strong>Total a pagar: </strong>{parseFloat(item.data.total_order).toFixed(2)}</p>
                                     </div>
                                 </div>

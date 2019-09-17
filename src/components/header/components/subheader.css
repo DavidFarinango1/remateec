@@ -1,8 +1,8 @@
 .Subheader1{
     background-color:#f8f9fa!important;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: 'a b';
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 'c a b';
     /* border-top: 1px solid rgb(0, 0, 0, .2);
     border-bottom: 1px solid rgb(0, 0, 0, .2); */
 }
