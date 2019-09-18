@@ -72,7 +72,19 @@
 .OneProd_title{
     padding: .3em;
     margin-bottom: 0;  
+    /* cursor: pointer; */
 }
+.OneProd_title:hover{
+    font-weight: bold; 
+    cursor: pointer;
+    font-style: italic;
+}
+.OneProd_titlenone{
+    padding: .3em;
+    margin-bottom: 0;  
+    /* cursor: pointer; */
+}
+
 .OneProdCateg{
     margin-bottom: 1em;
 }

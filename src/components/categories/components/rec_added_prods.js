@@ -58,7 +58,7 @@ class RecAddedProds extends Component{
                                             </div>
                                         </div>                                            
                 <div>
-                    <h3 className="OneProd_title">
+                    <h3 className="OneProd_titlenone">
                         Agregados recientemente:
                     </h3>
                 </div>

@@ -21,3 +21,6 @@
     display: flex;
     flex-wrap: wrap;
 }
+.CCp{
+    opacity: .9 !important;
+}

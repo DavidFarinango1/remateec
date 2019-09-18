@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import './oneprodcateg.css'
 import OneDescriptionModal from './oneDescriptionModal'
+import { withRouter } from 'react-router-dom'
+import * as ROUTES from '../../constants/routes';
 
 class StationeryProds extends Component{
     constructor(props){
@@ -9,6 +11,9 @@ class StationeryProds extends Component{
         this.state={
             data2: '',
         }
+    }
+    toStationery=()=>{
+        this.props.history.push(ROUTES.STATIONERY)
     }
     render(){
         return(
@@ -27,7 +32,7 @@ class StationeryProds extends Component{
                 </div>
                 
                 
-                <div>
+                <div onClick={this.toStationery}>
                     <h3 className="OneProd_title">
                         Utiles escolares y suministros de oficina:
                     </h3>
@@ -58,4 +63,4 @@ class StationeryProds extends Component{
         )
     }
 }
-export default StationeryProds;
+export default withRouter(StationeryProds);

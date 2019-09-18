@@ -94,6 +94,21 @@ class ClothesContainer extends Component{
                         <CartContainer />
                     </div>
                 </div>
+                <div>
+                <div className="BlogSB1"> 
+                   <div className="BSB1_2">
+                       <h4 className="BSB1_2H">Catálogo:</h4>
+                       <p className="BSB1_2P CCp">
+                        Tenemos una gran variedad de vestidos, blusas, zapatos, correas, camisas, camisetas, entre otros de todas las tallas y colores, tanto para hombre como para mujer <br/><br/>Si quieres ver más prendas haz clic en el siguiente link
+                       </p>
+                       <a download="campaña9.pdf"  href="./files/CAMP9.PDF" >Descargar aqui!</a><br/>   
+                       <span className="iconHeart">♥</span>
+                   </div>
+                   <div className="BSB1_1">
+                       <img style={{objectFit: 'contain'}} className="Blogimg"src="./images/others/jolie.PNG" alt="Nuestra historia"/>
+                    </div> 
+                </div>
+                </div>
                 <Footer />
             </div>
         )

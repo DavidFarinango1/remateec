@@ -8,7 +8,7 @@ class OthersProds extends Component{
         return(
             <div className="OneProdCateg">
                 <div>
-                    <h3 className="OneProd_title">
+                    <h3 className="OneProd_titlenone">
                         Otros productos:
                     </h3>
                 </div>

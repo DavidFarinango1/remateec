@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import './oneprodcateg.css'
 import OneDescriptionModal from './oneDescriptionModal'
+import { withRouter } from 'react-router-dom'
+import * as ROUTES from '../../constants/routes';
 
 class TechProds extends Component{
     constructor(props){
@@ -11,6 +13,9 @@ class TechProds extends Component{
             translate2: 190,
 
         }
+    }
+    toTech=()=>{
+        this.props.history.push(ROUTES.TECH)
     }
     suma=()=>{
         this.setState({
@@ -33,7 +38,7 @@ class TechProds extends Component{
     render(){
         return(
             <div className="OneProdCateg">
-                <div>
+                <div onClick={this.toTech}>
                     <h3 className="OneProd_title">
                         Tecnología:
                     </h3>
@@ -80,4 +85,4 @@ class TechProds extends Component{
         )
     }
 }
-export default TechProds;
+export default withRouter(TechProds);
