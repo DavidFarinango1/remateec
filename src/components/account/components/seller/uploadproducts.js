@@ -2,9 +2,85 @@ import React, { Component } from 'react'
 import './uploadproducts.css'
 import { MDBProgress } from 'mdbreact';
 import { withFirebase } from '../../../../Firebase'
-
+import Drodownsss from './dropdownsss.js'
 
 class UploadProducts extends Component {
+    // constructor(props){
+    //     super(props);
+    //     this.state={
+    //         valor: '',
+    //         valor2: '',
+    //         valor3: '',
+    //     }
+    // }
+    // onActionChange2 = event=>{
+    //     this.setState({
+    //         [event.target.name]: event.target.value
+    //     })
+    // }
+    // cate2=()=>{
+    //     console.log(this.state.inputValue_categories2)
+    // }
+    // onActionChangeD=event=>{
+    //     this.setState({
+    //         [event.target.name]: event.target.value
+    //     },()=>{
+    //             if(this.state.valor==='Tecnologia'){
+    //                 this.setState({
+    //                     valor2: <div>
+    //                         <select name="valor3" value={this.state.valor3} onChange={this.onActionChangeD} className="custom-select custom-select-sm" >
+    //                             <option value="None" selected>Escoge la categoria</option>
+    //                             <option value="LaptopsComputadoras">Laptops o Computadoras</option>
+    //                             <option value="AccesoriosComputacion">Accesorios de computación</option>
+    //                             <option value="CelularesTablets">Celulares o Tablets</option>
+    //                             <option value="AccesoriosCelularesTablets">Accesorios de celulares o tablets</option>
+    //                             <option value="Impresoras">Impresoras</option>
+    //                             <option value="AccesoriosImpresoras">Accesorios de impresoras</option>
+    //                         </select>   
+    //                     </div>
+    //                 })
+    //             }
+    //             if(this.state.valor==='Ropa'){
+    //                 this.setState({
+    //                     valor2: <div>
+    //                         <select name="valor3" value={this.state.valor3} onChange={this.onActionChangeD} className="custom-select custom-select-sm" >
+    //                             <option value="None" selected>Escoge la categoria</option>
+    //                             <option value="Blusas">Blusas y Camisas</option>
+    //                             <option value="Vestidos">Vestidos y pantalones</option>
+    //                             <option value="Zapatos">Zapatos</option>
+    //                             <option value="AccesoriosMujer">Accesorios de mujer</option>
+    //                         </select>   
+    //                     </div>
+    //                 })
+    //             }
+    //             if(this.state.valor==='Papeleria'){
+    //                 this.setState({
+    //                     valor2: <div>
+    //                         <select name="valor3" value={this.state.valor3} onChange={this.onActionChangeD} className="custom-select custom-select-sm" >
+    //                             <option value="None" selected>Escoge la categoria</option>
+    //                             <option value="Papeleria">Papeleria</option>
+    //                             <option value="SuministrosOficina">Suministros de oficina</option>
+    //                         </select>   
+    //                     </div>
+    //                 })
+    //             }
+    //             if(this.state.valor==='Otros'){
+    //                 this.setState({
+    //                     valor2: <div>
+    //                         <select name="valor3" value={this.state.valor3} onChange={this.onActionChangeD} className="custom-select custom-select-sm" >
+    //                             <option value="None" selected>Escoge la categoria</option>
+    //                             <option value="Otros1">Otros1</option>
+    //                             <option value="Otros2">otros2</option>
+    //                         </select>   
+    //                     </div>
+    //                 })
+    //             }
+    //         })
+    // }
+    // onC=()=>{
+    //     console.log(this.state.valor)
+    //     console.log(this.state.valor3)
+    // }
     render(){
         const {
             inputValue_mybussinessname,
@@ -12,6 +88,9 @@ class UploadProducts extends Component {
             inputValue_mygps,
             inputValue_name,
             inputValue_categories,
+            inputValue_categories1,
+            // inputValue_categories2,
+            // inputValue_categories3,
             inputValue_price,
             inputValue_shortdetails,
             details_general_description1,
@@ -37,7 +116,7 @@ class UploadProducts extends Component {
                         <p>Nombre:</p>
                         <input name="inputValue_name" value = {inputValue_name} onChange={this.props.onActionChange} className="form-control form-control-sm" placeholder="Nombre del producto"  type="text" maxLength="150" required></input>
                     </div>
-                    <div className="UPB2">
+                    {/* <div className="UPB2">
                         <p>Categorias</p>
                         <select name="inputValue_categories" value={inputValue_categories} onChange={this.props.onActionChange} className="custom-select custom-select-sm" >
                             <option value="None" selected>Escoge la categoria</option>
@@ -47,6 +126,15 @@ class UploadProducts extends Component {
                             <option value="Papeleria">Papeleria</option>
                             <option value="Otros">Otros</option>
                         </select>
+                    </div> */}
+                    <div className="UPB2">
+                        <Drodownsss 
+                        onC={this.props.onC}
+                        valor={this.props.valor}
+                        valor3={this.props.valor3}
+                        onActionChangeD={this.props.onActionChangeD}
+                        valor2={this.props.valor2}
+                        />                        
                     </div>
                     <div className="UPB3">
                         {/* <p className="UPB_img_title">Agregar imagenes del producto</p> */}

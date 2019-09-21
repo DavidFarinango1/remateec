@@ -18,6 +18,7 @@ class Myproducts extends Component{
             inputValue_mygps: '',
             inputValue_name: '',
             inputValue_categories: '',
+            inputValue_categories1: '',
             inputValue_price: '',
             inputValue_shortdetails: '',
             details_general_description1: '',
@@ -32,6 +33,9 @@ class Myproducts extends Component{
             picture2: './images/others/signomas.png',
             uploadValue3: 0,
             picture3: './images/others/signomas.png',
+            valor: '',
+            valor2: '',
+            valor3:'',
         };
     }
     handleUpload0=(event)=>{
@@ -161,7 +165,8 @@ class Myproducts extends Component{
                 if(doc.exists){
                     this.setState({
                         inputValue_name: doc.data().p_name,
-                        inputValue_categories: doc.data().p_categories,
+                        valor: doc.data().p_categories,
+                        valor3: doc.data().p_subcategory,
                         inputValue_price: doc.data().p_price,
                         inputValue_shortdetails: doc.data().p_shortdetails,
                         details_general_description1: doc.data().p_details_general_description1,
@@ -193,6 +198,7 @@ class Myproducts extends Component{
                 inputValue_mygps,
                 inputValue_name, 
                 inputValue_categories, 
+                inputValue_categories1, 
                 inputValue_price,
                 inputValue_shortdetails,
                 details_general_description1, 
@@ -201,7 +207,9 @@ class Myproducts extends Component{
                 picture0,
                 picture2,
                 picture3,
-                edit 
+                edit,
+                valor,
+                valor3,
             } = this.state;
         const user = this.props.firebase.auth.currentUser
         console.log(user)
@@ -219,7 +227,8 @@ class Myproducts extends Component{
                     p_mycell: inputValue_mycell,
                     p_mygps: inputValue_mygps,
                     p_name: inputValue_name,
-                    p_categories: inputValue_categories,
+                    p_categories: valor,
+                    p_subcategory: valor3,
                     p_price: inputValue_price,
                     p_shortdetails: inputValue_shortdetails,
                     p_details_general_description1: details_general_description1,
@@ -230,10 +239,12 @@ class Myproducts extends Component{
                     p_secundary_image3: picture3,
                 })
                 .then(()=>{
-                    console.log(`Producto: ${inputValue_name} de la categoria: ${inputValue_categories} agregado`)
+                    console.log(`Producto: ${inputValue_name} de la categoria: ${valor} y de la subcategoria ${valor3} agregado`)
                     this.setState({
                         inputValue_name: '',
-                        inputValue_categories: '',
+                        // inputValue_categories: '',
+                        valor: '',
+                        valor3: '',
                         inputValue_price: '',
                         inputValue_shortdetails: '',
                         details_general_description1: '',
@@ -255,7 +266,9 @@ class Myproducts extends Component{
     update=()=>{
         const { id, 
                 inputValue_name, 
-                inputValue_categories, 
+                // inputValue_categories,
+                valor,
+                valor3, 
                 inputValue_price,
                 inputValue_shortdetails, 
                 details_general_description1,
@@ -272,7 +285,8 @@ class Myproducts extends Component{
             .update({
                 date: new Date(),
                 p_name: inputValue_name,
-                p_categories: inputValue_categories,
+                p_categories: valor,
+                p_subcategory: valor3,
                 p_price: inputValue_price,
                 p_shortdetails: inputValue_shortdetails,
                 p_details_general_description1: details_general_description1,
@@ -286,7 +300,9 @@ class Myproducts extends Component{
                 console.log('actualizado')
                 this.setState({
                     inputValue_name: '',
-                    inputValue_categories: '',
+                    // inputValue_categories: '',
+                    valor: '',
+                    valor3: '',
                     inputValue_price: '',
                     inputValue_shortdetails: '',
                     details_general_description1: '',
@@ -331,6 +347,80 @@ class Myproducts extends Component{
             console.log(`A ocurrido al borrar la imagen secundaria 3: ${error}`)
         });
     }
+    // desde aqui
+    onActionChange2 = event=>{
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+    cate2=()=>{
+        console.log(this.state.inputValue_categories2)
+    }
+    onActionChangeD=event=>{
+        this.setState({
+            [event.target.name]: event.target.value
+        },()=>{
+                if(this.state.valor==='Tecnologia'){
+                    this.setState({
+                        valor2: <div>
+                            <select name="valor3" value={this.state.valor3} onChange={this.onActionChangeD} className="custom-select custom-select-sm" >
+                                <option value="None" selected>Escoge la categoria</option>
+                                <option value="LaptopsComputadoras">Laptops, Computadoras o sus partes</option>
+                                <option value="AccesoriosComputacion">Accesorios de computación</option>
+                                <option value="CelularesTablets">Celulares o Tablets</option>
+                                <option value="AccesoriosCelularesTablets">Accesorios de celulares o tablets</option>
+                                <option value="Impresoras">Impresoras</option>
+                                <option value="AccesoriosImpresoras">Accesorios de impresoras</option>
+                            </select>   
+                        </div>
+                    })
+                }
+                if(this.state.valor==='Ropa'){
+                    this.setState({
+                        valor2: <div>
+                            <select name="valor3" value={this.state.valor3} onChange={this.onActionChangeD} className="custom-select custom-select-sm" >
+                                <option value="None" selected>Escoge la categoria</option>
+                                <option value="Blusas">Blusas y Camisas</option>
+                                <option value="SacosChompas">Sacos y Chompas</option>
+                                <option value="Vestidos">Vestidos y pantalones</option>
+                                <option value="Zapatos">Zapatos</option>
+                                <option value="AccesoriosMujer">Accesorios de mujer</option>
+                            </select>   
+                        </div>
+                    })
+                }
+                if(this.state.valor==='Papeleria'){
+                    this.setState({
+                        valor2: <div>
+                            <select name="valor3" value={this.state.valor3} onChange={this.onActionChangeD} className="custom-select custom-select-sm" >
+                                <option value="None" selected>Escoge la categoria</option>
+                                <option value="Papeleria">Papeleria</option>
+                                <option value="SuministrosOficina">Suministros de oficina</option>
+                            </select>   
+                        </div>
+                    })
+                }
+                if(this.state.valor==='Otros'){
+                    this.setState({
+                        valor2: <div>
+                            <select name="valor3" value={this.state.valor3} onChange={this.onActionChangeD} className="custom-select custom-select-sm" >
+                                <option value="None" selected>Escoge la categoria</option>
+                                <option value="Otros1">Otros1</option>
+                                <option value="Otros2">otros2</option>
+                            </select>   
+                        </div>
+                    })
+                }
+            })
+    }
+    onC=()=>{
+        console.log(this.state.valor)
+        console.log(this.state.valor3)
+    }
+
+
+
+    // hasta aqui
     render(){
         return(
             <div>
@@ -356,6 +446,14 @@ class Myproducts extends Component{
 
                         onActionChange = {this.onChange}
                         editReal = {this.state.edit}
+
+
+                        onC={this.onC}
+                        valor={this.state.valor}
+                        onActionChangeD={this.onActionChangeD}
+                        valor2={this.state.valor2}
+                        valor3={this.state.valor3}
+
                         />
                     </div>
                     <div className="SellerBox3">

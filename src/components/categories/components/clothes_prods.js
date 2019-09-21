@@ -10,10 +10,48 @@ class StationeryProds extends Component{
         super(props);
         this.state={
             data2: '',
+            filteredData: [],
+            filterword: '',
+            result2:[],
         }
     }
     toClothes=()=>{
         this.props.history.push(ROUTES.CLOTHES)
+    }
+    setVestido=()=>{
+        this.setState({
+            filterword: 'Vestido'
+        },()=>{
+            this.readyToFilter()
+        })
+    }
+    setBlusa=()=>{
+        this.setState({
+            filterword: 'Blusa'
+        },()=>{
+            this.readyToFilter()
+        })
+    }
+    readyToFilter=()=>{
+        // this.setState({
+        //     filteredData: 'holi'
+        // },()=>{
+        //     console.log(this.state.filteredData)
+        //     console.log(this.props.products2)
+        // })
+        let filterwordReal =this.state.filterword
+        if(filterwordReal){
+            let result2 = this.props.products2.filter((item)=>{
+                return item.data.p_name.toLowerCase().includes(filterwordReal.toLowerCase())
+            })
+            this.setState({
+                result2,
+            },()=>{
+                console.log(this.state.result2)
+            })
+        }else{
+            console.log('no hay nada')
+        }
     }
     render(){
         return(
@@ -40,6 +78,12 @@ class StationeryProds extends Component{
                     className="OneProd_title">
                         Ropa:
                     </h3>
+                </div>
+                <div onClick={this.setVestido} >
+                    Vestido
+                </div>
+                <div onClick={this.setBlusa} >
+                    Blusa
                 </div>
                 <div className="cards-slider2">
                     <div className="cards-slider-wraper2">

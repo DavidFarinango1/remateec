@@ -1,37 +1,22 @@
 import React, {Component} from 'react'
 import Header from '../../header/container/headercontainer'
-import Slides from '../../slides/components/slides'
-import CartContainer from '../../Cart/cart_container'
 import Clothes from '../components/clothes'
+import ClothesSelected from '../components/clothesselected'
 import Footer from '../../footer/container/footer-container'
 
 import { withFirebase } from '../../../Firebase'
-import * as actions from '../../../store/actions/index'
-import { bindActionCreators } from 'redux'
-import { compose } from 'recompose'
-import { connect } from 'react-redux'
-import styled from 'styled-components'
 
-const Container = styled.div`
-    background-color: #444;
-    color: white;
-    padding: 10px;
-    position: fixed;
-    top: ${props => props.top}px;
-    right: 16px;
-    z-index: 99999;
-    transition: top 0.5s ease;
-    height: 100 vh;
-`;
 class ClothesContainer extends Component{
     constructor(props){
         super(props);
         this.state={
             others_prods:[],
             data: '',
-            top: -100,
             id: '',
-
+            filteredData: [],
+            filterword: '',
+            result2:[],
+            show: false,
         }
     }
     componentDidMount(){
@@ -39,9 +24,7 @@ class ClothesContainer extends Component{
             this.props.firebase
                 .dothisdb()
                 .collection('products')
-                // .orderBy('date', 'desc')
                 .where('p_categories' , '==', 'Ropa')
-                // .limit(3)
                 .onSnapshot((snapShots)=>{
                     this.setState({
                         others_prods: snapShots.docs.map((doc)=>{
@@ -52,46 +35,87 @@ class ClothesContainer extends Component{
                     console.log(error)
                 })
     }
-    openModal=(prod)=>{
+    setBlusa=()=>{
         this.setState({
-            data: prod.data,
+            filterword: 'Blusas'
+        },()=>{
+            this.readyToFilter()
         })
     }
-    dispachAddToCart=(product)=> {
-        this.props.actions.addToCart(product);
-        console.log(product)
-        this.showNotification();
-        this.setState({productsState: true})
-    }
-    showNotification=()=>{
+    setSacos=()=>{
         this.setState({
-            top: 16,
+            filterword: 'SacosChompas'
         },()=>{
-            setTimeout(()=>{
-                this.setState({
-                    top:-100,
-                })
-            },1000)
-        });
+            this.readyToFilter()
+        })
+    }
+    setVestido=()=>{
+        this.setState({
+            filterword: 'Vestidos'
+        },()=>{
+            this.readyToFilter()
+        })
+    }
+    setZapatos=()=>{
+        this.setState({
+            filterword: 'Zapatos'
+        },()=>{
+            this.readyToFilter()
+        })
+    }
+    setAccesorios=()=>{
+        this.setState({
+            filterword: 'AccesoriosMujer'
+        },()=>{
+            this.readyToFilter()
+        })
+    }
+    readyToFilter=()=>{
+        let filterwordReal =this.state.filterword
+        if(filterwordReal){
+            let result2 = this.state.others_prods.filter((item)=>{
+                return item.data.p_subcategory.toLowerCase() === filterwordReal.toLowerCase()
+            })
+            this.setState({
+                result2,
+                show: true,
+            },()=>{
+                console.log(this.state.result2)
+                console.log(this.state.show)
+            })
+        }else{
+            console.log('no hay nada')
+        }
     }
     render(){
         return(        
             <div>
-                <Container top={this.state.top}> Agregado al carrito <i className="fa fa-bell"></i></Container>
                 <Header />
-                <Slides />
-                <div className="StationeryPbox">
-                    <div className="StationeryPbox1">
-                        <Clothes 
-                            products2={this.state.others_prods}
-                            handleOnAdd={this.dispachAddToCart}
-                            openModal2={this.openModal}
-                            data_modal={this.state.data}
-                        
-                        />   
-                    </div>
+                <div className="StationeryPbox" style={{marginTop: '1em'}}>
                     <div className="StationeryPbox2">
-                        <CartContainer />
+                        <div>
+                            <h3 className="CCHselect" onClick={()=>{this.setState({show: false},()=>{console.log(this.state.show)})}}>Ropa de mujer</h3>
+                        </div>
+                        <div className="CCPselect" style={{marginLeft: '2em'}}>
+                            <p onClick={this.setBlusa}>Blusas y Camisas</p> 
+                            <p onClick={this.setSacos}>Sacos y Chompas</p> 
+                            <p onClick={this.setVestido}>Vestidos y pantalones</p> 
+                            <p onClick={this.setZapatos}>Zapatos</p> 
+                            <p onClick={this.setAccesorios}>Accesorios de mujer</p> 
+                        </div>
+                    </div>
+                    <div className="StationeryPbox1">
+                        {
+                            this.state.show 
+                            ?
+                            <ClothesSelected
+                                products2={this.state.result2}
+                            />
+                            :
+                            <Clothes 
+                                products2={this.state.others_prods}
+                            />
+                        }
                     </div>
                 </div>
                 <div>
@@ -101,7 +125,7 @@ class ClothesContainer extends Component{
                        <p className="BSB1_2P CCp">
                         Tenemos una gran variedad de vestidos, blusas, zapatos, correas, camisas, camisetas, entre otros de todas las tallas y colores, tanto para hombre como para mujer <br/><br/>Si quieres ver más prendas haz clic en el siguiente link
                        </p>
-                       <a download="campaña9.pdf"  href="./files/CAMP9.PDF" >Descargar aqui!</a><br/>   
+                       <a download="campaña9.pdf"  href="https://firebasestorage.googleapis.com/v0/b/ventasquito-4da99.appspot.com/o/catalogo%2FCAMP9.pdf?alt=media&token=cf9363c3-bff7-4878-846a-5b53ff96f0c8" target='_blank' >Descargar aqui!</a><br/>   
                        <span className="iconHeart">♥</span>
                    </div>
                    <div className="BSB1_1">
@@ -115,17 +139,4 @@ class ClothesContainer extends Component{
     }
 }
 
-const mapStateToProps=(state, props)=>( {
-    count: state.get('count'),
-})
-const mapDispatchToProps=(dispatch)=>({
-      actions: bindActionCreators(actions, dispatch)
-})
-export default compose(
-    withFirebase,
-    connect(
-        mapStateToProps,
-        mapDispatchToProps,
-    ),
-)(ClothesContainer);
-// export default ClothesContainer;
+export default withFirebase(ClothesContainer);

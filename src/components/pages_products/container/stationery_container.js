@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import Header from '../../header/container/headercontainer'
 import Slides from '../../slides/components/slides'
 import CartContainer from '../../Cart/cart_container'
+import ClothesSelected from '../components/clothesselected'
+
 import Stationery from '../components/stationery'
 import Footer from '../../footer/container/footer-container'
 import './stationery.css'
@@ -12,27 +14,31 @@ import { bindActionCreators } from 'redux'
 import { compose } from 'recompose'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
+// import ClothesSelected from '../components/clothesselected'
 
-const Container = styled.div`
-    background-color: #444;
-    color: white;
-    padding: 10px;
-    position: fixed;
-    top: ${props => props.top}px;
-    right: 16px;
-    z-index: 99999;
-    transition: top 0.5s ease;
-    height: 100 vh;
-`;
+// const Container = styled.div`
+//     background-color: #444;
+//     color: white;
+//     padding: 10px;
+//     position: fixed;
+//     top: ${props => props.top}px;
+//     right: 16px;
+//     z-index: 99999;
+//     transition: top 0.5s ease;
+//     height: 100 vh;
+// `;
 class StationeryContainer extends Component{
     constructor(props){
         super(props);
         this.state={
             stationery_prods:[],
             data: '',
-            top: -100,
+            // top: -100,
             id: '',
-
+            filteredData: [],
+            filterword: '',
+            result2:[],
+            show: false,
         }
     }
     componentDidMount(){
@@ -52,46 +58,97 @@ class StationeryContainer extends Component{
                 console.log(error)
             })
     }
-    openModal=(prod)=>{
+    setPapeleria=()=>{
         this.setState({
-            data: prod.data,
+            filterword: 'Papeleria'
+        },()=>{
+            this.readyToFilter()
         })
     }
-    dispachAddToCart=(product)=> {
-        this.props.actions.addToCart(product);
-        console.log(product)
-        this.showNotification();
-        this.setState({productsState: true})
-    }
-    showNotification=()=>{
+    setSuministrosOficina=()=>{
         this.setState({
-            top: 16,
+            filterword: 'SuministrosOficina'
         },()=>{
-            setTimeout(()=>{
-                this.setState({
-                    top:-100,
-                })
-            },1000)
-        });
+            this.readyToFilter()
+        })
     }
+    readyToFilter=()=>{
+        let filterwordReal =this.state.filterword
+        if(filterwordReal){
+            let result2 = this.state.stationery_prods.filter((item)=>{
+                return item.data.p_subcategory.toLowerCase() === filterwordReal.toLowerCase()
+            })
+            this.setState({
+                result2,
+                show: true,
+            },()=>{
+                console.log(this.state.result2)
+                console.log(this.state.show)
+            })
+        }else{
+            console.log('no hay nada')
+        }
+    }
+    // openModal=(prod)=>{
+    //     this.setState({
+    //         data: prod.data,
+    //     })
+    // }
+    // dispachAddToCart=(product)=> {
+    //     this.props.actions.addToCart(product);
+    //     console.log(product)
+    //     this.showNotification();
+    //     this.setState({productsState: true})
+    // }
+    // showNotification=()=>{
+    //     this.setState({
+    //         top: 16,
+    //     },()=>{
+    //         setTimeout(()=>{
+    //             this.setState({
+    //                 top:-100,
+    //             })
+    //         },1000)
+    //     });
+    // }
 
     render(){
         return(        
             <div>
-                <Container top={this.state.top}> Agregado al carrito <i className="fa fa-bell"></i></Container>
+                {/* <Container top={this.state.top}> Agregado al carrito <i className="fa fa-bell"></i></Container> */}
                 <Header />
-                <Slides />
+                {/* <Slides /> */}
                 <div className="StationeryPbox">
+                    <div className="StationeryPbox2">
+                        {/* <CartContainer /> */}
+                        <div>
+                            <h3 className="CCHselect" onClick={()=>{this.setState({show: false},()=>{console.log(this.state.show)})}}>Papeleria o Suministros de oficina</h3>
+                        </div>
+                        <div className="CCPselect" style={{marginLeft: '2em'}}>
+                            <p onClick={this.setPapeleria}>Papeleria</p> 
+                            <p onClick={this.setSuministrosOficina}>Suministros de oficina</p> 
+                        </div>
+
+                    </div>
                     <div className="StationeryPbox1">
-                        <Stationery 
+                        {/* <Stationery 
                         products2={this.state.stationery_prods}
                         handleOnAdd={this.dispachAddToCart}
                         openModal2={this.openModal}
                         data_modal={this.state.data}
-                        />   
-                    </div>
-                    <div className="StationeryPbox2">
-                        <CartContainer />
+                        />    */}
+                        {
+                            this.state.show 
+                            ?
+                            <ClothesSelected
+                                products2={this.state.result2}
+                            />
+                            :
+                            <Stationery 
+                                products2={this.state.stationery_prods}
+                            />
+                            // <p>holi</p>
+                        }
                     </div>
                 </div>
                 <Footer />
@@ -99,17 +156,17 @@ class StationeryContainer extends Component{
         )
     }
 }
-const mapStateToProps=(state, props)=>( {
-    count: state.get('count'),
-})
-const mapDispatchToProps=(dispatch)=>({
-      actions: bindActionCreators(actions, dispatch)
-})
-export default compose(
-    withFirebase,
-    connect(
-        mapStateToProps,
-        mapDispatchToProps,
-    ),
-)(StationeryContainer);
-// export default StationeryContainer;
+// const mapStateToProps=(state, props)=>( {
+//     count: state.get('count'),
+// })
+// const mapDispatchToProps=(dispatch)=>({
+//       actions: bindActionCreators(actions, dispatch)
+// })
+// export default compose(
+//     withFirebase,
+//     connect(
+//         mapStateToProps,
+//         mapDispatchToProps,
+//     ),
+// )(StationeryContainer);
+export default withFirebase(StationeryContainer);

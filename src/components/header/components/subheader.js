@@ -36,33 +36,45 @@ class Subheader extends Component {
                         Todos los productos
                         </a>
                         <div className="dropdown-menu DDMenu" aria-labelledby="navbarDropdownMenuLink">
-                        <p onClick={this.toStationery} className="dropdown-item" >Papelería</p>
-                        <p onClick={this.toClothes} className="dropdown-item">Ropa</p>
-                        <p onClick={this.toTech} className="dropdown-item">Tecnología</p>
+                            <p onClick={this.toStationery} className="dropdown-item" >Papelería</p>
+                            <p onClick={this.toClothes} className="dropdown-item">Ropa</p>
+                            <p onClick={this.toTech} className="dropdown-item">Tecnología</p>
                         </div>
                     </li>
                 </div>
                 <div className="Sh1_2">
-                    {/* <Link className='SH1p' to=''> */}
                         <p className='SH1p' onClick={this.toBlog}>
                         Acerca de nosotros
                         </p>
-                    {/* </Link> */}
                 </div>
-                {/* <div className="Sh1_3">
-                    <Link className='SH1p' to=''>
-                        <p>
-                        Contactos
-                        </p>
-                    </Link>
+                {/* desde aqui */}
+                {/* <div class="dropdown Sh1_2">
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">
+                    Dropdown <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li class="dropdown">
+                        <a href="#">One more dropdown</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li class="dropdown">
+                            <a href="#">One more dropdown</a>
+                            <ul class="dropdown-menu">
+                            ...
+                            </ul>
+                            </li>
+                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                        </li>
+                        <li><a href="#">Something else here</a></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
                 </div> */}
-                {/* <div className="Sh1_4">
-                    <Link className='SH1p' to=''>
-                        <p>
-                        Ayuda
-                        </p>
-                    </Link>
-                </div> */}
+                {/* hasta aqui */}
             </div>    
         )
     }

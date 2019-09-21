@@ -21,6 +21,9 @@ class Coments extends Component{
                                 <p><strong>Correo: </strong>{item.data.contact_email}</p>
                             </div>
                                 <p><strong>Mensaje:</strong>{item.data.contact_message}</p>
+                            <div>
+                                <button className='JMP_button1 btn btn-danger' onClick={()=>{this.props.deletecomment(item.id)}}>Eliminar comentario</button>
+                            </div>
                         </div>
                     ))
                     : null
