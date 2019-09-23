@@ -20,6 +20,9 @@ class Subheader extends Component {
     toBlog=()=>{
         this.props.history.push(ROUTES.BLOG)
     }
+    toContactos=()=>{
+        this.props.history.push(ROUTES.CONTACTOS)
+    }
     render(){
         return(
             <div className="Subheader1">
@@ -45,6 +48,11 @@ class Subheader extends Component {
                 <div className="Sh1_2">
                         <p className='SH1p' onClick={this.toBlog}>
                         Acerca de nosotros
+                        </p>
+                </div>
+                <div className="Sh1_4">
+                        <p className='SH1p' onClick={this.toContactos}>
+                        Contactos
                         </p>
                 </div>
                 {/* desde aqui */}

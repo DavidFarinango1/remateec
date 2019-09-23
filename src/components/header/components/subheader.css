@@ -2,8 +2,8 @@
     background-color: #19262E!important;
     color: white !important;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: 'c a b';
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 'c a b d';
     /* border-top: 1px solid rgb(0, 0, 0, .2);
     border-bottom: 1px solid rgb(0, 0, 0, .2); */
 }
@@ -16,6 +16,11 @@
 }
 .Sh1_2{
     grid-area: b;
+    display: flex;
+    justify-content: center;
+}
+.Sh1_4{
+    grid-area: D;
     display: flex;
     justify-content: center;
 }

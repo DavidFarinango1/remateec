@@ -24,7 +24,9 @@ class Stationery extends Component{
                                     <div>
                                         <div className='CSPDIV'>
                                             <p className='CSPrice'> USD: ${item.data.p_price} </p>
+                                            <div>
                                             <p className='CSName'>{item.data.p_name} </p>
+                                            </div>
                                             <p className='CSName2'>Envio gratis si supera los $20,00 </p>
                                             <p className='CSName3'>Precio no incluye IVA</p>
                                         </div>

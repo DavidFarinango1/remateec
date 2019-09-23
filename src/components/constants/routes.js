@@ -17,6 +17,7 @@ export const STATIONERY = '/productos-papeleria';
 export const CLOTHES = '/productos-ropa';
 export const TECH = '/productos-tecnologia';
 export const BLOG = '/acerca-de-nosotros';
+export const CONTACTOS = '/contactos-ventas-quito';
 
 export const SHOPPINGCART = '/mi-carrito-non-auth';
 export const SHOPPINGCARTLOGGED = '/mi-carrito-auth-successful';

@@ -18,27 +18,7 @@ class StationeryProds extends Component{
     toClothes=()=>{
         this.props.history.push(ROUTES.CLOTHES)
     }
-    setVestido=()=>{
-        this.setState({
-            filterword: 'Vestido'
-        },()=>{
-            this.readyToFilter()
-        })
-    }
-    setBlusa=()=>{
-        this.setState({
-            filterword: 'Blusa'
-        },()=>{
-            this.readyToFilter()
-        })
-    }
     readyToFilter=()=>{
-        // this.setState({
-        //     filteredData: 'holi'
-        // },()=>{
-        //     console.log(this.state.filteredData)
-        //     console.log(this.props.products2)
-        // })
         let filterwordReal =this.state.filterword
         if(filterwordReal){
             let result2 = this.props.products2.filter((item)=>{
@@ -74,16 +54,9 @@ class StationeryProds extends Component{
                 onClick={this.toClothes}
                 >
                     <h3 
-                    // onClick={this.toClothes()} 
                     className="OneProd_title">
                         Ropa:
                     </h3>
-                </div>
-                <div onClick={this.setVestido} >
-                    Vestido
-                </div>
-                <div onClick={this.setBlusa} >
-                    Blusa
                 </div>
                 <div className="cards-slider2">
                     <div className="cards-slider-wraper2">
