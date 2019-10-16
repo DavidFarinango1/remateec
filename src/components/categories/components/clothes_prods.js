@@ -15,7 +15,8 @@ class StationeryProds extends Component{
             result2:[],
         }
     }
-    toClothes=()=>{
+    toClothes=event=>{
+        event.doDefault
         this.props.history.push(ROUTES.CLOTHES)
     }
     readyToFilter=()=>{

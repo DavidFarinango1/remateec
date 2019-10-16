@@ -18,9 +18,11 @@ class OthersProds extends Component{
                             this.props.products2 && this.props.products2 !== undefined ? this.props.products2.map((item,key)=>(
                                 <div className='OneProdCateg_box card2' key={key}>
                                     <div className='OneProdCateg_principal_image'>
-                                        <Link to={'/product/' + item.id}>
+                                        {/* <Link to={'/product/' + item.id}> */}
+                                        <a href={'/product/' + item.id}>
                                             <img className="OneProdCateg_pi_img" src={item.data.p_principal_image} width="200px" alt="imagen producto principal"/> 
-                                        </Link>
+                                        {/* </Link> */}
+                                        </a>
                                     </div>
                                     <div className='OneProdCateg_price'>
                                         <p className='OneProdCateg_P'> ${item.data.p_price} </p>
