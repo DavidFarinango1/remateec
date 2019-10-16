@@ -84,3 +84,68 @@
     font-size: .8em;
     color: rgba(0,0,0,.6);
 }
+.StationeryPbox3{
+    display: none;
+}
+@media screen and (max-width: 768px){
+    .CSIMG{
+        height: 180px;
+        width: 180px;
+        object-fit: contain;
+    }
+    .CSPrice{
+        font-size: 1em;
+    }
+    .CSName {
+        font-size: .6em;
+        margin: .1em 0;
+    }
+    .CSName2{
+        font-size: .7em;
+    }
+    .StationeryPbox{
+        display: block;
+    }
+    .StationeryPbox2{
+        width: 100%;
+        margin-right: 0 ;
+        display: none;
+    }
+    .StationeryPbox3{
+        display: block;
+    }
+    .StationeryButton3{
+        margin: .3em 0;
+        width: 100% !important; 
+    }
+    .StationeryPbox1{
+        width: 100%;
+        margin: 0;
+    }
+    .CSPB1{
+        margin: .3em;
+    }
+    .StationeryButton3p p{
+        margin: 0 !important;
+    }
+    .CSPBUTTONDetails{
+        padding: .2em .5em;
+        font-size: .9em;
+    }
+}
+@media screen and (max-width: 768px){
+    .CSPB1{
+        display: flex;
+        width: 100%;
+    }
+    .CSIMG{
+        height: 130px;
+        width: 130px;
+    }
+    .CSPDIVPRINCIPAL{
+        width: 100%;
+    }
+    .CSPDIV{
+        padding: 0 .2em;
+    }
+}

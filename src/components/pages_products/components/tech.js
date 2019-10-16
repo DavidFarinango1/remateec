@@ -21,18 +21,18 @@ class Stationery extends Component{
                                             <img className="CSIMG zoom2" src={item.data.p_principal_image} width="200px" alt="imagen producto principal"/> 
                                         </Link>
                                     </div>
-                                    <div>
+                                    <div className="CSPDIVPRINCIPAL">
                                         <div className='CSPDIV'>
                                             <p className='CSPrice'> USD: ${item.data.p_price} </p>
                                             <div>
                                             <p className='CSName'>{item.data.p_name} </p>
                                             </div>
                                             <p className='CSName2'>Envio gratis si supera los $20,00 </p>
-                                            <p className='CSName3'>Precio no incluye IVA</p>
+                                            <p className='CSName3'>Precio No incluye IVA</p>
                                         </div>
                                         <div style={{textAlign: 'center'}}  className=''>
                                         <Link to={'/product/' + item.id}>
-                                            <button className='btn btn-info' >Ver más detalles</button>
+                                            <button type="button" className='btn btn-outline-info CSPBUTTONDetails' >Ver más detalles</button>
                                         </Link>
                                         </div>
                                     </div>

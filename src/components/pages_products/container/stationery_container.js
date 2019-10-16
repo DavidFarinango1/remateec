@@ -128,7 +128,17 @@ class StationeryContainer extends Component{
                             <p onClick={this.setPapeleria}>Papeleria</p> 
                             <p onClick={this.setSuministrosOficina}>Suministros de oficina</p> 
                         </div>
-
+                    </div>
+                    <div className="StationeryPbox3">
+                        <div className="dropdown">
+                            <button className="btn btn-secondary dropdown-toggle StationeryButton3" type="button" id="dropdownMenuButton" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+                                Papeleria o Suministros de oficina
+                            </button>
+                            <div className="dropdown-menu dropdown-menu-lg-right StationeryButton3p" aria-labelledby="dropdownMenuButton">
+                                <p className="dropdown-item" onClick={this.setPapeleria}>Papeleria</p> 
+                                <p className="dropdown-item" onClick={this.setSuministrosOficina}>Suministros de oficina</p>                              
+                            </div>
+                        </div>
                     </div>
                     <div className="StationeryPbox1">
                         {/* <Stationery 

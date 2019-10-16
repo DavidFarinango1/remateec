@@ -18,3 +18,42 @@
     border-radius: 5px;
     padding: 1.5em;
 }
+@media screen and (max-width: 768px){
+    .SellerPBOX{
+        grid-template-columns: 1fr;
+        grid-gap: 1em;
+        grid-template-areas: "SellerPBOX1" 
+                             "SellerPBOX2";
+        margin: 1em;
+    }
+    .ItemSeller-container{
+        display: flex;
+        padding: 0;
+    }
+    .ISBPM{
+        margin: 0 1em;
+    }
+    .ItemSellerLinks{
+        margin: 0;
+    }
+}
+@media screen and (max-width: 425px){
+    .ISBPM{
+        margin: .3em !important;
+        font-size: 1em !important;
+    }
+    .ItemSellerBox1 img{
+        height: 2em;
+        width: 2em;
+    }
+    .SellerPBOX{
+        grid-gap: .5em;
+        margin: 0;
+    }
+    .MyaccountBOX{
+        padding: 0;
+    }
+    .MyaccountBOX h2{
+        font-size: 1.5em !important;
+    }
+}

@@ -7,23 +7,6 @@ import Footer from '../../footer/container/footer-container'
 import ClothesSelected from '../components/clothesselected'
 
 import { withFirebase } from '../../../Firebase'
-import * as actions from '../../../store/actions/index'
-import { bindActionCreators } from 'redux'
-import { compose } from 'recompose'
-import { connect } from 'react-redux'
-import styled from 'styled-components'
-
-// const Container = styled.div`
-//     background-color: #444;
-//     color: white;
-//     padding: 10px;
-//     position: fixed;
-//     top: ${props => props.top}px;
-//     right: 16px;
-//     z-index: 99999;
-//     transition: top 0.5s ease;
-//     height: 100 vh;
-// `;
 
 class TechContainer extends Component{
     constructor(props){
@@ -99,6 +82,94 @@ class TechContainer extends Component{
             this.readyToFilter()
         })
     }
+    // subcategoria
+    setMousesORatones=()=>{
+        this.setState({
+            filterword: 'Mouse'
+        },()=>{
+            this.readyToFilter2()
+        })
+    }
+    setTeclados=()=>{
+        this.setState({
+            filterword: 'Teclado'
+        },()=>{
+            this.readyToFilter2()
+        })
+    }
+    setRouters=()=>{
+        this.setState({
+            filterword: 'Router'
+        },()=>{
+            this.readyToFilter2()
+        })
+    }
+    setRedesInalambricas=()=>{
+        this.setState({
+            filterword: 'Red'
+        },()=>{
+            this.readyToFilter2()
+        })
+    }
+    setBateriasLaptops=()=>{
+        this.setState({
+            filterword: 'Bateria'
+        },()=>{
+            this.readyToFilter2()
+        })
+    }
+    setParlantesAmplificadores=()=>{
+        this.setState({
+            filterword: 'Parlante'
+        },()=>{
+            this.readyToFilter2()
+        })
+    }
+    // setOtrosAccesoriosCompu=()=>{
+    //     this.setState({
+    //         filterword: 'OtrosAccesoriosCompu'
+    //     },()=>{
+    //         this.readyToFilter2()
+    //     })
+    // }
+    setAudifonos=()=>{
+        this.setState({
+            filterword: 'Audifono'
+        },()=>{
+            this.readyToFilter2()
+        })
+    }
+    setAlmacenamiento=()=>{
+        this.setState({
+            filterword: 'Memoria'
+        },()=>{
+            this.readyToFilter2()
+        })
+    }
+    setCables=()=>{
+        this.setState({
+            filterword: 'Cable'
+        },()=>{
+            this.readyToFilter2()
+        })
+    }
+    setCargadores=()=>{
+        this.setState({
+            filterword: 'Cargador'
+        },()=>{
+            this.readyToFilter2()
+        })
+    }
+    setAudifonos=()=>{
+        this.setState({
+            filterword: 'Audifono'
+        },()=>{
+            this.readyToFilter2()
+        })
+    }
+
+    // finsubcategoria
+
     readyToFilter=()=>{
         let filterwordReal =this.state.filterword
         if(filterwordReal){
@@ -117,6 +188,25 @@ class TechContainer extends Component{
             console.log('no hay nada')
         }
     }
+    readyToFilter2=()=>{
+        let filterwordReal =this.state.filterword
+        if(filterwordReal){
+            // console.log(this.state.tech_prods)}
+            let result3 = this.state.tech_prods.filter((item)=>{
+                // return item.data.p_subcategory.toLowerCase().includes(filterwordReal.toLowerCase())
+                return item.data.p_name.toLowerCase().includes(filterwordReal.toLowerCase())
+            })
+            this.setState({
+                result2: result3,
+                show: true,
+            },()=>{
+                console.log(this.state.result2)
+                console.log(this.state.show)
+            })
+        }else{
+            console.log('no hay nada')
+        }
+    }
 
     render(){
         return(        
@@ -124,27 +214,68 @@ class TechContainer extends Component{
                 <Header />
                 <div className="StationeryPbox">
                     <div className="StationeryPbox2">
-                        {/* <CartContainer /> */}
                         <div>
                             <h3 className="CCHselect" onClick={()=>{this.setState({show: false},()=>{console.log(this.state.show)})}}>Tecnologia</h3>
                         </div>
                         <div className="CCPselect" style={{marginLeft: '2em'}}>
                             <p onClick={this.setLaptopsComputadoras}>Laptops, Computadoras o sus partes</p> 
                             <p onClick={this.setAccesoriosComputacion}>Accesorios de computación</p> 
-                            <p onClick={this.setCelularesTablets}>Celulares o Tablets</p> 
+                            <div style={{marginLeft: '1em', fontSize: '.8em'}}>
+                                <p onClick={this.setMousesORatones}>Mouses o Ratones</p>
+                                <p onClick={this.setTeclados}>Teclados</p>
+                                <p onClick={this.setRouters}>Routers</p>
+                                <p onClick={this.setRedesInalambricas}>Redes Inalámbricas</p>
+                                <p onClick={this.setBateriasLaptops}>Baterias de laptops u otras baterias</p>
+                                <p onClick={this.setParlantesAmplificadores}>Parlantes o Amplificadores</p>
+                                {/* <p onClick={this.setOtrosAccesoriosCompu}>Otros accesorios celulares</p> */}
+                            </div>
+                            <p onClick={this.setCelularesTablets}>Celulares o Tablets</p>
                             <p onClick={this.setAccesoriosCelularesTablets}>Accesorios de celulares o tablets</p> 
+                            <div style={{marginLeft: '1em', fontSize: '.8em'}}>
+                                <p onClick={this.setAudifonos}>Audifonos</p>
+                                <p onClick={this.setAlmacenamiento}>Micro SD o Almacenamiento</p>
+                                <p onClick={this.setCables}>Cables para celulares</p>
+                                <p onClick={this.setCargadores}>Cargadores</p>
+                            </div>
                             <p onClick={this.setImpresoras}>Impresoras</p> 
                             <p onClick={this.setAccesoriosImpresoras}>Accesorios de impresoras</p> 
                         </div>
+                    </div>
+                    <div className="StationeryPbox3">
+                        <div className="dropdown">
+                            <button className="btn btn-secondary dropdown-toggle StationeryButton3" type="button" id="dropdownMenuButton" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+                                Tecnologia
+                            </button>
+                            <div className="dropdown-menu dropdown-menu-lg-right StationeryButton3p" aria-labelledby="dropdownMenuButton">
+                                <p className="dropdown-item" onClick={this.setLaptopsComputadoras}>Laptops, Computadoras o sus partes</p> 
+                                <p className="dropdown-item" onClick={this.setAccesoriosComputacion}>Accesorios de computación</p> 
+                                {/* <div style={{marginLeft: '1em', fontSize: '.8em'}}>
+                                </div> */}
+                                <p style={{marginLeft: '1em', fontSize: '.8em'}} className="dropdown-item" onClick={this.setMousesORatones}>Mouses o Ratones</p>
+                                <p style={{marginLeft: '1em', fontSize: '.8em'}} className="dropdown-item" onClick={this.setTeclados}>Teclados</p>
+                                <p style={{marginLeft: '1em', fontSize: '.8em'}} className="dropdown-item" onClick={this.setRouters}>Routers</p>
+                                <p style={{marginLeft: '1em', fontSize: '.8em'}} className="dropdown-item" onClick={this.setRedesInalambricas}>Redes Inalámbricas</p>
+                                <p style={{marginLeft: '1em', fontSize: '.8em'}} className="dropdown-item" onClick={this.setBateriasLaptops}>Baterias de laptops u otras baterias</p>
+                                <p style={{marginLeft: '1em', fontSize: '.8em'}} className="dropdown-item" onClick={this.setParlantesAmplificadores}>Parlantes o Amplificadores</p>
+                                {/* <p style={{marginLeft: '1em', fontSize: '.8em'}} className="dropdown-item" onClick={this.setOtrosAccesoriosCompu}>Otros accesorios celulares</p> */}
+                                
+                                
+                                <p className="dropdown-item" onClick={this.setCelularesTablets}>Celulares o Tablets</p> 
+                                <p className="dropdown-item" onClick={this.setAccesoriosCelularesTablets}>Accesorios de celulares o tablets</p> 
+                                {/* <div style={{marginLeft: '1em', fontSize: '.8em'}}> */}
+                                    <p style={{marginLeft: '1em', fontSize: '.8em'}} className="dropdown-item" onClick={this.setAudifonos}>Audifonos</p>
+                                    <p style={{marginLeft: '1em', fontSize: '.8em'}} className="dropdown-item" onClick={this.setAlmacenamiento}>Micro SD o Almacenamiento</p>
+                                    <p style={{marginLeft: '1em', fontSize: '.8em'}} className="dropdown-item" onClick={this.setCables}>Cables para celulares</p>
+                                    <p style={{marginLeft: '1em', fontSize: '.8em'}} className="dropdown-item" onClick={this.setCargadores}>Cargadores</p>
+                                {/* </div> */}
 
+                                <p className="dropdown-item" onClick={this.setImpresoras}>Impresoras</p> 
+                                <p className="dropdown-item" onClick={this.setAccesoriosImpresoras}>Accesorios de impresoras</p> 
+                            </div>
+                            {/* </div> */}
+                        </div>
                     </div>
                     <div className="StationeryPbox1">
-                        {/* <Tech 
-                            products2={this.state.tech_prods}
-                            // handleOnAdd={this.dispachAddToCart}
-                            // openModal2={this.openModal}
-                            // data_modal={this.state.data}
-                        />   */}
                         {
                             this.state.show 
                             ?

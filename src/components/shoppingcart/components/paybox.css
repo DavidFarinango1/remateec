@@ -35,6 +35,11 @@
     text-align: initial;
     margin-left: 1em;
 }
+.PayBox_det_2pa{
+    margin-top: 0;
+    margin-bottom:0;
+    text-align: end !important;
+}
 .PayBox_form{
     text-align: end;
     margin-right: 2em;

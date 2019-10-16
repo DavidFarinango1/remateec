@@ -11,7 +11,7 @@ class Suggestion extends Component{
                     this.props.suggestion && this.props.suggestion !== undefined ? this.props.suggestion.map((item, key)=>(
                         <div className='ordertotal' key={key}>
                             <div>
-                                <h4>Sugerencia #{item.id}</h4> 
+                                <h4 className='ordertotalpedido'>Sugerencia #{item.id}</h4> 
                                 <h6>Fecha: {moment(item.data.date.toDate()).calendar()} </h6>
                                 {/* <strong>Datos del contacto</strong> */}
                             </div>

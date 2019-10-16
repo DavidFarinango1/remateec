@@ -11,7 +11,7 @@ class Coments extends Component{
                     this.props.comments && this.props.comments !== undefined ? this.props.comments.map((item, key)=>(
                         <div className='ordertotal' key={key}>
                             <div>
-                                <h4>Comentario #{item.id}</h4> 
+                                <h4 className='ordertotalpedido'>Comentario #{item.id}</h4> 
                                 <h6>Fecha: {moment(item.data.date.toDate()).calendar()} </h6>
                                 <strong>Datos del contacto</strong>
                             </div>

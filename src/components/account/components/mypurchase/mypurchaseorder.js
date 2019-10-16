@@ -9,7 +9,7 @@ class MyPurchaseOrder extends Component{
                     this.props.order2 && this.props.order2 !== undefined ? this.props.order2.map((item,key)=>(
                         <div className='ordertotal' key={key}>
                             <div>
-                                <h4>Pedido #{item.id}</h4> 
+                                <h4 className='ordertotalpedido'>Pedido #{item.id}</h4> 
                                 <h6>Fecha: {
                                     moment(item.data.order_at.toDate()).calendar()
                                     // moment.locale('es')
@@ -34,7 +34,7 @@ class MyPurchaseOrder extends Component{
                                         {/* <p><strong>Status:</strong>{item.data.o_status}</p> */}
                                         {/* <p><strong>Status:</strong><span className="badge badge-pill badge-info">{item.data.o_status}</span></p> */}
                                         <p><strong>Status:</strong><span className="badge badge-pill badge-info">{item.data.o_status}</span></p>
-                                        <p><strong>Total a pagar: </strong>{parseFloat(item.data.total_order).toFixed(2)}</p>
+                                        <p><strong>Total a pagar: </strong>{Number((item.data.total_order*1.12).toFixed(2))}</p>
                                     </div>
                                 </div>
                                 <div>
@@ -65,6 +65,22 @@ class MyPurchaseOrder extends Component{
                                             </div>
                                         ))
                                     }
+                                    <div style={{borderBottom: '1px dashed rgba(0,0,0,.5)'}}>
+                                        <div style={{display: 'flex', margin: '0 1em 0 4em', justifyContent: 'space-between'}}>
+                                            <p style={{opacity: '.8'}} className="PayBox_det_2pa">Subtotal: </p>
+                                            <p style={{opacity: '.8', textAlign: 'end'}} className="PayBox_det_2pa">${Number(item.data.total_order.toFixed(2))}</p>
+                                        </div>
+                                        <div style={{display: 'flex', margin: '0 1em 0 4em', justifyContent: 'space-between'}}>
+                                            <p style={{opacity: '.8'}} className="PayBox_det_2pa">Envio:</p>
+                                            <p style={{opacity: '.8', textAlign: 'end'}} className="PayBox_det_2pa">Gratis</p>
+                                        </div>
+                                        <div style={{display: 'flex', margin: '0 1em 0 4em', justifyContent: 'space-between'}}>
+                                            <p style={{opacity: '.8'}} className="PayBox_det_2pa">Impuestos (IVA 12%):</p><br/>
+                                            <p style={{opacity: '.8', textAlign: 'end'}} className="PayBox_det_2pa">${Number((item.data.total_order*0.12).toFixed(2))}</p>
+                                        </div>
+                                    </div>
+                                    <p style={{marginRight: '1em'}} className="PayBox_det_2pa">Total a pagar: <strong>${Number((item.data.total_order*1.12).toFixed(2))}</strong></p>
+
                                 </div>
                             </div>
                         </div> 

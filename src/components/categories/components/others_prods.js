@@ -29,6 +29,11 @@ class OthersProds extends Component{
                                         <button className='OneProdCateg_button1  btn btn-info' onClick={() => this.props.handleOnAdd(item)}>Comprar</button>
                                         <button className='OneProdCateg_button1 OneProdCateg_button1_2 btn btn-danger' onClick={() => this.props.openModal2(item)} data-toggle="modal" data-target="#exampleModalCenter">Ver más</button>
                                     </div>
+                                    <div className='OneProdCateg_showPrice'>
+                                            <div class="alert alert-primary ShowPriceAlert" role="alert">
+                                            ${item.data.p_price}
+                                            </div>
+                                        </div>
                                     <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                         <div className="modal-dialog modal-dialog-centered modalwid" role="document">
                                             <div className="modal-content">

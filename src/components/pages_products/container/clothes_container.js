@@ -91,7 +91,7 @@ class ClothesContainer extends Component{
         return(        
             <div>
                 <Header />
-                <div className="StationeryPbox" style={{marginTop: '1em'}}>
+                <div className="StationeryPbox">
                     <div className="StationeryPbox2">
                         <div>
                             <h3 className="CCHselect" onClick={()=>{this.setState({show: false},()=>{console.log(this.state.show)})}}>Ropa de mujer</h3>
@@ -102,6 +102,20 @@ class ClothesContainer extends Component{
                             <p onClick={this.setVestido}>Vestidos y pantalones</p> 
                             <p onClick={this.setZapatos}>Zapatos</p> 
                             <p onClick={this.setAccesorios}>Accesorios de mujer</p> 
+                        </div>
+                    </div>
+                    <div className="StationeryPbox3">
+                        <div className="dropdown">
+                            <button className="btn btn-secondary dropdown-toggle StationeryButton3" type="button" id="dropdownMenuButton" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+                                Ropa
+                            </button>
+                            <div className="dropdown-menu dropdown-menu-lg-right StationeryButton3p" aria-labelledby="dropdownMenuButton">
+                                <p className="dropdown-item" onClick={this.setBlusa}>Blusas y Camisas</p> 
+                                <p className="dropdown-item" onClick={this.setSacos}>Sacos y Chompas</p>                              
+                                <p className="dropdown-item" onClick={this.setVestido}>Vestidos y pantalones</p>                              
+                                <p className="dropdown-item" onClick={this.setZapatos}>Zapatos</p>                              
+                                <p className="dropdown-item" onClick={this.setAccesorios}>Accesorios de mujer</p>                              
+                            </div>
                         </div>
                     </div>
                     <div className="StationeryPbox1">
@@ -123,7 +137,7 @@ class ClothesContainer extends Component{
                    <div className="BSB1_2">
                        <h4 className="BSB1_2H">Catálogo:</h4>
                        <p className="BSB1_2P CCp">
-                        Tenemos una gran variedad de vestidos, blusas, zapatos, correas, camisas, camisetas, entre otros de todas las tallas y colores, tanto para hombre como para mujer <br/><br/>Si quieres ver más prendas haz clic en el siguiente link
+                        Tenemos una gran variedad de vestidos, blusas, zapatos, correas, camisas, camisetas, entre otros, escoge tu prenda y llamanos o escribenos al Whatsapp 0996114197 <br/><br/>Si quieres ver más prendas haz clic en el siguiente link <br/>
                        </p>
                        <a download="campaña9.pdf"  href="https://firebasestorage.googleapis.com/v0/b/ventasquito-4da99.appspot.com/o/catalogo%2FCAMP9.pdf?alt=media&token=cf9363c3-bff7-4878-846a-5b53ff96f0c8" target='_blank' >Descargar aqui!</a><br/>   
                        <span className="iconHeart">♥</span>

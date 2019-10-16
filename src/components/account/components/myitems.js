@@ -60,27 +60,27 @@ class ItemsSeller extends Component{
                 <div className="ItemSellerBox2 ItemSellerLinks">
                     <Link to ={ROUTES.MYACCOUNT}>
                         {/* <div className="ItemSellerBox2" > */}
-                            <p>Mi cuenta</p>
+                            <p className="ISBPM">Mi cuenta</p>
                         {/* </div> */}
                     </Link>
                     <Link to ={ROUTES.MYPURCHASE}>
                         {/* <div className="ItemSellerBox2" > */}
-                            <p>Mis compras</p>
+                            <p className="ISBPM">Mis compras</p>
                         {/* </div> */}
                     </Link>
                     <Link to ={ROUTES.MYPRODUCTS}>
                         {
-                            this.state.admin ?<p >Mis productos</p>: null
+                            this.state.admin ?<p className="ISBPM" >Mis productos</p>: null
                         }
                     </Link>
                     <Link to ={ROUTES.MYSHOPCART}>
                         {
-                            this.state.admin ?<p >Mis ventas</p>: null
+                            this.state.admin ?<p className="ISBPM" >Mis ventas</p>: null
                         }
                     </Link>
                     <Link to ={ROUTES.MYCOMMENTS}>
                         {
-                            this.state.admin ?<p >Mis comentarios</p>: null
+                            this.state.admin ?<p className="ISBPM" >Mis comentarios</p>: null
                         }
                     </Link>
 

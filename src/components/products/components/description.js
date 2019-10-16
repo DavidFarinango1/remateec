@@ -6,6 +6,7 @@ import { compose } from 'recompose'
 import { connect } from 'react-redux'
 import OneDescription from './oneprod/onedescription';
 import MoreDescription from './oneprod/moredescription';
+import Rec_added_prods from '../../categories/components/rec_added_prods'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -24,6 +25,7 @@ class Description extends Component {
         super(props);
         this.state ={
             data: [],
+            recently_added_prods:[],
             id: '',
             top: -100,
         }
@@ -45,6 +47,21 @@ class Description extends Component {
             .catch((error)=>{
                 console.log(error)
             })
+        this.listener6 =     
+            this.props.firebase
+                .dothisdb()
+                .collection('products')
+                .orderBy('date', 'desc')
+                // .limit(3)
+                .onSnapshot((snapShots)=>{
+                    this.setState({
+                        recently_added_prods: snapShots.docs.map((doc)=>{
+                            return { id: doc.id, data: doc.data()}
+                        })
+                    })
+                },error=>{
+                    console.log(error)
+                })
     }
     addUnit=(product)=>{
         this.props.actions.addToCart(product);
@@ -64,6 +81,17 @@ class Description extends Component {
             },1000)
         });
     }
+    openModal=(prod)=>{
+        this.setState({
+            data: prod.data,
+        })
+    }
+    dispachAddToCart=(product)=> {
+        this.props.actions.addToCart(product);
+        console.log(product)
+        this.showNotification();
+        this.setState({productsState: true})
+    }
     render(){
         return(
             <div>
@@ -73,6 +101,15 @@ class Description extends Component {
                 handleOnAddUnit={this.addUnit}
                 />
                 <MoreDescription proddetails={this.state} />
+                <div className="SBtitle2">Más productos</div>
+                <div className="CateCont2_1">
+                    <Rec_added_prods 
+                        products2={this.state.recently_added_prods}
+                        handleOnAdd={this.dispachAddToCart}
+                        openModal2={this.openModal}
+                        data_modal={this.state.data}
+                    />
+                </div>
             </div>
         )
     }

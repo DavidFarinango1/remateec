@@ -36,6 +36,8 @@ class Myproducts extends Component{
             valor: '',
             valor2: '',
             valor3:'',
+            // valor4:'',
+            // valor5:'',
         };
     }
     handleUpload0=(event)=>{
@@ -167,6 +169,7 @@ class Myproducts extends Component{
                         inputValue_name: doc.data().p_name,
                         valor: doc.data().p_categories,
                         valor3: doc.data().p_subcategory,
+                        // valor5: doc.data().p_subcategory2,
                         inputValue_price: doc.data().p_price,
                         inputValue_shortdetails: doc.data().p_shortdetails,
                         details_general_description1: doc.data().p_details_general_description1,
@@ -210,6 +213,7 @@ class Myproducts extends Component{
                 edit,
                 valor,
                 valor3,
+                // valor5,
             } = this.state;
         const user = this.props.firebase.auth.currentUser
         console.log(user)
@@ -229,6 +233,7 @@ class Myproducts extends Component{
                     p_name: inputValue_name,
                     p_categories: valor,
                     p_subcategory: valor3,
+                    // p_subcategory2: valor5,
                     p_price: inputValue_price,
                     p_shortdetails: inputValue_shortdetails,
                     p_details_general_description1: details_general_description1,
@@ -245,6 +250,7 @@ class Myproducts extends Component{
                         // inputValue_categories: '',
                         valor: '',
                         valor3: '',
+                        // valor5: '',
                         inputValue_price: '',
                         inputValue_shortdetails: '',
                         details_general_description1: '',
@@ -269,6 +275,7 @@ class Myproducts extends Component{
                 // inputValue_categories,
                 valor,
                 valor3, 
+                // valor5, 
                 inputValue_price,
                 inputValue_shortdetails, 
                 details_general_description1,
@@ -287,6 +294,7 @@ class Myproducts extends Component{
                 p_name: inputValue_name,
                 p_categories: valor,
                 p_subcategory: valor3,
+                // p_subcategory2: valor5,
                 p_price: inputValue_price,
                 p_shortdetails: inputValue_shortdetails,
                 p_details_general_description1: details_general_description1,
@@ -300,9 +308,9 @@ class Myproducts extends Component{
                 console.log('actualizado')
                 this.setState({
                     inputValue_name: '',
-                    // inputValue_categories: '',
                     valor: '',
                     valor3: '',
+                    // valor5: '',
                     inputValue_price: '',
                     inputValue_shortdetails: '',
                     details_general_description1: '',
@@ -373,6 +381,38 @@ class Myproducts extends Component{
                                 <option value="AccesoriosImpresoras">Accesorios de impresoras</option>
                             </select>   
                         </div>
+                    // },()=>{
+                    //     if(this.state.valor3==='AccesoriosComputacion'){
+                    //         this.setState({
+                    //             valor4: <div>
+                    //                 <select name="valor5" value={this.state.valor5} onChange={this.onActionChangeD} className="custom-select custom-select-sm" >
+                    //                     <option value="None" selected>Escoge la categoria</option>
+                    //                     <option value="MousesORatones">Mouses o Ratones</option>
+                    //                     <option value="Teclados">Teclados</option>
+                    //                     <option value="Routers">Routers</option>
+                    //                     <option value="RedesInalambricas">Redes Inalámbricas</option>
+                    //                     <option value="BateriasLaptops">Baterias de laptops</option>
+                    //                     <option value="ParlantesAmplificadores">Parlantes o Amplificadores</option>
+                    //                     <option value="OtrosAccesoriosCompu">Otros accesorios celulares</option>
+                    //                 </select>   
+                    //             </div>
+                    //         })
+                    //     }
+                    //     if(this.state.valor3==='AccesoriosCelularesTablets'){
+                    //         this.setState({
+                    //             valor4: <div>
+                    //                 <select name="valor5" value={this.state.valor5} onChange={this.onActionChangeD} className="custom-select custom-select-sm" >
+                    //                     <option value="None" selected>Escoge la categoria</option>
+                    //                     <option value="Audifonos">Audifonos o Audio</option>
+                    //                     <option value="Almacenamiento">Micro SD o Almacenamiento</option>
+                    //                     <option value="CablesCelulares">Cables para celulares</option>
+                    //                     <option value="Cargadores">Cargadores</option>
+                    //                     <option value="OtrosAccesoriosCelu">Otros accesorios de celulares</option>
+                    //                 </select>   
+                    //             </div>
+                    //         })
+                    //     }
+
                     })
                 }
                 if(this.state.valor==='Ropa'){
@@ -411,7 +451,8 @@ class Myproducts extends Component{
                         </div>
                     })
                 }
-            })
+            }
+            )
     }
     onC=()=>{
         console.log(this.state.valor)

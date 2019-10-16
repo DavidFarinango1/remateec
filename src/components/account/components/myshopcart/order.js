@@ -23,9 +23,9 @@ class Order extends Component{
                     this.props.order && this.props.order !== undefined ? this.props.order.map((item,key)=>(
                     <div className='ordertotal' key={key}>
                         <div>
-                            <h4>Pedido #{item.id}</h4> 
+                            <h4 className='ordertotalpedido'>Pedido #{item.id}</h4> 
                             <h6>Fecha: {moment(item.data.order_at.toDate()).calendar()} </h6>
-                            <p><strong>Total a cobrar: </strong>{item.data.total_order}</p>
+                            <p><strong>Total a cobrar: </strong>${Number((item.data.total_order*1.12).toFixed(2))}</p>
                         </div>
                         <div className='Orderbox'>
                             <div>
@@ -50,9 +50,21 @@ class Order extends Component{
                                         </div>
                                     ))
                                 }
-                                {
-                                    
-                                }
+                                <div style={{borderBottom: '1px dashed rgba(0,0,0,.5)'}}>
+                                    <div style={{display: 'flex', margin: '0 1em 0 4em', justifyContent: 'space-between'}}>
+                                        <p style={{opacity: '.8'}} className="PayBox_det_2pa">Subtotal: </p>
+                                        <p style={{opacity: '.8', textAlign: 'end'}} className="PayBox_det_2pa">${Number(item.data.total_order.toFixed(2))}</p>
+                                    </div>
+                                    <div style={{display: 'flex', margin: '0 1em 0 4em', justifyContent: 'space-between'}}>
+                                        <p style={{opacity: '.8'}} className="PayBox_det_2pa">Envio:</p>
+                                        <p style={{opacity: '.8', textAlign: 'end'}} className="PayBox_det_2pa">Gratis</p>
+                                    </div>
+                                    <div style={{display: 'flex', margin: '0 1em 0 4em', justifyContent: 'space-between'}}>
+                                        <p style={{opacity: '.8'}} className="PayBox_det_2pa">Impuestos (IVA 12%):</p><br/>
+                                        <p style={{opacity: '.8', textAlign: 'end'}} className="PayBox_det_2pa">${Number((item.data.total_order*0.12).toFixed(2))}</p>
+                                    </div>
+                                </div>
+                                <p style={{marginRight: '1em'}} className="PayBox_det_2pa">Total: <strong>${Number((item.data.total_order*1.12).toFixed(2))}</strong></p>
                             </div>
                             <div>
                                 <strong>Status</strong>

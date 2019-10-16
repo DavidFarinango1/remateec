@@ -6,11 +6,11 @@ class Blog extends Component{
         return(
             <div>
                 <div className="BlogHeader" style={{backgroundImage: `url(./images/others/O7GZJO0.jpg)`}}>
-                    <h2 style={{fontFamily: 'auto',fontSize:'2.3em',textAlign: 'center',color:'white', margin:'1.3em',backgroundColor: 'rgba(0,0,0,.6)',width:'max-content', padding: '0 .5em'}}>Acerca de nosotros</h2>
+                    <h2 className="BlogHeaderH2title">Acerca de nosotros</h2>
                 </div>
                 <div className="BlogSB1"> 
                    <div className="BSB1_1">
-                       <img className="Blogimg"src="./images/others/OHT3MQ0.jpg" alt="Nuestra historia"/>
+                       <img className="Blogimg"src="./images/others/foto1.png" alt="Nuestra historia"/>
                     </div> 
                    <div className="BSB1_2">
                        <h4 className="BSB1_2H">Nuestra historia:</h4>
@@ -29,12 +29,12 @@ class Blog extends Component{
                        <span className="iconHeart">♥</span>
                     </div>
                     <div className="BSB1_1">
-                       <img className="Blogimg"src="./images/others/OHT3MQ0.jpg" alt="Nuestra historia"/>
+                       <img className="Blogimg"src="./images/others/foto2.png" alt="Nuestra historia"/>
                     </div> 
                 </div>
                 <div className="BlogSB1">
                     <div className="BSB1_1">
-                       <img className="Blogimg"src="./images/others/OHT3MQ0.jpg" alt="Nuestra historia"/>
+                       <img className="Blogimg"src="./images/others/foto3.png" alt="Nuestra historia"/>
                     </div> 
                     <div className="BSB1_2">
                        <h4 className="BSB1_2H">Visión:</h4>

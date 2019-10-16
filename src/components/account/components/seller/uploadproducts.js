@@ -5,92 +5,12 @@ import { withFirebase } from '../../../../Firebase'
 import Drodownsss from './dropdownsss.js'
 
 class UploadProducts extends Component {
-    // constructor(props){
-    //     super(props);
-    //     this.state={
-    //         valor: '',
-    //         valor2: '',
-    //         valor3: '',
-    //     }
-    // }
-    // onActionChange2 = event=>{
-    //     this.setState({
-    //         [event.target.name]: event.target.value
-    //     })
-    // }
-    // cate2=()=>{
-    //     console.log(this.state.inputValue_categories2)
-    // }
-    // onActionChangeD=event=>{
-    //     this.setState({
-    //         [event.target.name]: event.target.value
-    //     },()=>{
-    //             if(this.state.valor==='Tecnologia'){
-    //                 this.setState({
-    //                     valor2: <div>
-    //                         <select name="valor3" value={this.state.valor3} onChange={this.onActionChangeD} className="custom-select custom-select-sm" >
-    //                             <option value="None" selected>Escoge la categoria</option>
-    //                             <option value="LaptopsComputadoras">Laptops o Computadoras</option>
-    //                             <option value="AccesoriosComputacion">Accesorios de computación</option>
-    //                             <option value="CelularesTablets">Celulares o Tablets</option>
-    //                             <option value="AccesoriosCelularesTablets">Accesorios de celulares o tablets</option>
-    //                             <option value="Impresoras">Impresoras</option>
-    //                             <option value="AccesoriosImpresoras">Accesorios de impresoras</option>
-    //                         </select>   
-    //                     </div>
-    //                 })
-    //             }
-    //             if(this.state.valor==='Ropa'){
-    //                 this.setState({
-    //                     valor2: <div>
-    //                         <select name="valor3" value={this.state.valor3} onChange={this.onActionChangeD} className="custom-select custom-select-sm" >
-    //                             <option value="None" selected>Escoge la categoria</option>
-    //                             <option value="Blusas">Blusas y Camisas</option>
-    //                             <option value="Vestidos">Vestidos y pantalones</option>
-    //                             <option value="Zapatos">Zapatos</option>
-    //                             <option value="AccesoriosMujer">Accesorios de mujer</option>
-    //                         </select>   
-    //                     </div>
-    //                 })
-    //             }
-    //             if(this.state.valor==='Papeleria'){
-    //                 this.setState({
-    //                     valor2: <div>
-    //                         <select name="valor3" value={this.state.valor3} onChange={this.onActionChangeD} className="custom-select custom-select-sm" >
-    //                             <option value="None" selected>Escoge la categoria</option>
-    //                             <option value="Papeleria">Papeleria</option>
-    //                             <option value="SuministrosOficina">Suministros de oficina</option>
-    //                         </select>   
-    //                     </div>
-    //                 })
-    //             }
-    //             if(this.state.valor==='Otros'){
-    //                 this.setState({
-    //                     valor2: <div>
-    //                         <select name="valor3" value={this.state.valor3} onChange={this.onActionChangeD} className="custom-select custom-select-sm" >
-    //                             <option value="None" selected>Escoge la categoria</option>
-    //                             <option value="Otros1">Otros1</option>
-    //                             <option value="Otros2">otros2</option>
-    //                         </select>   
-    //                     </div>
-    //                 })
-    //             }
-    //         })
-    // }
-    // onC=()=>{
-    //     console.log(this.state.valor)
-    //     console.log(this.state.valor3)
-    // }
     render(){
         const {
             inputValue_mybussinessname,
             inputValue_mycell,
             inputValue_mygps,
             inputValue_name,
-            inputValue_categories,
-            inputValue_categories1,
-            // inputValue_categories2,
-            // inputValue_categories3,
             inputValue_price,
             inputValue_shortdetails,
             details_general_description1,
@@ -116,24 +36,15 @@ class UploadProducts extends Component {
                         <p>Nombre:</p>
                         <input name="inputValue_name" value = {inputValue_name} onChange={this.props.onActionChange} className="form-control form-control-sm" placeholder="Nombre del producto"  type="text" maxLength="150" required></input>
                     </div>
-                    {/* <div className="UPB2">
-                        <p>Categorias</p>
-                        <select name="inputValue_categories" value={inputValue_categories} onChange={this.props.onActionChange} className="custom-select custom-select-sm" >
-                            <option value="None" selected>Escoge la categoria</option>
-                            <option value="Tecnologia">Tecnologia</option>
-                            <option value="Ropa">Ropa</option>
-                            <option value="Libros">Libros</option>
-                            <option value="Papeleria">Papeleria</option>
-                            <option value="Otros">Otros</option>
-                        </select>
-                    </div> */}
                     <div className="UPB2">
                         <Drodownsss 
                         onC={this.props.onC}
                         valor={this.props.valor}
-                        valor3={this.props.valor3}
-                        onActionChangeD={this.props.onActionChangeD}
                         valor2={this.props.valor2}
+                        valor3={this.props.valor3}
+                        // valor4={this.props.valor4}
+                        // valor5={this.props.valor5}
+                        onActionChangeD={this.props.onActionChangeD}
                         />                        
                     </div>
                     <div className="UPB3">
@@ -192,16 +103,7 @@ class UploadProducts extends Component {
                             {/* <input name="title_general_description2" value={title_general_description2} className="form-control form-control-sm" type="text" onChange={this.props.onActionChange} placeholder='Titulo general descripción 2:' required></input> */}
                             <textarea name="details_general_description2" value={details_general_description2} className="form-control form-control-sm" onChange={this.props.onActionChange} maxLength="500" data-length="500" rows="3" placeholder='Detalle general descripción 2:' required></textarea>
                         </div>
-                        {/* <div className="UPB6-c">
-                            <h4>Descripción 3</h4>
-                            <input name="title_general_description3" value={title_general_description3} className="form-control form-control-sm" type="text" onChange={this.props.onActionChange} placeholder='Titulo general descripción 3:' required></input>
-                            <textarea name="details_general_description3" value={details_general_description3} className="form-control" onChange={this.props.onActionChange} maxLength="200" data-length="200" rows="3" placeholder='Detalle general descripción 3:' required></textarea>
-                        </div> */}
                     </div>
-                    {/* <div className="UPB7">
-                            <p>Mi dirección:</p>
-                            <input name="myubication" value={myubication} className="form-control form-control-sm" type="text" onChange={this.props.onActionChange} placeholder='Donde se encuentran los productos' required></input>
-                    </div> */}
                     <div className="UPB8">
                         <p>Forma de Envio:</p>
                         <select name="logistic_seller" value={logistic_seller} onChange={this.props.onActionChange} className="custom-select custom-select-sm">

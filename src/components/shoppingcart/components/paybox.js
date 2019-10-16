@@ -25,7 +25,21 @@ class PayBox extends Component{
                     <div >
                         <h4 className="PayBox_det_2">Detalle:</h4>
                         <p className="PayBox_det_2p">Subtotal de productos <strong>({this.props.onTotalProducts} productos)</strong></p>
-                        <p className="PayBox_det_2p">Total a pagar: <strong>${Number(this.props.onTotalAmount.toFixed(2))}</strong></p>
+                        <div style={{borderBottom: '1px dashed rgba(0,0,0,.5)'}}>
+                            <div style={{display: 'flex', margin: '0 1em 0 4em', justifyContent: 'space-between'}}>
+                                <p style={{opacity: '.8'}} className="PayBox_det_2pa">Subtotal: </p>
+                                <p style={{opacity: '.8', textAlign: 'end'}} className="PayBox_det_2pa">${Number(this.props.onTotalAmount.toFixed(2))}</p>
+                            </div>
+                            <div style={{display: 'flex', margin: '0 1em 0 4em', justifyContent: 'space-between'}}>
+                                <p style={{opacity: '.8'}} className="PayBox_det_2pa">Envio:</p>
+                                <p style={{opacity: '.8', textAlign: 'end'}} className="PayBox_det_2pa">Gratis</p>
+                            </div>
+                            <div style={{display: 'flex', margin: '0 1em 0 4em', justifyContent: 'space-between'}}>
+                                <p style={{opacity: '.8'}} className="PayBox_det_2pa">Impuestos (IVA 12%):</p><br/>
+                                <p style={{opacity: '.8', textAlign: 'end'}} className="PayBox_det_2pa">${Number((this.props.onTotalAmount*0.12).toFixed(2))}</p>
+                            </div>
+                        </div>
+                        <p style={{marginRight: '1em'}} className="PayBox_det_2pa">Total a pagar: <strong>${Number((this.props.onTotalAmount*1.12).toFixed(2))}</strong></p>
                     </div>
                 </div>
                 <div className="form-group form-check PayBox_form">

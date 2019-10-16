@@ -4,6 +4,16 @@
     /* background-image: url('./images/others/O7GZJO0.jpg'); */
     /* background-image: url('../../../../public/images/users/usuario.png'); */
 }
+.BlogHeaderH2title{
+    font-family: auto;
+    font-size:2.3em;
+    text-Align: center;
+    color: white;
+    margin: 1.3em;
+    background-color: rgba(0,0,0,.6);
+    width: max-content; 
+    padding: 0 .5em;
+}
 .BlogSB1{
     background-color: white;
     color: black;
@@ -38,4 +48,44 @@
 .Blogimg{
     width: 100%;
     height: 21em;
+}
+@media screen and (max-width: 750px){
+    .BSB1_2{
+        padding-top: .2em;
+    }
+    .BSB1_2H{
+        font-size: 1.2em;
+    }
+    .BSB1_2P{
+        padding: .3em;
+        opacity: .7;
+        font-size: 1em;
+        font-family: cursive;
+    }
+}
+@media screen and (max-width: 575px){
+    .BlogSB1{
+        display: grid;
+        margin: .2em;
+        border: rgba(0,0,0,.3);
+        grid-template-areas: 'a'
+                             'b';
+    }
+    .BSB1_1{
+        width: 100%;
+        grid-area: a;
+    }
+    .BSB1_2{
+        width: 100%;
+        grid-area: b;
+    }
+    .Blogimg{
+        object-fit: contain;
+        height: 100%;
+    }
+    .BlogHeaderH2title{
+        font-size:2em;
+        margin: .5em;
+        padding: 0 .5em;
+    }
 }

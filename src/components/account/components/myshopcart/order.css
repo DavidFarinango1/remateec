@@ -9,3 +9,8 @@
 .order_eachone{
     margin: 0;
 }
+@media screen and (max-width: 425px){
+    .ordertotalpedido{
+        font-size: .8em !important;
+    }
+}

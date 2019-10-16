@@ -4,8 +4,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas: 'c a b d';
-    /* border-top: 1px solid rgb(0, 0, 0, .2);
-    border-bottom: 1px solid rgb(0, 0, 0, .2); */
 }
 .Sh1_1{
     grid-area: a;
@@ -89,7 +87,14 @@
     color: white;
     cursor: pointer;
 }
-/* .Sh1_4:hover{
-    text-decoration: none !important;
-    font-weight: bold;
-} */
+@media screen and (max-width: 480px){
+    .Subheader1{
+        grid-template-columns: 1fr 3fr 1fr 1fr;
+    }
+    .SH1p{
+        font-size: .8em;
+    }
+    .DDA{
+        font-size: 1em;
+    }
+}

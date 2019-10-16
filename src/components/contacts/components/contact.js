@@ -5,14 +5,14 @@ class Contact extends Component {
         return(
             <div>
             <div className="BlogHeader" style={{backgroundImage: `url(./images/others/O7GZJO0.jpg)`}}>
-                <h2 style={{fontFamily: 'auto',fontSize:'2.3em',textAlign: 'center',color:'white', margin:'1.3em',backgroundColor: 'rgba(0,0,0,.6)',width:'max-content', padding: '0 .5em'}}>Contactos</h2>
+                <h2 className="BlogHeaderH2title" >Contactos</h2>
             </div>
             <div className="BlogSB1"> 
                <div className="BSB1_1" src='https://drive.google.com/open?id=1aybKRbm-q4usjqNW5xJ8pVe0D-FjaYiM&usp=sharing'>
                    {/* <img style={{objectFit: 'contain'}} className="Blogimg"src="./images/others/sucursal1.jpg" alt="Nuestra historia"/> */}
                 
                 
-                   <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1aybKRbm-q4usjqNW5xJ8pVe0D-FjaYiM" width="640" height="300"></iframe>                
+                   <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1aybKRbm-q4usjqNW5xJ8pVe0D-FjaYiM" style={{width: '100%'}} height="300"></iframe>                
                 </div> 
                <div className="BSB1_2">
                    <h4 className="BSB1_2H">Sucursal 1:</h4>
@@ -32,7 +32,7 @@ class Contact extends Component {
                 </div>
                 <div className="BSB1_1">
                    {/* <img className="Blogimg"src="./images/others/OHT3MQ0.jpg" alt="Nuestra historia"/> */}
-                   <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1aybKRbm-q4usjqNW5xJ8pVe0D-FjaYiM" width="640" height="300"></iframe>
+                   <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1aybKRbm-q4usjqNW5xJ8pVe0D-FjaYiM" style={{width: '100%'}} height="300"></iframe>
                 </div> 
             </div>
             <div className="BlogSB1">
