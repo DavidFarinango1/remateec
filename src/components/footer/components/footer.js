@@ -60,9 +60,9 @@ class Footer extends React.Component{
                     <h3>Contáctanos directamente al:</h3><br />
                     <div className="contact_boxp">
                         <h4>Teléfonos:</h4><br />
-                        <p>0996114197/2581496</p>< br/> <br />
+                        <p>0996114197/0991200163</p>< br/> <br />
                         <h4>Correo:</h4><br />
-                        <p>davidfarinango24.1995@gmail.com</p>
+                        <p>ventasquito.soporte@gmail.com<br />davidfarinango24.1995@gmail.com</p>
                     </div>
                     <section className="socialprincipal">
                         {/* <a href="" className="social-link1 Facebook"></a>
