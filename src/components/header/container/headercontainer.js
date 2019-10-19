@@ -9,6 +9,8 @@ class HeaderContainer extends Component {
                 <Header  />
                 <p>Cambio entrante</p>
                 <p>Ventasquito</p>
+                <p>Ventasquito</p>q
+                <p>Ventasquito</p>
                 <Subheader />
             </div>    
         )
