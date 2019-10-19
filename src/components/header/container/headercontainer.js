@@ -8,6 +8,7 @@ class HeaderContainer extends Component {
             <div>
                 <Header  />
                 <p>Cambio entrante</p>
+                <p>Ventasquito</p>
                 <Subheader />
             </div>    
         )
