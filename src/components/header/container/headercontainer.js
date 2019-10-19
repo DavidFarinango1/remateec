@@ -7,6 +7,7 @@ class HeaderContainer extends Component {
         return(
             <div>
                 <Header  />
+                <p>Cambio entrante</p>
                 <Subheader />
             </div>    
         )
