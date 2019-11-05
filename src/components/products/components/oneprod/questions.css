@@ -1,0 +1,10 @@
+.QuestionsInput{
+    display: flex;
+    margin: 0 .1em;
+}
+.input_question_value{
+    margin: 0 1em !important;
+}
+.question_submit{
+    width: 150px !important;
+}

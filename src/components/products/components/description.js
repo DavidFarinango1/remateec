@@ -6,6 +6,7 @@ import { compose } from 'recompose'
 import { connect } from 'react-redux'
 import OneDescription from './oneprod/onedescription';
 import MoreDescription from './oneprod/moredescription';
+import Questions from './oneprod/questions';
 import Rec_added_prods from '../../categories/components/rec_added_prods'
 import styled from 'styled-components'
 
@@ -28,6 +29,7 @@ class Description extends Component {
             recently_added_prods:[],
             id: '',
             top: -100,
+            inputValue_questions: '',
         }
     }
     componentDidMount(){
@@ -92,6 +94,13 @@ class Description extends Component {
         this.showNotification();
         this.setState({productsState: true})
     }
+    onActionChange=event=>{
+        this.setState({
+            [event.target.name]: event.target.value
+        },()=>{
+            console.log(this.state.inputValue_questions)
+        })
+    }
     render(){
         return(
             <div>
@@ -101,6 +110,10 @@ class Description extends Component {
                 handleOnAddUnit={this.addUnit}
                 />
                 <MoreDescription proddetails={this.state} />
+                <Questions 
+                state={this.state}
+                onActionChange={this.onActionChange}
+                />
                 <div className="SBtitle2">Más productos</div>
                 <div className="CateCont2_1">
                     <Rec_added_prods 
