@@ -4,11 +4,13 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 4fr 2fr;
     grid-template-areas: "odmname odmimages"
-                         "odmdetails odmdetails";
+                         "odmdetails odmdetails"
+                         "odmbutton odmbutton";
 }
 .ODM-PBboxa{grid-area: odmname;}
 .ODM-PBboxb{grid-area: odmimages;}
 .ODM-PBboxc{grid-area: odmdetails;}
+.ODM-PBboxd{grid-area: odmbutton;}
 .OMDmb{
     padding: 0 !important;
 }
@@ -44,6 +46,10 @@
     background: white;
     text-align: left; 
     padding: 5px 0px 2px 15px;
+}
+.ODM-PBboxd{
+    text-align: center;
+    margin-bottom: 5px;
 }
 /* fin primer caja */
 @media screen and (max-width:1024px){

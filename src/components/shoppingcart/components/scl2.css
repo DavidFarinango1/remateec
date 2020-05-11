@@ -160,8 +160,75 @@
         font-size: small;
     }
 }
-@media screen and (max-width:320px){
+@media screen and (max-width:425px){
+    /* .SHL-principalbox{
+        grid-template-areas: "a a f g h"
+                             "b b f g h"
+                             "a d f g h"
+                             "b e f g h";
+        grid-template-rows: 1.1fr .5fr 1.2fr .8fr;
+        } */
+    .SHLbox-c{
+        display: none;
+    }
     .SHL-principalbox{
+        /* border: 1px solid rgb(0, 0, 0, 0.3); */
+        /* border-radius: 3px; */
+        /* background: white; */
+        /* height: max-content; */
+        /* display: grid; */
+        /* width: 75%; */
+        /* height: 120px; */
+        grid-template-columns: 1.5fr 5fr 1fr 1fr 1fr;
+        grid-template-rows: 2fr 1fr .1fr;
+        grid-template-areas: "a a f g h"
+                             "b b f g h"
+                             ". e f g h"
+                             ;
+        grid-gap: 3px;
+    }
+    .SHL-b-word{
+        font-size: .7em;
+    }
+    /* .SHL-e-button{
+        display:none
+    }
+    .SHL-e-button2hidden{
+        display: block
+    } */
+    /* 
+    .SHL-e-button{
+        display:none
+    }
+    .SHL-e-button2hidden{
+        display: block
+    }
+    .SCL-principalbox {
+        margin: .2em;
+    } */
+}
+@media screen and (max-width:320px){
+    .SHL-b-word{
+        font-size: .6em;
+    }
+
+    .SHL-principalbox{
+        /* border: 1px solid rgb(0, 0, 0, 0.3); */
+        /* border-radius: 3px; */
+        /* background: white; */
+        /* height: max-content; */
+        /* display: grid; */
+        /* width: 75%; */
+        /* height: 120px; */
+        grid-template-columns: 1.5fr 5fr 1fr 1fr 1fr;
+        grid-template-rows: 2fr 1fr .1fr;
+        grid-template-areas: "a a f g h"
+                             "b b f g h"
+                             "e e e e e"
+                             ;
+        grid-gap: 3px;
+    }
+    /* .SHL-principalbox{
         grid-template-areas: "a c f g h"
                              "a d f g h"
                              "a d f g h"
@@ -176,5 +243,5 @@
     }
     .SCL-principalbox {
         margin: .2em;
-    }
+    } */
 }

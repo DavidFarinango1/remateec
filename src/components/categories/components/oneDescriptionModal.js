@@ -29,12 +29,16 @@ class OneDescriptionModal extends PureComponent{
             first: false,
         })
     }
+    onClick4=()=>{
+        console.log(this.props)
+    }
     render(){
         return(
         <div className="ODM-principal-box">
             <div className="ODM-PBboxa">
                 <div className="ODM-PBproduct">{this.props.oneproduct.p_name}</div>
-                <div className="ODM-PBprecio"><strong>USD: </strong>{this.props.oneproduct.p_price}</div>
+                <div className="ODM-PBprecio"><strong>Precio: </strong>{this.props.oneproduct.p_price}</div>
+                <div><small style={{color:'grey'}}>(Precio no incluye IVA)</small></div>
             </div>
             <div className="ODM-PBboxb">
                 <div className="ODM-PBbox1">
@@ -55,6 +59,13 @@ class OneDescriptionModal extends PureComponent{
             <div className="ODM-PBboxc">
                 <div className="PBdetails-descriptionmodal">{this.props.oneproduct.p_shortdetails}</div>
             </div>
+            {/* <div className="ODM-PBboxd">
+                <a href={'/product/'+this.props.idData.id}>
+                 <p onClick={this.onClick4}>{this.props.idData.id}</p>
+                <button class="btn btn-outline-success">Ver más detalles y promociones</button>
+
+                </a>
+            </div> */}
         </div>
         )
     }

@@ -24,7 +24,7 @@
 .Search-result{
     font-size: 1.4em;
     margin: .5em;
-    border-bottom: 1px solid rgb(0, 0, 0, 0.15);
+    border-bottom: 2px solid rgb(0, 0, 0, 0.15);
     padding-bottom: .3em;
 }
 .Search-principalbox{
@@ -33,10 +33,10 @@
     height: max-content;
     display: grid;
     grid-template-columns: 1.5fr 5fr 1.5fr;
-    grid-template-rows: 1.1fr 1fr 1fr 1fr;
+    grid-template-rows: 1.1fr 1fr 1fr;
     grid-template-areas: "a b f"
                          "a c f"
-                         "a d f"
+                         /* "a d f" */
                          "a e f"
     
     ;
@@ -63,6 +63,7 @@
 }
 .s-d{
     grid-area: d;
+    display: none;
 }
 .s-d p{
     margin-bottom: 0.4em;
@@ -82,6 +83,27 @@
     display:none
 }
 @media screen and (max-width:425px){
+    .CateCont2_search{
+        /* width: 100%; */
+        /* margin-top: 1em; */
+        display: block;
+    }
+    .CateCont2_1_search{
+        width: 100%;
+        margin-right: .5em;
+        margin-left: .5em;
+        background: white;
+        /* border-radius: 5px; */
+    }
+    .s-e{
+        display: none;
+    }
+    .CateCont3_search {
+        width: 100%;
+        background: white;
+        border-radius: 13px;
+        margin-right: .5em;
+    }
     .Search-result {
         font-size: 1em;
     }
@@ -99,17 +121,22 @@
         border-bottom: 1px solid rgb(0, 0, 0, 0.15);
         margin: .5em;
         grid-template-columns: 1.5fr 5fr 1.5fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-        grid-template-areas: "a b f"
-                             "a c f"
-                             "a d f"        
-                             "a e f"        
+        grid-template-rows: 3fr 1fr .5fr .5fr;
+        grid-template-areas: "a a a"
+                             "b b b"
+                             "c c c"
+                             ". f ."        
         ;
         grid-gap: 0px;
         padding-bottom: .2em;
     }
+    .s-f{
+        display: inherit;
+    }
     .s-a img{
-        width: 80%;
+        width: 180px;
+        height: 180px;
+        object-fit: contain;
     }
     .s-b p{
         font-size: smaller;
@@ -128,7 +155,7 @@
         margin-bottom: 0.2em;
     }
 }
-@media screen and (max-width:320px){
+/* @media screen and (max-width:320px){
     .Search-principalbox{
         margin: .5em;
         grid-template-columns: 1.5fr 5fr;
@@ -147,4 +174,4 @@
     .s-f{
         justify-content: center;
     }
-}
+} */

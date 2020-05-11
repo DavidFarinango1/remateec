@@ -143,6 +143,7 @@ class CategoriesContainer extends Component{
     openModal=(prod)=>{
         this.setState({
             data: prod.data,
+            id: prod,
         })
     }
     dispachAddToCart=(product)=> {
@@ -173,12 +174,20 @@ class CategoriesContainer extends Component{
                         handleOnAdd={this.dispachAddToCart}
                         openModal2={this.openModal}
                         data_modal={this.state.data}
+                        idData={this.state.id}
                         />
                     </div>
-                    
                     <div className="CateCont2_1">
-                        <ClothesProds 
-                        products2={this.state.clothes_products}
+                        <TechProds 
+                        products2={this.state.tech_prods}
+                        handleOnAdd={this.dispachAddToCart}
+                        openModal2={this.openModal}
+                        data_modal={this.state.data}
+                        />
+                    </div>
+                    <div className="CateCont2_1">
+                        <OthersProds 
+                        products2={this.state.others_prods}
                         handleOnAdd={this.dispachAddToCart}
                         openModal2={this.openModal}
                         data_modal={this.state.data}
@@ -193,16 +202,8 @@ class CategoriesContainer extends Component{
                         />
                     </div>
                     <div className="CateCont2_1">
-                        <TechProds 
-                        products2={this.state.tech_prods}
-                        handleOnAdd={this.dispachAddToCart}
-                        openModal2={this.openModal}
-                        data_modal={this.state.data}
-                        />
-                    </div>
-                    <div className="CateCont2_1">
-                        <OthersProds 
-                        products2={this.state.others_prods}
+                        <ClothesProds 
+                        products2={this.state.clothes_products}
                         handleOnAdd={this.dispachAddToCart}
                         openModal2={this.openModal}
                         data_modal={this.state.data}

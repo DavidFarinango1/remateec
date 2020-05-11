@@ -30,10 +30,10 @@ class PayBox extends Component{
                                 <p style={{opacity: '.8'}} className="PayBox_det_2pa">Subtotal: </p>
                                 <p style={{opacity: '.8', textAlign: 'end'}} className="PayBox_det_2pa">${Number(this.props.onTotalAmount.toFixed(2))}</p>
                             </div>
-                            <div style={{display: 'flex', margin: '0 1em 0 4em', justifyContent: 'space-between'}}>
+                            {/* <div style={{display: 'flex', margin: '0 1em 0 4em', justifyContent: 'space-between'}}>
                                 <p style={{opacity: '.8'}} className="PayBox_det_2pa">Envio:</p>
                                 <p style={{opacity: '.8', textAlign: 'end'}} className="PayBox_det_2pa">Gratis</p>
-                            </div>
+                            </div> */}
                             <div style={{display: 'flex', margin: '0 1em 0 4em', justifyContent: 'space-between'}}>
                                 <p style={{opacity: '.8'}} className="PayBox_det_2pa">Impuestos (IVA 12%):</p><br/>
                                 <p style={{opacity: '.8', textAlign: 'end'}} className="PayBox_det_2pa">${Number((this.props.onTotalAmount*0.12).toFixed(2))}</p>

@@ -74,7 +74,8 @@ class Onedescription extends Component{
             </div>
             <div className="PBbox c">
                 <div className="PBproduct prueba2">{this.props.proddetails.data.p_name}</div>
-                <div className="PBprecio"><strong>USD: </strong>{this.props.proddetails.data.p_price}</div>
+                <div className="PBprecio"><strong>Precio: </strong>{this.props.proddetails.data.p_price}</div>
+                <div><small style={{color:'grey'}}>(Precio no incluye IVA)</small></div>
                 {/* <div className="PBoferta"><strong>-Por la compra de:</strong>{this.props.proddetails.data.get('offer')}</div> */}
                 <div className="PBvendido-por" onClick={console.log(this.props.proddetails.data)}><strong>-Vendido por:<br /></strong>Weygo Industries</div>
                 {/* <div className="PBvendido-por" onClick={console.log(this.props.proddetails.data)}><strong>-Vendido por:<br /></strong>{this.props.proddetails.data.p_mybussinessname}</div> */}

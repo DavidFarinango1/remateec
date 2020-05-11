@@ -72,10 +72,10 @@ class Search extends Component{
                                     <p>{item.data.p_name}</p>
                                 </div>
                                 <div className="s-c">
-                                    <p><strong>Precio: </strong>${item.data.p_price}</p>
+                                    <p><strong>Precio: </strong>${item.data.p_price} <small style={{color: 'grey'}}>(No incluye IVA)</small></p>
                                 </div>
                                 <div className="s-d">
-                                    <p>Envio gratis a partir de $20,00</p>
+                                    {/* <p>Envio gratis a partir de $20,00</p> */}
                                 </div>
                                 <div className="s-e">
                                     <p>Disponible</p>

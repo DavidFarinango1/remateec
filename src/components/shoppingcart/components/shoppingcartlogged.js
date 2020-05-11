@@ -40,7 +40,7 @@ class ShoppingCartLogged extends Component{
                     <p className="SHL-c-word">Disponible</p>
                 </div>
                 <div className="SHLbox-d">
-                    <p className="SHL-d-word">Envio gratis si el total del pedido pasa los $20,00</p>
+                    {/* <p className="SHL-d-word">Envio gratis si el total del pedido pasa los $20,00</p> */}
                 </div>
                 <div className="SHLbox-e">
                     <button type="button" className="btn btn-light SHL-e-button" onClick={() => this.props.handleDeleteFromCart()}>Quitar producto</button>   

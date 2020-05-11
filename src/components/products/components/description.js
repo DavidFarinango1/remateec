@@ -110,10 +110,10 @@ class Description extends Component {
                 handleOnAddUnit={this.addUnit}
                 />
                 <MoreDescription proddetails={this.state} />
-                <Questions 
+                {/* <Questions 
                 state={this.state}
                 onActionChange={this.onActionChange}
-                />
+                /> */}
                 <div className="SBtitle2">Más productos</div>
                 <div className="CateCont2_1">
                     <Rec_added_prods 
