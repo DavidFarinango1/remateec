@@ -26,8 +26,8 @@ class MyPurchaseOrder extends Component{
                                     </div>
                                     <div className="MypOBDp">
                                         <strong>Datos del vendedor:</strong>
-                                        <p><strong>Cédula: </strong>1724157258</p>
-                                        <p><strong>Contacto: </strong>0996114197</p>
+                                        <p><strong>Cédula: </strong>1713921334</p>
+                                        <p><strong>Contacto: </strong>0991200163</p>
                                     </div>
                                     <div>
                                         {/* <p><strong>Status:</strong>En proceso</p> */}
@@ -75,11 +75,15 @@ class MyPurchaseOrder extends Component{
                                             <p style={{opacity: '.8', textAlign: 'end'}} className="PayBox_det_2pa">Gratis</p>
                                         </div> */}
                                         <div style={{display: 'flex', margin: '0 1em 0 4em', justifyContent: 'space-between'}}>
-                                            <p style={{opacity: '.8'}} className="PayBox_det_2pa">Impuestos (IVA 12%):</p><br/>
-                                            <p style={{opacity: '.8', textAlign: 'end'}} className="PayBox_det_2pa">${Number((item.data.total_order*0.12).toFixed(2))}</p>
+                                            <p style={{opacity: '.8'}} className="PayBox_det_2pa">Impuestos:</p><br/>
+                                            <p style={{opacity: '.8', textAlign: 'end'}} className="PayBox_det_2pa">Ya incluidos</p>
+                                        </div>
+                                        <div style={{display: 'flex', margin: '0 1em 0 4em', justifyContent: 'space-between'}}>
+                                            <p style={{opacity: '.8'}} className="PayBox_det_2pa">Envío:</p><br/>
+                                            <p style={{opacity: '.8', textAlign: 'end'}} className="PayBox_det_2pa">Por coordinar</p>
                                         </div>
                                     </div>
-                                    <p style={{marginRight: '1em'}} className="PayBox_det_2pa">Total a pagar: <strong>${Number((item.data.total_order*1.12).toFixed(2))}</strong></p>
+                                    <p style={{marginRight: '1em'}} className="PayBox_det_2pa">Total a pagar: <strong>${Number((item.data.total_order*1).toFixed(2))}</strong></p>
 
                                 </div>
                             </div>

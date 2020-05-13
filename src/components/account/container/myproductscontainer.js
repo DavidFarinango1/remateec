@@ -238,7 +238,7 @@ class Myproducts extends Component{
                     p_shortdetails: inputValue_shortdetails,
                     p_details_general_description1: details_general_description1,
                     p_details_general_description2: details_general_description2,
-                    p_logistic_seller: 'Weygo Logistics',
+                    p_logistic_seller: 'Serviexpress Logistics',
                     p_principal_image: picture0,
                     p_secundary_image2: picture2,
                     p_secundary_image3: picture3,

@@ -74,13 +74,14 @@ class Onedescription extends Component{
             </div>
             <div className="PBbox c">
                 <div className="PBproduct prueba2">{this.props.proddetails.data.p_name}</div>
-                <div className="PBprecio"><strong>Precio: </strong>{this.props.proddetails.data.p_price}</div>
-                <div><small style={{color:'grey'}}>(Precio no incluye IVA)</small></div>
+                <div className="PBprecio"><strong>Precio: </strong>${this.props.proddetails.data.p_price}</div>
+                {/* <div><small style={{color:'grey'}}>Impuestos incluidos</small></div> */}
                 {/* <div className="PBoferta"><strong>-Por la compra de:</strong>{this.props.proddetails.data.get('offer')}</div> */}
-                <div className="PBvendido-por" onClick={console.log(this.props.proddetails.data)}><strong>-Vendido por:<br /></strong>Weygo Industries</div>
+                <div className="PBvendido-por" onClick={console.log(this.props.proddetails.data)}><strong>-Vendido por:<br /></strong>Ventasquito Industries</div>
                 {/* <div className="PBvendido-por" onClick={console.log(this.props.proddetails.data)}><strong>-Vendido por:<br /></strong>{this.props.proddetails.data.p_mybussinessname}</div> */}
-                <div className="PBenviado-por"><strong>-Enviado por:</strong><br />{this.props.proddetails.data.p_logistic_seller}</div>
-                <div className="PBformas de pago"><strong>-Formas de pago:</strong> <br />Pago al momento de la entrega</div>
+                {/* <div className="PBenviado-por"><strong>-Enviado por:</strong><br />{this.props.proddetails.data.p_logistic_seller}</div> */}
+                <div className="PBenviado-por"><strong>-Enviado por:</strong><br />Serviexpress Logistics</div>
+                <div className="PBformas de pago"><strong>-Formas de pago:</strong> <br />Efectivo o Transferencia</div>
                 {/* <Link to='/ShoppingCart/Logged'> */}
                 <div className="PBbutton-sell">
                     <button 

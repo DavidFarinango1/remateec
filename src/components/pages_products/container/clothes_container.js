@@ -137,7 +137,7 @@ class ClothesContainer extends Component{
                    <div className="BSB1_2">
                        <h4 className="BSB1_2H">Catálogo:</h4>
                        <p className="BSB1_2P CCp">
-                        Tenemos una gran variedad de vestidos, blusas, zapatos, correas, camisas, camisetas, entre otros, escoge tu prenda y llamanos o escribenos al Whatsapp 0996114197 <br/><br/>Si quieres ver más prendas haz clic en el siguiente link <br/>
+                        Tenemos una gran variedad de vestidos, blusas, zapatos, correas, camisas, camisetas, entre otros, escoge tu prenda y llamanos o escribenos al Whatsapp 0991200163 <br/><br/>Si quieres ver más prendas haz clic en el siguiente link <br/>
                        </p>
                        <a download="campaña9.pdf"  href="https://firebasestorage.googleapis.com/v0/b/ventasquito-4da99.appspot.com/o/catalogo%2FCAMP9.pdf?alt=media&token=cf9363c3-bff7-4878-846a-5b53ff96f0c8" target='_blank' >Descargar aqui!</a><br/>   
                        <span className="iconHeart">♥</span>

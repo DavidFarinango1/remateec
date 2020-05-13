@@ -60,7 +60,7 @@ class Footer extends React.Component{
                     <h3>Contáctanos directamente al:</h3><br />
                     <div className="contact_boxp">
                         <h4>Teléfonos:</h4><br />
-                        <p>0996114197/0991200163</p>< br/> <br />
+                        <p>0991200163</p>< br/> <br />
                         <h4>Correo:</h4><br />
                         <p>ventasquito.soporte@gmail.com<br />davidfarinango24.1995@gmail.com</p>
                     </div>

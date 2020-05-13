@@ -125,7 +125,9 @@ class School extends Component{
                                     <div className="card-body">
                                         <h5 className="card-title">Envíanos tu lista por Whatsapp.</h5>
                                         <p className="card-text">Simple y sencillo, nuestros asesores de ventas responderan lo mas pronto posible.</p>
-                                        <p className="card-text"><small className="text-muted">Si tu lista supera los $20,00 te la enviamos totalmente gratis.</small></p>
+                                        <p className="card-text"><small className="text-muted">
+                                            {/* Si tu lista supera los $20,00 te la enviamos totalmente gratis. */}
+                                            </small></p>
                                     </div>
                                 </div>
                             </div>
@@ -141,7 +143,9 @@ class School extends Component{
                                     <div className="card-body">
                                         <h5 className="card-title">También puedes llenar el siguiente formulario:</h5>
                                         <p className="card-text">Realizamos entregas por el momento solamente en la ciudad de Quito, esperamos crecer muy pronto para poder brindarles un mejor servicio.</p>
-                                        <p className="card-text"><small className="text-muted">Si tu lista supera los $20,00 te la enviamos totalmente gratis.</small></p>
+                                        <p className="card-text"><small className="text-muted">
+                                            {/* Si tu lista supera los $20,00 te la enviamos totalmente gratis. */}
+                                            </small></p>
                                     </div>
                                 </div>
                                 <div className="col-md-4">

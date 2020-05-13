@@ -36,7 +36,7 @@ class Slides extends React.Component{
                     <div className="carousel-inner">
                         <div>
                             <div className="carousel-item active ">
-                                <img src="./images/slides/g.png" className="d-block w-100" alt="Slide1" />  
+                                <img src="./images/slides/g1.png" className="d-block w-100" alt="Slide1" />  
                             </div>
                             <div className="carousel-item">
                                 <img src="./images/slides/e.png" className="d-block w-100" alt="Slide3" />

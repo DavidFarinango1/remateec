@@ -9,7 +9,7 @@ class Cash extends Component{
                     <p className="Cash_p"><strong>Ventasquito</strong></p>
                 </div>
                 <p className="Cash_details">
-                    Al finalizar la compra te llegará un <strong>WhatsApp</strong> confirmando los detalles de tu compra y cualquier novedad sobre descuentos o promociones a tu celular, muchas gracias por preferirnos.
+                    Al finalizar la compra te llegará un <strong>WhatsApp</strong> confirmando los detalles de tu compra y coordinando el envio y valor final a pagar a tu celular, muchas gracias por preferirnos.
                 </p>
                 <div className="Cash_buttons">
                     <button type="button" className="btn btn-outline-danger" onClick={this.props.buyReturn}>

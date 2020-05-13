@@ -131,7 +131,7 @@ class SignInFormBase extends Component{
                     {/* <h3>También puedes iniciar sesión con:</h3> */}
                     <section className="signinsocial">
                     </section>
-                    <p className='SignIn_problems' >Si tienes algún problema para ingresar o registrarte, por favor escribenos al whatsapp +593 996114197 o al correo weygo.ceo@gmail.com</p>
+                    <p className='SignIn_problems' >Si tienes algún problema para ingresar o registrarte, por favor escribenos al whatsapp +593 991200163 o al correo weygo.ceo@gmail.com</p>
                 </div>               
             </div>
         );

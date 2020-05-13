@@ -37,8 +37,8 @@ class OneDescriptionModal extends PureComponent{
         <div className="ODM-principal-box">
             <div className="ODM-PBboxa">
                 <div className="ODM-PBproduct">{this.props.oneproduct.p_name}</div>
-                <div className="ODM-PBprecio"><strong>Precio: </strong>{this.props.oneproduct.p_price}</div>
-                <div><small style={{color:'grey'}}>(Precio no incluye IVA)</small></div>
+                <div className="ODM-PBprecio"><strong>Precio: $</strong>{this.props.oneproduct.p_price}</div>
+                {/* <div><small style={{color:'grey'}}>(Incluido impuestos)</small></div> */}
             </div>
             <div className="ODM-PBboxb">
                 <div className="ODM-PBbox1">

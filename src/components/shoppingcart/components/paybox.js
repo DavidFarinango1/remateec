@@ -35,19 +35,25 @@ class PayBox extends Component{
                                 <p style={{opacity: '.8', textAlign: 'end'}} className="PayBox_det_2pa">Gratis</p>
                             </div> */}
                             <div style={{display: 'flex', margin: '0 1em 0 4em', justifyContent: 'space-between'}}>
-                                <p style={{opacity: '.8'}} className="PayBox_det_2pa">Impuestos (IVA 12%):</p><br/>
-                                <p style={{opacity: '.8', textAlign: 'end'}} className="PayBox_det_2pa">${Number((this.props.onTotalAmount*0.12).toFixed(2))}</p>
+                                <p style={{opacity: '.8'}} className="PayBox_det_2pa">Impuestos:</p><br/>
+                                <p style={{opacity: '.8', textAlign: 'end'}} className="PayBox_det_2pa">Ya incluidos</p>
+                            </div>
+                            <div style={{display: 'flex', margin: '0 1em 0 4em', justifyContent: 'space-between'}}>
+                                <p style={{opacity: '.8'}} className="PayBox_det_2pa">Envio:</p><br/>
+                                <p style={{opacity: '.8', textAlign: 'end'}} className="PayBox_det_2pa">Por coordinar</p>
                             </div>
                         </div>
-                        <p style={{marginRight: '1em'}} className="PayBox_det_2pa">Total a pagar: <strong>${Number((this.props.onTotalAmount*1.12).toFixed(2))}</strong></p>
+                        <p style={{marginRight: '1em'}} className="PayBox_det_2pa">Total a pagar: <strong>${Number((this.props.onTotalAmount*1).toFixed(2))}</strong></p>
                     </div>
                 </div>
                 <div className="form-group form-check PayBox_form">
-                    <label className="form-check-label PayBox_form_label" htmlFor="exampleCheck1">Efectivo</label>
+                    <label className="form-check-label PayBox_form_label" htmlFor="exampleCheck1">Efectivo o Transferencia</label>
                     <input type="checkbox" className="form-check-input PayBox_form_input" id="exampleCheck1" required/>
                 </div>
                 <button type="submit" className="btn btn-outline-primary PayBox_det_submit">Siguiente</button>
-                <p className='SignIn_problems' >Tus datos solo serán requeridos una vez y estan a tu completa disposición para cualquier modificación o eliminación.<br/> Tu compra es 100% segura y privada.<br/> Gracias por preferirnos! </p>
+                <p className='SignIn_problems'> El costo de envío puede variar desde $3,00 en adelante dependiendo de los productos y sector de entrega. <br/>
+                {/* Tus datos solo serán requeridos una vez y estan a tu completa disposición para cualquier modificación o eliminación.<br/>  */}
+                Tu compra es 100% segura y privada.<br/> Gracias por preferirnos! </p>
             </div>
         )
     }
