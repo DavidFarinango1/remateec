@@ -12,6 +12,17 @@ import 'firebase/storage'
 //     messagingSenderId: "510782049463",
 //     appId: "1:510782049463:web:6a4a3f4ec3049248"
 // };
+//
+/* const config = {
+  apiKey: "AIzaSyBcCN9KqeZqgDLRNrzHpmE8ppwstjmeoI0",
+  authDomain: "ventasquito-4da99.firebaseapp.com",
+  databaseURL: "https://ventasquito-4da99.firebaseio.com",
+  projectId: "ventasquito-4da99",
+  storageBucket: "ventasquito-4da99.appspot.com",
+  messagingSenderId: "742480332892",
+  appId: "1:742480332892:web:b44fd5a8f55bc0e4"
+}; */
+
 const config = {
     apiKey: "AIzaSyB8vDP0nzvOFIEsZC-lEHZYlqfOPbPtf5A",
     authDomain: "ventasquito-4da99.firebaseapp.com",
@@ -19,7 +30,7 @@ const config = {
     projectId: "ventasquito-4da99",
     storageBucket: "ventasquito-4da99.appspot.com",
     messagingSenderId: "742480332892",
-    appId: "1:742480332892:web:b44fd5a8f55bc0e4"
+   appId: "1:742480332892:web:b44fd5a8f55bc0e4"
 };
 
 class Firebase {

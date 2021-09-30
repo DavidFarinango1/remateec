@@ -381,54 +381,41 @@ class Myproducts extends Component{
                                 <option value="AccesoriosImpresoras">Accesorios de impresoras</option>
                             </select>   
                         </div>
-                    // },()=>{
-                    //     if(this.state.valor3==='AccesoriosComputacion'){
-                    //         this.setState({
-                    //             valor4: <div>
-                    //                 <select name="valor5" value={this.state.valor5} onChange={this.onActionChangeD} className="custom-select custom-select-sm" >
-                    //                     <option value="None" selected>Escoge la categoria</option>
-                    //                     <option value="MousesORatones">Mouses o Ratones</option>
-                    //                     <option value="Teclados">Teclados</option>
-                    //                     <option value="Routers">Routers</option>
-                    //                     <option value="RedesInalambricas">Redes Inalámbricas</option>
-                    //                     <option value="BateriasLaptops">Baterias de laptops</option>
-                    //                     <option value="ParlantesAmplificadores">Parlantes o Amplificadores</option>
-                    //                     <option value="OtrosAccesoriosCompu">Otros accesorios celulares</option>
-                    //                 </select>   
-                    //             </div>
-                    //         })
-                    //     }
-                    //     if(this.state.valor3==='AccesoriosCelularesTablets'){
-                    //         this.setState({
-                    //             valor4: <div>
-                    //                 <select name="valor5" value={this.state.valor5} onChange={this.onActionChangeD} className="custom-select custom-select-sm" >
-                    //                     <option value="None" selected>Escoge la categoria</option>
-                    //                     <option value="Audifonos">Audifonos o Audio</option>
-                    //                     <option value="Almacenamiento">Micro SD o Almacenamiento</option>
-                    //                     <option value="CablesCelulares">Cables para celulares</option>
-                    //                     <option value="Cargadores">Cargadores</option>
-                    //                     <option value="OtrosAccesoriosCelu">Otros accesorios de celulares</option>
-                    //                 </select>   
-                    //             </div>
-                    //         })
-                    //     }
-
                     })
                 }
-                if(this.state.valor==='Ropa'){
+                if(this.state.valor==='Sillas'){
                     this.setState({
                         valor2: <div>
                             <select name="valor3" value={this.state.valor3} onChange={this.onActionChangeD} className="custom-select custom-select-sm" >
                                 <option value="None" selected>Escoge la categoria</option>
-                                <option value="Blusas">Blusas y Camisas</option>
-                                <option value="SacosChompas">Sacos y Chompas</option>
-                                <option value="Vestidos">Vestidos y pantalones</option>
-                                <option value="Zapatos">Zapatos</option>
-                                <option value="AccesoriosMujer">Accesorios de mujer</option>
+                                <option value="Ejecutivas">Ejecutivas, Oficina, Casa</option>
+                                <option value="Gerenciales">Gerenciales</option>
+                                <option value="Gamers">Gamers</option>
+                                <option value="Taburetes">Taburetes</option>
+                                <option value="Espera">Sillas de espera</option>
+                                <option value="Escritorios">Escritorios, Mesas</option>
                             </select>   
                         </div>
                     })
                 }
+                /* 
+                ------------Esto si vale----------------
+                if(this.state.valor==='Sillas'){
+                    this.setState({
+                        valor2: <div>
+                            <select name="valor3" value={this.state.valor3} onChange={this.onActionChangeD} className="custom-select custom-select-sm" >
+                                <option value="None" selected>Escoge la categoria</option>
+                                <option value="Ejecutivas">Ejecutivas y Camisas</option>
+                                <option value="Gerenciales">Gerenciales</option>
+                                <option value="Gamers">Gamers</option>
+                                <option value="Taburetes">Taburetes</option>
+                                <option value="Espera">Sillas de espera</option>
+                            </select>   
+                        </div>
+                    })
+
+                ----------------Hasta aqui vale tranquilamente!-------------
+                } */
                 if(this.state.valor==='Papeleria'){
                     this.setState({
                         valor2: <div>

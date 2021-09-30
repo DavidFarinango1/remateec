@@ -4,7 +4,7 @@ import Slides from '../../slides/components/slides'
 import CartContainer from '../../Cart/cart_container'
 import Tech from '../components/tech'
 import Footer from '../../footer/container/footer-container'
-import ClothesSelected from '../components/clothesselected'
+import ChairsSelected from '../components/chairsselected'
 
 import { withFirebase } from '../../../Firebase'
 
@@ -47,7 +47,7 @@ class TechContainer extends Component{
             this.readyToFilter()
         })
     }
-    setAccesoriosComputacion=()=>{
+    setEsperaComputacion=()=>{
         this.setState({
             filterword: 'AccesoriosComputacion'
         },()=>{
@@ -61,7 +61,7 @@ class TechContainer extends Component{
             this.readyToFilter()
         })
     }
-    setAccesoriosCelularesTablets=()=>{
+    setEsperaCelularesTablets=()=>{
         this.setState({
             filterword: 'AccesoriosCelularesTablets'
         },()=>{
@@ -75,7 +75,7 @@ class TechContainer extends Component{
             this.readyToFilter()
         })
     }
-    setAccesoriosImpresoras=()=>{
+    setEsperaImpresoras=()=>{
         this.setState({
             filterword: 'AccesoriosImpresoras'
         },()=>{
@@ -219,7 +219,7 @@ class TechContainer extends Component{
                         </div>
                         <div className="CCPselect" style={{marginLeft: '2em'}}>
                             <p onClick={this.setLaptopsComputadoras}>Laptops, Computadoras o sus partes</p> 
-                            <p onClick={this.setAccesoriosComputacion}>Accesorios de computación</p> 
+                            <p onClick={this.setEsperaComputacion}>Accesorios de computación</p> 
                             <div style={{marginLeft: '1em', fontSize: '.8em'}}>
                                 <p onClick={this.setMousesORatones}>Mouses o Ratones</p>
                                 <p onClick={this.setTeclados}>Teclados</p>
@@ -230,7 +230,7 @@ class TechContainer extends Component{
                                 {/* <p onClick={this.setOtrosAccesoriosCompu}>Otros accesorios celulares</p> */}
                             </div>
                             <p onClick={this.setCelularesTablets}>Celulares o Tablets</p>
-                            <p onClick={this.setAccesoriosCelularesTablets}>Accesorios de celulares o tablets</p> 
+                            <p onClick={this.setEsperaCelularesTablets}>Accesorios de celulares o tablets</p> 
                             <div style={{marginLeft: '1em', fontSize: '.8em'}}>
                                 <p onClick={this.setAudifonos}>Audifonos</p>
                                 <p onClick={this.setAlmacenamiento}>Micro SD o Almacenamiento</p>
@@ -238,7 +238,7 @@ class TechContainer extends Component{
                                 <p onClick={this.setCargadores}>Cargadores</p>
                             </div>
                             <p onClick={this.setImpresoras}>Impresoras</p> 
-                            <p onClick={this.setAccesoriosImpresoras}>Accesorios de impresoras</p> 
+                            <p onClick={this.setEsperaImpresoras}>Accesorios de impresoras</p> 
                         </div>
                     </div>
                     <div className="StationeryPbox3">
@@ -248,7 +248,7 @@ class TechContainer extends Component{
                             </button>
                             <div className="dropdown-menu dropdown-menu-lg-right StationeryButton3p" aria-labelledby="dropdownMenuButton">
                                 <p className="dropdown-item" onClick={this.setLaptopsComputadoras}>Laptops, Computadoras o sus partes</p> 
-                                <p className="dropdown-item" onClick={this.setAccesoriosComputacion}>Accesorios de computación</p> 
+                                <p className="dropdown-item" onClick={this.setEsperaComputacion}>Accesorios de computación</p> 
                                 {/* <div style={{marginLeft: '1em', fontSize: '.8em'}}>
                                 </div> */}
                                 <p style={{marginLeft: '1em', fontSize: '.8em'}} className="dropdown-item" onClick={this.setMousesORatones}>Mouses o Ratones</p>
@@ -261,7 +261,7 @@ class TechContainer extends Component{
                                 
                                 
                                 <p className="dropdown-item" onClick={this.setCelularesTablets}>Celulares o Tablets</p> 
-                                <p className="dropdown-item" onClick={this.setAccesoriosCelularesTablets}>Accesorios de celulares o tablets</p> 
+                                <p className="dropdown-item" onClick={this.setEsperaCelularesTablets}>Accesorios de celulares o tablets</p> 
                                 {/* <div style={{marginLeft: '1em', fontSize: '.8em'}}> */}
                                     <p style={{marginLeft: '1em', fontSize: '.8em'}} className="dropdown-item" onClick={this.setAudifonos}>Audifonos</p>
                                     <p style={{marginLeft: '1em', fontSize: '.8em'}} className="dropdown-item" onClick={this.setAlmacenamiento}>Micro SD o Almacenamiento</p>
@@ -270,7 +270,7 @@ class TechContainer extends Component{
                                 {/* </div> */}
 
                                 <p className="dropdown-item" onClick={this.setImpresoras}>Impresoras</p> 
-                                <p className="dropdown-item" onClick={this.setAccesoriosImpresoras}>Accesorios de impresoras</p> 
+                                <p className="dropdown-item" onClick={this.setEsperaImpresoras}>Accesorios de impresoras</p> 
                             </div>
                             {/* </div> */}
                         </div>
@@ -279,7 +279,7 @@ class TechContainer extends Component{
                         {
                             this.state.show 
                             ?
-                            <ClothesSelected
+                            <ChairsSelected
                                 products2={this.state.result2}
                             />
                             :

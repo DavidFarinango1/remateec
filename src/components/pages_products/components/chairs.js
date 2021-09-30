@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 import OneDescriptionModal from '../../categories/components/oneDescriptionModal'
 
-class Clothes extends Component{
+class Chairs extends Component{
     constructor(props){
         super(props);
         this.state={
@@ -81,4 +81,4 @@ class Clothes extends Component{
     }
 }
 
-export default Clothes;
+export default Chairs;

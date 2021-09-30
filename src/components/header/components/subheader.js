@@ -11,8 +11,8 @@ class Subheader extends Component {
     toHome=()=>{
         this.props.history.push(ROUTES.HOME)
     }
-    toClothes=()=>{
-        this.props.history.push(ROUTES.CLOTHES)
+    toChairs=()=>{
+        this.props.history.push(ROUTES.CHAIRS)
     }
     toTech=()=>{
         this.props.history.push(ROUTES.TECH)
@@ -40,7 +40,7 @@ class Subheader extends Component {
                         </a>
                         <div className="dropdown-menu DDMenu" aria-labelledby="navbarDropdownMenuLink">
                             <p onClick={this.toStationery} className="dropdown-item" >Papelería</p>
-                            <p onClick={this.toClothes} className="dropdown-item">Ropa</p>
+                            <p onClick={this.toChairs} className="dropdown-item">Sillas o Escritorios</p>
                             <p onClick={this.toTech} className="dropdown-item">Tecnología</p>
                         </div>
                     </li>

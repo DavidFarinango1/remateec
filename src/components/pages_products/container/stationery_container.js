@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import Header from '../../header/container/headercontainer'
 import Slides from '../../slides/components/slides'
 import CartContainer from '../../Cart/cart_container'
-import ClothesSelected from '../components/clothesselected'
+import ChairsSelected from '../components/chairsselected'
 
 import Stationery from '../components/stationery'
 import Footer from '../../footer/container/footer-container'
@@ -14,7 +14,7 @@ import { bindActionCreators } from 'redux'
 import { compose } from 'recompose'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
-// import ClothesSelected from '../components/clothesselected'
+// import ChairsSelected from '../components/clothesselected'
 
 // const Container = styled.div`
 //     background-color: #444;
@@ -150,7 +150,7 @@ class StationeryContainer extends Component{
                         {
                             this.state.show 
                             ?
-                            <ClothesSelected
+                            <ChairsSelected
                                 products2={this.state.result2}
                             />
                             :

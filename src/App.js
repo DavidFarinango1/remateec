@@ -15,7 +15,7 @@ import MyPurchaseContainer from './components/account/container/mypurchasecontai
 import MyCommentsContainer from './components/account/container/mycommentscontainer'
 import SchoolContainer from './components/school/container/school_container'
 import StationeryContainer from './components/pages_products/container/stationery_container'
-import ClothesContainer from './components/pages_products/container/clothes_container'
+import ChairsContainer from './components/pages_products/container/chairs_container'
 import TechContainer from './components/pages_products/container/tech_container'
 import BlogContainer from './components/blog/container/blog_container'
 import ContactContainer from './components/contacts/container/contact_container'
@@ -62,7 +62,7 @@ class App extends Component {
                   <Route exact path={ROUTES.MYCOMMENTS} component={MyCommentsContainer} />
                   <Route exact path={ROUTES.SCHOOL} component={SchoolContainer} />
                   <Route exact path={ROUTES.STATIONERY} component={StationeryContainer} />
-                  <Route exact path={ROUTES.CLOTHES} component={ClothesContainer} />
+                  <Route exact path={ROUTES.CHAIRS} component={ChairsContainer} />
                   <Route exact path={ROUTES.TECH} component={TechContainer} />
                   <Route exact path={ROUTES.BLOG} component={BlogContainer} />
                   <Route exact path={ROUTES.CONTACTOS} component={ContactContainer} />

@@ -6,18 +6,18 @@ import { withRouter } from 'react-router-dom'
 import * as ROUTES from '../../constants/routes';
 
 class TechProds extends Component{
-    constructor(props){
+    /* constructor(props){
         super(props);
         this.state={
             translate: 0,
             translate2: 190,
 
         }
-    }
+    } */
     toTech=()=>{
         this.props.history.push(ROUTES.TECH)
     }
-    suma=()=>{
+    /* suma=()=>{
         this.setState({
             translate : this.state.translate-190
         })
@@ -34,7 +34,7 @@ class TechProds extends Component{
                 translate : 0
             })
         }
-    }
+    } */
     render(){
         return(
             <div className="OneProdCateg">

@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom'
 import * as ROUTES from '../../constants/routes';
 
 class StationeryProds extends Component{
-    constructor(props){
+    /* constructor(props){
         super(props);
         this.state={
             data2: '',
@@ -14,12 +14,12 @@ class StationeryProds extends Component{
             filterword: '',
             result2:[],
         }
-    }
-    toClothes=event=>{
+    } */
+    toChairs=event=>{
         event.doDefault
-        this.props.history.push(ROUTES.CLOTHES)
+        this.props.history.push(ROUTES.CHAIRS)
     }
-    readyToFilter=()=>{
+    /* readyToFilter=()=>{
         let filterwordReal =this.state.filterword
         if(filterwordReal){
             let result2 = this.props.products2.filter((item)=>{
@@ -33,7 +33,7 @@ class StationeryProds extends Component{
         }else{
             console.log('no hay nada')
         }
-    }
+    } */
     render(){
         return(
             <div className="OneProdCateg2">
@@ -52,11 +52,11 @@ class StationeryProds extends Component{
                 
                 
                 <div
-                onClick={this.toClothes}
+                onClick={this.toChairs}
                 >
                     <h3 
                     className="OneProd_title">
-                        Ropa:
+                        Sillas:
                     </h3>
                 </div>
                 <div className="cards-slider2">

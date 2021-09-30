@@ -6,12 +6,12 @@ import { withRouter } from 'react-router-dom'
 import * as ROUTES from '../../constants/routes';
 
 class StationeryProds extends Component{
-    constructor(props){
+    /* constructor(props){
         super(props);
         this.state={
             data2: '',
         }
-    }
+    } */
     toStationery=()=>{
         this.props.history.push(ROUTES.STATIONERY)
     }

@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 
-class ClothesSelected extends Component{
+class ChairsSelected extends Component{
     render(){
         return(
             <div style={{display: 'flex', flexWrap: 'wrap'}}>
@@ -33,4 +33,4 @@ class ClothesSelected extends Component{
         )
     }
 }
-export default ClothesSelected;
+export default ChairsSelected;

@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
 import Header from '../../header/container/headercontainer'
-import Clothes from '../components/clothes'
-import ClothesSelected from '../components/clothesselected'
+import Chairs from '../components/chairs'
+import ChairsSelected from '../components/chairsselected'
 import Footer from '../../footer/container/footer-container'
 
 import { withFirebase } from '../../../Firebase'
 
-class ClothesContainer extends Component{
+class ChairsContainer extends Component{
     constructor(props){
         super(props);
         this.state={
@@ -24,7 +24,7 @@ class ClothesContainer extends Component{
             this.props.firebase
                 .dothisdb()
                 .collection('products')
-                .where('p_categories' , '==', 'Ropa')
+                .where('p_categories' , '==', 'Sillas')
                 .onSnapshot((snapShots)=>{
                     this.setState({
                         others_prods: snapShots.docs.map((doc)=>{
@@ -35,37 +35,44 @@ class ClothesContainer extends Component{
                     console.log(error)
                 })
     }
-    setBlusa=()=>{
+    setEjecutivas=()=>{
         this.setState({
-            filterword: 'Blusas'
+            filterword: 'Ejecutivas'
         },()=>{
             this.readyToFilter()
         })
     }
-    setSacos=()=>{
+    setGerencial=()=>{
         this.setState({
-            filterword: 'SacosChompas'
+            filterword: 'Gerenciales'
         },()=>{
             this.readyToFilter()
         })
     }
-    setVestido=()=>{
+    setGamer=()=>{
         this.setState({
-            filterword: 'Vestidos'
+            filterword: 'Gamers'
         },()=>{
             this.readyToFilter()
         })
     }
-    setZapatos=()=>{
+    setTaburete=()=>{
         this.setState({
-            filterword: 'Zapatos'
+            filterword: 'Taburetes'
         },()=>{
             this.readyToFilter()
         })
     }
-    setAccesorios=()=>{
+    setEspera=()=>{
         this.setState({
-            filterword: 'AccesoriosMujer'
+            filterword: 'Espera'
+        },()=>{
+            this.readyToFilter()
+        })
+    }
+    setEscritorios=()=>{
+        this.setState({
+            filterword: 'Escritorios'
         },()=>{
             this.readyToFilter()
         })
@@ -94,27 +101,29 @@ class ClothesContainer extends Component{
                 <div className="StationeryPbox">
                     <div className="StationeryPbox2">
                         <div>
-                            <h3 className="CCHselect" onClick={()=>{this.setState({show: false},()=>{console.log(this.state.show)})}}>Ropa de mujer</h3>
+                            <h3 className="CCHselect" onClick={()=>{this.setState({show: false},()=>{console.log(this.state.show)})}}>Sillas, muebles, taburetes</h3>
                         </div>
                         <div className="CCPselect" style={{marginLeft: '2em'}}>
-                            <p onClick={this.setBlusa}>Blusas y Camisas</p> 
-                            <p onClick={this.setSacos}>Sacos y Chompas</p> 
-                            <p onClick={this.setVestido}>Vestidos y pantalones</p> 
-                            <p onClick={this.setZapatos}>Zapatos</p> 
-                            <p onClick={this.setAccesorios}>Accesorios de mujer</p> 
+                            <p onClick={this.setEjecutivas}>Ejecutivas, Oficina, Casa</p> 
+                            <p onClick={this.setGerencial}>Gerenciales</p> 
+                            <p onClick={this.setGamer}>Gamers</p> 
+                            <p onClick={this.setTaburete}>Taburetes</p> 
+                            <p onClick={this.setEspera}>Sillas de espera</p> 
+                            <p onClick={this.setEscritorios}>Escritorios, Mesas</p> 
                         </div>
                     </div>
                     <div className="StationeryPbox3">
                         <div className="dropdown">
                             <button className="btn btn-secondary dropdown-toggle StationeryButton3" type="button" id="dropdownMenuButton" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-                                Ropa
+                                Sillas
                             </button>
                             <div className="dropdown-menu dropdown-menu-lg-right StationeryButton3p" aria-labelledby="dropdownMenuButton">
-                                <p className="dropdown-item" onClick={this.setBlusa}>Blusas y Camisas</p> 
-                                <p className="dropdown-item" onClick={this.setSacos}>Sacos y Chompas</p>                              
-                                <p className="dropdown-item" onClick={this.setVestido}>Vestidos y pantalones</p>                              
-                                <p className="dropdown-item" onClick={this.setZapatos}>Zapatos</p>                              
-                                <p className="dropdown-item" onClick={this.setAccesorios}>Accesorios de mujer</p>                              
+                                <p className="dropdown-item" onClick={this.setEjecutivas}>Ejecutivas, Oficina, Casa</p> 
+                                <p className="dropdown-item" onClick={this.setGerencial}>Gerenciales</p>                              
+                                <p className="dropdown-item" onClick={this.setGamer}>Gamers</p>                              
+                                <p className="dropdown-item" onClick={this.setTaburete}>Taburetes</p>                              
+                                <p className="dropdown-item" onClick={this.setEspera}>Sillas de espera</p>                              
+                                <p className="dropdown-item" onClick={this.setEscritorios}>Escritorios, Mesas</p>                              
                             </div>
                         </div>
                     </div>
@@ -122,11 +131,11 @@ class ClothesContainer extends Component{
                         {
                             this.state.show 
                             ?
-                            <ClothesSelected
+                            <ChairsSelected
                                 products2={this.state.result2}
                             />
                             :
-                            <Clothes 
+                            <Chairs 
                                 products2={this.state.others_prods}
                             />
                         }
@@ -137,13 +146,15 @@ class ClothesContainer extends Component{
                    <div className="BSB1_2">
                        <h4 className="BSB1_2H">Catálogo:</h4>
                        <p className="BSB1_2P CCp">
-                        Tenemos una gran variedad de vestidos, blusas, zapatos, correas, camisas, camisetas, entre otros, escoge tu prenda y llamanos o escribenos al Whatsapp 0991200163 <br/><br/>Si quieres ver más prendas haz clic en el siguiente link <br/>
+                        Tenemos una gran variedad de sillas ejecutivas, tipo gerenciales, tipo gamers, taburetes, tandems de espera entre otros, llamanos o escribenos al whatsapp 0991200163 para enviarte toda la información más facilmente<br/><br/>Si quieres ver nuestro catálogo completo haz clic en el siguiente link <br/>
                        </p>
-                       <a download="campaña9.pdf"  href="https://firebasestorage.googleapis.com/v0/b/ventasquito-4da99.appspot.com/o/catalogo%2FCAMP9.pdf?alt=media&token=cf9363c3-bff7-4878-846a-5b53ff96f0c8" target='_blank' >Descargar aqui!</a><br/>   
+                       <a download="campaña9.pdf"  href="https://firebasestorage.googleapis.com/v0/b/ventasquito-4da99.appspot.com/o/catalogo%2FCAT%C3%81LOGO%20SILLAS-MUEBLES%20(1)_compressed.pdf?alt=media&token=c227ddaf-bb2f-4c0d-8031-86e3fef19ae7" target='_blank' >Descargar aqui!</a><br/>   
+                       <a className='BSB1_2P CCp SignIn_problems'> Precios y stock pueden variar sin previo aviso, consulte con su asesor.</a>
                        <span className="iconHeart">♥</span>
                    </div>
+                   
                    <div className="BSB1_1">
-                       <img style={{objectFit: 'contain'}} className="Blogimg"src="./images/others/jolie.PNG" alt="Nuestra historia"/>
+                       <img style={{objectFit: 'contain'}} className="Blogimg"src="./images/others/catalogo2021.jpeg" alt="Nuestra historia"/>
                     </div> 
                 </div>
                 </div>
@@ -153,4 +164,4 @@ class ClothesContainer extends Component{
     }
 }
 
-export default withFirebase(ClothesContainer);
+export default withFirebase(ChairsContainer);
