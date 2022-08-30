@@ -4,6 +4,7 @@ import Header from '../../header/container/headercontainer'
 import Slides from '../../slides/components/slides'
 import Categories from '../../categories/container/categoriescontainer'
 import Footer from '../../footer/container/footer-container'
+import SocialN from '../../SocialN/container/socialn-container'
 
 class Home extends Component{     
     render(){
@@ -13,6 +14,7 @@ class Home extends Component{
                 <Slides />
                 <Categories />
                 <Footer />
+                <SocialN />
             </HomeLayout>
         )
     }
