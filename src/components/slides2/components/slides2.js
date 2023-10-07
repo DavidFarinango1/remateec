@@ -35,7 +35,7 @@ class Slides extends React.Component{
                             <div className="carousel-item active ">
                         {/* <Link to={'/listas-de-utiles'}> */}
                         {/* <div> */}
-                                    <img src="./images/slides/e.png" className="d-block w-100" alt="Slide1" />  
+                                    <img src="./images/slides/CABECERA1.png" className="d-block w-100" alt="Slide1" />  
                                     {/* <Link to='listas-de-utiles'> */}
                                     {/* <p>hasdasxaslkxjans</p> */}
                                     {/* <button className="pppp" onClick={this.evento}>Holi</button> */}
@@ -57,9 +57,7 @@ class Slides extends React.Component{
                             <div className="carousel-item">
                             <img src="./images/slides/a.png" className="d-block w-100" alt="Slide3" />
                             </div>
-                            <div className="carousel-item">
-                            <img src="./images/slides/f.png" className="d-block w-100" alt="Slide3" />
-                            </div>
+                            
                         </div>
                     </div>
                     <a className="carousel-control-prev slide_control" href="#carouselindicator1" role="button" data-slide="prev">

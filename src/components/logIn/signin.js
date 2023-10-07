@@ -94,7 +94,7 @@ class SignInFormBase extends Component{
             <div className= "SIP1">
                 <div className = "SIP1header">
                     <div style={{display: 'flex', justifyContent: 'center'}}>
-                        <img src= "./images/weygo/logo.PNG" height="66px"></img>
+                        <img src= "./images/weygo/logoactual2023.png" height="66px"></img>
                         <h1>Ventasquito</h1>
                     </div>
                 {/* </div>

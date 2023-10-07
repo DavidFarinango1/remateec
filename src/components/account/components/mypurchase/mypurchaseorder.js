@@ -34,7 +34,7 @@ class MyPurchaseOrder extends Component{
                                         {/* <p><strong>Status:</strong>{item.data.o_status}</p> */}
                                         {/* <p><strong>Status:</strong><span className="badge badge-pill badge-info">{item.data.o_status}</span></p> */}
                                         <p><strong>Status:</strong><span className="badge badge-pill badge-info">{item.data.o_status}</span></p>
-                                        <p><strong>Total a pagar: </strong>{Number((item.data.total_order*1.12).toFixed(2))}</p>
+                                        <p><strong>Total a pagar: </strong>{Number((item.data.total_order*1).toFixed(2))}</p>
                                     </div>
                                 </div>
                                 <div>

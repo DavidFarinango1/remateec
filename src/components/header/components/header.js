@@ -64,7 +64,7 @@ class Header extends Component{
                         <Link to= ''>
                             {/* <img src = "./images/weygo/logo.PNG" alt="logo" /> */}
                             {/* <img src = {`/images/weygo/logo.PNG`} alt="logo" /> */}
-                            <img src = {`/images/weygo/logo.PNG`} alt="logo" />
+                            <img src = {`/images/weygo/logoactual2023.png`} alt="logo" />
                         </Link>
                             {/* <!-- Button trigger modal --> */}
                             <div data-toggle="tooltip" data-placement="bottom" title="Como empezar!">
