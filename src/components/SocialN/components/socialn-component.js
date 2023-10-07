@@ -15,13 +15,13 @@ class SocialN extends React.Component{
         return(
         <div className="socialncontainer">
             <div className="socialNf">
-            <a  href="https://www.instagram.com/ventasquito_tech/"><img src = {`/images/linksocial/icono-instagram.PNG`} alt="logo" /></a>
+            <a  href="https://www.instagram.com/ventasquito_tech/"><img src = {`/images/linksocial/icono-instagram.png`} alt="logo" /></a>
             </div>
             <div className="socialNf">
-            <a  href="https://www.facebook.com/ventasquito.tech"><img src = {`/images/linksocial/a4.PNG`} alt="logo" /></a>
+            <a  href="https://www.facebook.com/ventasquito.tech"><img src = {`/images/linksocial/a4.png`} alt="logo" /></a>
             </div>
             <div className="socialNf">
-            <a  href="https://wa.me/message/XHZZAAUQB3MXJ1"><img src = {`/images/linksocial/a1.PNG`} alt="logo" /></a>
+            <a  href="https://wa.me/message/XHZZAAUQB3MXJ1"><img src = {`/images/linksocial/a1.png`} alt="logo" /></a>
             </div>
            
             
