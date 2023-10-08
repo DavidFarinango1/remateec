@@ -1,5 +1,5 @@
 .CateCont{
-    margin-top: 1em;
+    margin-top: .2em;
     display: flex;
 }
 .CateCont2{
@@ -42,7 +42,7 @@
 }
 @media screen and (max-width:320px){
     .CateCont {
-        margin-top: .5em;
+        margin-top: .1em;
     }
     .OneProdCateg {
         margin-bottom: .5em;
@@ -53,6 +53,6 @@
         margin-top: 0;
     }
     .CateCont2{
-        margin-top: .5em;
+        margin-top: .1em;
     }
 }

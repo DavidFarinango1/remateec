@@ -35,7 +35,7 @@ class Slides extends React.Component{
                             <div className="carousel-item active ">
                         {/* <Link to={'/listas-de-utiles'}> */}
                         {/* <div> */}
-                                    <img src="./images/slides/CABECERA1.png" className="d-block w-100" alt="Slide1" />  
+                                    <img src="./images/slides/CABECERAa.png" className="d-block w-100" alt="Slide1" />  
                                     {/* <Link to='listas-de-utiles'> */}
                                     {/* <p>hasdasxaslkxjans</p> */}
                                     {/* <button className="pppp" onClick={this.evento}>Holi</button> */}
