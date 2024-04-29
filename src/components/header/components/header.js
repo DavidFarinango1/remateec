@@ -68,7 +68,7 @@ class Header extends Component{
                         </Link>
                             {/* <!-- Button trigger modal --> */}
                             <div data-toggle="tooltip" data-placement="bottom" title="Como empezar!">
-                                <a className="navbar-brand buttonVentasQuito" href="#" data-toggle="modal" data-target="#exampleModalCenter2">Ventasquito</a>
+                                <a className="navbar-brand buttonVentasQuito" href="#" data-toggle="modal" data-target="#exampleModalCenter2">Remateec</a>
                             </div>
                             {/* <!-- Modal --> */}
                             <div className="modal fade" id="exampleModalCenter2" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle2" aria-hidden="true">
