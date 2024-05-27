@@ -5,8 +5,8 @@ class Cash extends Component{
         return(
             <div>
                 <div>
-                    <img className="Cash_img_logo" src={`/images/weygo/logoactual2023.png`} alt='logo' />
-                    <p className="Cash_p"><strong>Ventasquito</strong></p>
+                    <img className="Cash_img_logo" src={`/images/weygo/R.jpg`} alt='logo' />
+                    <p className="Cash_p"><strong>Remateec</strong></p>
                 </div>
                 <p className="Cash_details">
                     Al finalizar la compra te llegará un <strong>WhatsApp</strong> confirmando los detalles de tu compra y coordinando el envio y valor final a pagar a tu celular, muchas gracias por preferirnos.

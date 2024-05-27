@@ -40,11 +40,14 @@ class SignInFormBase extends Component{
                 if(authUser.user.emailVerified){
                     this.setState({ ...INITIAL_STATE });
                     this.props.history.push(ROUTES.HOME);
-                    alert('Bienvenido a Ventasquito.com')
+                    alert('Bienvenido a Remateec.com')
                 }else{
-                    this.props.firebase.doSignOut();
-                    alert('Por favor realiza el proceso de verificación de la cuenta')
+                    this.setState({ ...INITIAL_STATE });
                     this.props.history.push(ROUTES.HOME);
+                    alert('Bienvenido a Remateec.com')
+                    /* this.props.firebase.doSignOut();
+                    alert('Por favor realiza el proceso de verificación de la cuenta')
+                    this.props.history.push(ROUTES.HOME); */
                 }
             })
             .catch(error => {
@@ -94,8 +97,8 @@ class SignInFormBase extends Component{
             <div className= "SIP1">
                 <div className = "SIP1header">
                     <div style={{display: 'flex', justifyContent: 'center'}}>
-                        <img src= "./images/weygo/logoactual2023.png" height="66px"></img>
-                        <h1>Ventasquito</h1>
+                        <img src= "/images/weygo/R.jpg" height="66px"></img>
+                        <h1>Remateec</h1>
                     </div>
                 {/* </div>
                 <div className="SIP1info"> */}

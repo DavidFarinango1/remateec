@@ -55,7 +55,7 @@ class Slides extends React.Component{
                             <img src="./images/slides/d.PNG" className="d-block w-100" alt="Slide3" />
                             </div> */}
                             <div className="carousel-item">
-                            <img src="./images/slides/a.png" className="d-block w-100" alt="Slide3" />
+                            <img src="./images/slides/S1.png" className="d-block w-100" alt="Slide3" />
                             </div>
                             
                         </div>

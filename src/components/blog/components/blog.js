@@ -15,7 +15,7 @@ class Blog extends Component{
                    <div className="BSB1_2">
                        <h4 className="BSB1_2H">Nuestra historia:</h4>
                        <p className="BSB1_2P">
-                       Ventasquito.com es una empresa ecuatoriana que inició sus actividades en el año 2002 con el nombre de Serviexpress, dedicándonos principalmente a la venta de artículos de papelería, suministros de oficina y tecnología, buscamos dar el mejor servicio al cliente posible, siempre tomando en cuenta sus recomendaciones, somos una empresa familiar que busca mejorar constantemente.
+                       Remateec.com es una empresa ecuatoriana que inició sus actividades en el año 2002 con el nombre de Serviexpress, dedicándonos principalmente a la venta de artículos de papelería, suministros de oficina y tecnología, buscamos dar el mejor servicio al cliente posible, siempre tomando en cuenta sus recomendaciones, somos una empresa familiar que busca mejorar constantemente.
                        </p>
                        <span className="iconHeart">♥</span>
                    </div>

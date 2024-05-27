@@ -4,13 +4,13 @@ import 'firebase/auth';
 
 // Replace this with your own config details
 var config = {
-  apiKey: "AIzaSyB8vDP0nzvOFIEsZC-lEHZYlqfOPbPtf5A",
-    authDomain: "ventasquito-4da99.firebaseapp.com",
-    databaseURL: "https://ventasquito-4da99.firebaseio.com",
-    projectId: "ventasquito-4da99",
-    storageBucket: "ventasquito-4da99.appspot.com",
-    messagingSenderId: "742480332892",
-    appId: "1:742480332892:web:b44fd5a8f55bc0e4"
+  apiKey: "AIzaSyB9keJqJQcp4XTQF7fmjoDJsb6XtM0_GQs",
+  authDomain: "remateec2.firebaseapp.com",
+  databaseURL: "https://remateec2-default-rtdb.firebaseio.com",
+  projectId: "remateec2",
+  storageBucket: "remateec2.appspot.com",
+  messagingSenderId: "284933775195",
+  appId: "1:284933775195:web:21c6ed993ccec587b5c47e"
 };
 firebase.initializeApp(config);
 firebase.firestore().settings({ timestampsInSnapshots: true });

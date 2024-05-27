@@ -56,7 +56,7 @@ class StationeryProds extends Component{
                 >
                     <h3 
                     className="OneProd_title">
-                        Sillas:
+                        Ofertas en Sillas:
                     </h3>
                 </div>
                 <div className="cards-slider2">
@@ -77,6 +77,11 @@ class StationeryProds extends Component{
                                         <button className='OneProdCateg_button1 OneProdCateg_button1_2 btn btn-danger' onClick={() => this.props.openModal2(item)} data-toggle="modal" data-target="#exampleModalCenter">Ver más</button>
                                     </div>
                                     <div className='OneProdCateg_showPrice'>
+                                            <div className="alert alert-primary ShowPriceAlert" role="alert">
+                                            ${item.data.p_price}
+                                            </div>
+                                        </div>
+                                        <div className='OneProdCateg_showPrice2'>
                                             <div className="alert alert-primary ShowPriceAlert" role="alert">
                                             ${item.data.p_price}
                                             </div>

@@ -77,7 +77,7 @@ class Onedescription extends Component{
                 <div className="PBprecio"><strong>Precio: </strong>${this.props.proddetails.data.p_price}</div>
                 {/* <div><small style={{color:'grey'}}>Impuestos incluidos</small></div> */}
                 {/* <div className="PBoferta"><strong>-Por la compra de:</strong>{this.props.proddetails.data.get('offer')}</div> */}
-                <div className="PBvendido-por" onClick={console.log(this.props.proddetails.data)}><strong>-Vendido por:<br /></strong>Ventasquito Industries</div>
+                <div className="PBvendido-por" onClick={console.log(this.props.proddetails.data)}><strong>-Vendido por:<br /></strong>Remateec Industries</div>
                 {/* <div className="PBvendido-por" onClick={console.log(this.props.proddetails.data)}><strong>-Vendido por:<br /></strong>{this.props.proddetails.data.p_mybussinessname}</div> */}
                 {/* <div className="PBenviado-por"><strong>-Enviado por:</strong><br />{this.props.proddetails.data.p_logistic_seller}</div> */}
                 <div className="PBenviado-por"><strong>-Enviado por:</strong><br />Serviexpress Logistics</div>

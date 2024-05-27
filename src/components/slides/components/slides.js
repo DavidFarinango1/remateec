@@ -36,13 +36,13 @@ class Slides extends React.Component{
                     <div className="carousel-inner">
                         <div>
                             <div className="carousel-item active ">
-                                <img src="./images/slides/S1S.jpeg" className="d-block w-100" alt="Slide1" />  
+                                <img src="./images/slides/S1.png" className="d-block w-100" alt="Slide1" />  
                             </div>
                             <div className="carousel-item">
-                                <img src="./images/slides/S2S.jpeg" className="d-block w-100" alt="Slide2" />
+                                <img src="./images/slides/S2.png" className="d-block w-100" alt="Slide2" />
                             </div>
                             <div className="carousel-item">
-                                <img src="./images/slides/S3S.jpeg" className="d-block w-100" alt="Slide3" />
+                                <img src="./images/slides/S3.png" className="d-block w-100" alt="Slide3" />
                             </div>
                             
                         </div>

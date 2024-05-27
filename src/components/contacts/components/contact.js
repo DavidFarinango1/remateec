@@ -43,7 +43,7 @@ class Contact extends Component {
                    <h4 className="BSB1_2H">Contactos directos al:</h4>
                    <p className="BSB1_2P">
                     <strong>Celular: </strong>0991200163<br />
-                    <strong>Correo: </strong>ventasquito.soporte@gmail.com
+                    <strong>Correo: </strong>Remateec.soporte@gmail.com
                    </p>
                    <span className="iconHeart">♥</span>
                 </div>

@@ -64,11 +64,11 @@ class Header extends Component{
                         <Link to= ''>
                             {/* <img src = "./images/weygo/logo.PNG" alt="logo" /> */}
                             {/* <img src = {`/images/weygo/logo.PNG`} alt="logo" /> */}
-                            <img src = {`/images/weygo/logoactual2023.png`} alt="logo" />
+                            <img src = {`/images/weygo/R.jpg`} alt="logo" />
                         </Link>
                             {/* <!-- Button trigger modal --> */}
                             <div data-toggle="tooltip" data-placement="bottom" title="Como empezar!">
-                                <a className="navbar-brand buttonVentasQuito" href="#" data-toggle="modal" data-target="#exampleModalCenter2">Remateec</a>
+                                <a className="navbar-brand buttonRemateec" href="#" data-toggle="modal" data-target="#exampleModalCenter2">Remateec</a>
                             </div>
                             {/* <!-- Modal --> */}
                             <div className="modal fade" id="exampleModalCenter2" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle2" aria-hidden="true">
@@ -81,12 +81,11 @@ class Header extends Component{
                                         </button>
                                     </div>
                                     <div className="modal-body headermb">
-                                        <li>Primero haz click en ingresa o registrate</li>
-                                        <li>Después haz click en Registrate ahora</li>
-                                        <li>Una vez registrado te llegara a tu correo personal un enlace que verificará tu cuenta</li>
-                                        <li>Verifica tu cuenta e ingresa a ventasquito.com con tu correo y contraseña</li>
-                                        <li>Y listo ya puedes empezar a comprar.</li>
-                                        <h5>Ventasquito agradece tu registro.</h5>
+                                        <li>Primero busca el producto de tu preferencia puedes verlo en categorias o con el buscador</li>
+                                        <li>Lee bien la descripción del producto</li>
+                                        <li>Después enviale la foto al vendedor de tu confianza</li>
+                                        <li>El enviara tu producto juntamente con tu otro pedido</li>
+                                        <h5>Remateec agradece tu compra.</h5>
                                     </div>
                                 </div>
                             </div>

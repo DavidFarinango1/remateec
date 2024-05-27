@@ -148,7 +148,7 @@ class ChairsContainer extends Component{
                        <p className="BSB1_2P CCp">
                         Tenemos una gran variedad de sillas ejecutivas, tipo gerenciales, tipo gamers, taburetes, tandems de espera entre otros, llamanos o escribenos al whatsapp 0991200163 para enviarte toda la información más facilmente<br/><br/>Si quieres ver nuestro catálogo completo haz clic en el siguiente link <br/>
                        </p>
-                       <a download="campaña9.pdf"  href="https://firebasestorage.googleapis.com/v0/b/ventasquito-4da99.appspot.com/o/catalogo%2FCAT%C3%81LOGO%20SILLAS-MUEBLES%20(1)_compressed.pdf?alt=media&token=c227ddaf-bb2f-4c0d-8031-86e3fef19ae7" target='_blank' >Descargar aqui!</a><br/>   
+                       <a download="campaña9.pdf"  href="https://firebasestorage.googleapis.com/v0/b/remateec-b7f6d.appspot.com/o/catalogo%2FCAT%C3%81LOGO%20SILLAS-MUEBLES%20(1)_compressed.pdf?alt=media&token=c227ddaf-bb2f-4c0d-8031-86e3fef19ae7" target='_blank' >Descargar aqui!</a><br/>   
                        <a className='BSB1_2P CCp SignIn_problems'> Precios y stock pueden variar sin previo aviso, consulte con su asesor.</a>
                        <span className="iconHeart">♥</span>
                    </div>

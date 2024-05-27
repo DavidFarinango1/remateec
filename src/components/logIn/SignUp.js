@@ -33,14 +33,14 @@ class SignUpFormBase extends Component {
               displayName: username,
             })
             const configuracion ={
-              url: 'https://www.ventasquito.com/'
+              url: 'remateec.com'
             }
             
             authUser.user.sendEmailVerification(configuracion).catch(error=>{
               this.setState({error})
             })
             this.props.firebase.doSignOut()
-            alert('Bienvenido a Ventasquito.com, por favor realiza el proceso de verificacion en tu correo electrónico para poder empezar')
+            alert('Bienvenido a Remateec.com, por favor realiza el proceso de verificacion en tu correo electrónico para poder empezar')
             this.props.history.push(ROUTES.HOME);
             console.log('1='+authUser.user.uid)
               event.preventDefault();
@@ -74,8 +74,8 @@ class SignUpFormBase extends Component {
       <div className="SUP">
         <div className="SUPregister">
           <div className = "SUPLIheader">
-              <img src= "./images/weygo/logo.PNG" height="66px"></img>
-              <h1>Ventasquito</h1>
+              <img src= "/images/weygo/R.jpg" height="66px"></img>
+              <h1>Remateec</h1>
           </div>
           <form id="formulariot" onSubmit={this.onSubmit}>
             <div className="LIinfo">

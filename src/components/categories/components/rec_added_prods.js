@@ -59,7 +59,7 @@ class RecAddedProds extends Component{
                                         </div>                                            
                 <div>
                     <h3 className="OneProd_titlenone">
-                        Agregados recientemente:
+                        Ofertas recientes:
                     </h3>
                 </div>
                 <div className="cards-slider2">
@@ -77,27 +77,30 @@ class RecAddedProds extends Component{
                                     <div className='OneProdCateg_price'>
                                         <p className='OneProdCateg_P'> ${item.data.p_price} </p>
                                     </div>
-                                    <div className='OneProdCateg_buttons'>
+                                    {/* <div className='OneProdCateg_buttons'>
                                         <button className='OneProdCateg_button1  btn btn-info' onClick={() => this.props.handleOnAdd(item)}>Comprar</button>
                                         <button className='OneProdCateg_button1 OneProdCateg_button1_2 btn btn-danger' onClick={() => this.props.openModal2(item)} data-toggle="modal" data-target="#exampleModalCenter">Ver más</button>
-                                    </div>
-                                    <div className='OneProdCateg_showPrice'>
-                                            <div className="alert alert-primary ShowPriceAlert" role="alert">
-                                            ${item.data.p_price}
-                                            </div>
-                                        </div>
-                                    {/* <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                        <div className="modal-dialog modal-dialog-centered modalwid" role="document">
-                                            <div className="modal-content">
-                                                <div className="modal-body OMDmb">
-                                                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                    <OneDescriptionModal oneproduct={this.props.data_modal} itemId={item.id} />
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div> */}
+                                    <div className='OneProdCateg_showPrice'>
+                                        <div className="alert alert-primary ShowPriceAlert" role="alert">
+                                            ${item.data.p_price}
+                                        </div>
+                                    </div>
+                                    <div className='OneProdCateg_showPrice2'>
+                                        <div className="alert alert-primary ShowPriceAlert" role="alert">
+                                            {item.data.p_name}
+                                        </div>
+                                    </div>    
+                                    <div className='OneProdCateg_showPrice3'>
+                                        <div className="alert alert-primary ShowPriceAlert" role="alert">
+                                            ${item.data.p_price}
+                                        </div>
+                                    </div>
+                                    <div className='OneProdCateg_showPrice4'>
+                                        <div className="alert alert-primary ShowPriceAlert" role="alert">
+                                            AHORRAS: ${item.data.p_price - 1}
+                                        </div>
+                                    </div>
                                 </div>
                             )):null                
                         }

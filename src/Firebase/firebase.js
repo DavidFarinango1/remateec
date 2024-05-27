@@ -5,32 +5,32 @@ import 'firebase/storage'
 
 // const config = {
 //     apiKey: "AIzaSyBsFd51nIOjAQpU4MmttgZcmZfgVINj0r0",
-//     authDomain: "ventasquito-ef0c3.firebaseapp.com",
-//     databaseURL: "https://ventasquito-ef0c3.firebaseio.com",
-//     projectId: "ventasquito-ef0c3",
-//     storageBucket: "ventasquito-ef0c3.appspot.com",
+//     authDomain: "Remateec-ef0c3.firebaseapp.com",
+//     databaseURL: "https://Remateec-ef0c3.firebaseio.com",
+//     projectId: "Remateec-ef0c3",
+//     storageBucket: "Remateec-ef0c3.appspot.com",
 //     messagingSenderId: "510782049463",
 //     appId: "1:510782049463:web:6a4a3f4ec3049248"
 // };
 //
 /* const config = {
   apiKey: "AIzaSyBcCN9KqeZqgDLRNrzHpmE8ppwstjmeoI0",
-  authDomain: "ventasquito-4da99.firebaseapp.com",
-  databaseURL: "https://ventasquito-4da99.firebaseio.com",
-  projectId: "ventasquito-4da99",
-  storageBucket: "ventasquito-4da99.appspot.com",
+  authDomain: "remateec-b7f6d.firebaseapp.com",
+  databaseURL: "https://remateec-b7f6d.firebaseio.com",
+  projectId: "remateec-b7f6d",
+  storageBucket: "remateec-b7f6d.appspot.com",
   messagingSenderId: "742480332892",
   appId: "1:742480332892:web:b44fd5a8f55bc0e4"
 }; */
 
 const config = {
-    apiKey: "AIzaSyB8vDP0nzvOFIEsZC-lEHZYlqfOPbPtf5A",
-    authDomain: "ventasquito-4da99.firebaseapp.com",
-    databaseURL: "https://ventasquito-4da99.firebaseio.com",
-    projectId: "ventasquito-4da99",
-    storageBucket: "ventasquito-4da99.appspot.com",
-    messagingSenderId: "742480332892",
-   appId: "1:742480332892:web:b44fd5a8f55bc0e4"
+    apiKey: "AIzaSyB9keJqJQcp4XTQF7fmjoDJsb6XtM0_GQs",
+  authDomain: "remateec2.firebaseapp.com",
+  databaseURL: "https://remateec2-default-rtdb.firebaseio.com",
+  projectId: "remateec2",
+  storageBucket: "remateec2.appspot.com",
+  messagingSenderId: "284933775195",
+  appId: "1:284933775195:web:21c6ed993ccec587b5c47e"
 };
 
 class Firebase {

@@ -13,8 +13,8 @@ class Home extends Component{
                 <Header />
                 <Slides />
                 <Categories />
-                <Footer />
-                <SocialN />
+                {/* <Footer />
+                <SocialN /> */}
             </HomeLayout>
         )
     }

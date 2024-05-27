@@ -1,5 +1,5 @@
 .Subheader1{
-    background-color: #632214!important;
+    background-color: #232F3E!important;
     color: white !important;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -7,7 +7,7 @@
 }
 .Sh1_1{
     grid-area: a;
-    border: 1px solid #632214;
+    border: 1px solid #232F3E;
 }
 .Sh1_1:hover{
     border: 1px solid rgba(0,0,0,.2);
