@@ -110,7 +110,7 @@ class UploadProducts extends Component {
                         </div>
                     </div>
                     <div className="UPB8">
-                        <p>Forma de Envio:</p>
+                        <p>Estado del producto:</p>
                         <select name="logistic_seller" value={logistic_seller} onChange={this.props.onActionChange} className="custom-select custom-select-sm">
                             <option value="None" selected>Estado del producto</option>
                             <option value="Nuevo">Nuevo</option>

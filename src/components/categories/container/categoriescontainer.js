@@ -212,9 +212,9 @@ class CategoriesContainer extends Component{
                     </div>
                     
                 </div>
-                    <div className="CateCont3">
+                    {/* <div className="CateCont3">
                         <CartContainer products={this.state.productsState} />
-                    </div>
+                    </div> */}
             </div>
         )
     }
