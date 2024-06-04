@@ -27,6 +27,7 @@
                          "c c c"
                          "d d d"
                          "e e e"
+                         "g g g"
                          "f f f"
 }
 .JMP_name{
@@ -49,6 +50,11 @@
 }
 .JMP_price{
     grid-area: d;
+    display: flex;
+    justify-content: space-evenly;
+}
+.JMP_offerprice{
+    grid-area: g;
     display: flex;
     justify-content: space-evenly;
 }

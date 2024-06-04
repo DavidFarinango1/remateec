@@ -1,4 +1,10 @@
 /* prueba */
+.alert-primary{
+    background-color: crimson !important;
+    border-color: crimson !important;
+    color:white;
+
+}
 .button_next{
     position: absolute;
     z-index: 1;
@@ -22,6 +28,19 @@
     border: 0 !important;
     padding: 5px 10px !important;
     opacity: .85 !important;
+}
+.OneProdCateg_showPrice .alert-primary {
+    background-color: green !important;
+    border-color: green !important;
+    color: white;
+    font-weight: 500;
+}
+
+.OneProdCateg_showPrice .alert-danger {
+    background-color: red !important;
+    border-color: red !important;
+    color: white;
+    font-weight: 500;
 }
 .button_previous:hover{
     background-color: white;
@@ -53,10 +72,10 @@
         border: 0;
 }
 .cards-slider2{
-    /* overflow: hidden; */
-    /* position: relative; */
+    overflow: hidden; 
+    position: relative; 
     margin: 0 auto;
-    height: 190px;
+    height: 100%;
 }
 .cards-slider-wraper2{
     overflow-x: auto;
@@ -124,6 +143,18 @@
     grid-area: c;
     text-align: center;
 }
+.PreciosOferta{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Establece el número máximo de líneas a mostrar */
+    -webkit-box-orient: vertical; /* Orientación vertical para el box */
+}
+.Namerecc{
+    margin-left:.2em ;
+}
 .OneProdCateg_pi_img{
     width: 180px;
     height: 180px;
@@ -152,7 +183,7 @@
     opacity: 0.95;
 }
 .ShowPriceAlert{
-    padding: 0 .5em !important;
+    padding: 0 .3em !important;
     margin: 0 !important;
 }
 .OneProdCateg_showPrice{
@@ -169,10 +200,31 @@
 }
 .OneProdCateg_showPrice3{
     text-align: center;
-    text-decoration: line-through;
+    display: inline-flex;
+    /* text-decoration: line-through; */
     position: absolute;
     bottom: 0;
     left: 0;
+}
+.alertf{
+    color: #dc143c; /* Color del texto de la alerta */
+    border-radius: 4px; /* Borde redondeado */
+    border: 2px solid #dc143c;
+    padding: 0 .5em !important;
+    margin: .8em !important;
+    font-size: .8em;
+    font-weight: 500;
+    display: inline;
+}
+.price_origin{
+    display: inline-flex;
+    font-weight: 500;
+}
+.price_1{
+    margin: 0 10px 0 10px;
+}
+.price1_1{
+    text-decoration: line-through !important;
 }
 .OneProdCateg_showPrice4{
     text-align: center;

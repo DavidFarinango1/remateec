@@ -24,8 +24,12 @@ class OnlyMyProduct extends Component{
                                 </Link>
                             </div>
                             <div className='JMP_price'>
-                                <p className='JMP_P'><strong>Precio:</strong></p>
+                                <p className='JMP_P'><strong>Precio Oferta:</strong></p>
                                 <p className='JMP_P'>{item.data.p_price}</p>
+                            </div>
+                            <div className='JMP_offerprice'>
+                                <p className='JMP_P'><strong>Precio Normal:</strong></p>
+                                <p className='JMP_P'>{item.data.p_offerprice}</p>
                             </div>
                             <div className='JMP_sendby'>
                                 <p className='JMP_P'><strong>Enviado por:</strong></p>

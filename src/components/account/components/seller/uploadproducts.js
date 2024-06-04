@@ -12,6 +12,7 @@ class UploadProducts extends Component {
             inputValue_mygps,
             inputValue_name,
             inputValue_price,
+            inputValue_offerprice,
             inputValue_shortdetails,
             details_general_description1,
             details_general_description2,
@@ -81,8 +82,12 @@ class UploadProducts extends Component {
                         </div>
                     </div>
                     <div className="UPB4">
-                            <p>Precio</p>
+                            <p>Precio Normal:</p>
                             <input name="inputValue_price" value={inputValue_price} onChange={this.props.onActionChange} className="form-control form-control-sm" type="text" placeholder='Usar puntos para separar los decimales' required></input>
+                    </div>
+                    <div className="UPB4">
+                            <p>Precio Oferta:</p>
+                            <input name="inputValue_offerprice" value={inputValue_offerprice} onChange={this.props.onActionChange} className="form-control form-control-sm" type="text" placeholder='Usar puntos para separar los decimales' required></input>
                     </div>
                     <div className="UPB5">
                             <p>Breve detalle:</p>
@@ -107,9 +112,9 @@ class UploadProducts extends Component {
                     <div className="UPB8">
                         <p>Forma de Envio:</p>
                         <select name="logistic_seller" value={logistic_seller} onChange={this.props.onActionChange} className="custom-select custom-select-sm">
-                            <option value="None" selected>A través de weygo</option>
-                            <option value="Personal">Personal</option>
-                            <option value="A_traves_de_weygo">A través de Weygo</option>
+                            <option value="None" selected>Estado del producto</option>
+                            <option value="Nuevo">Nuevo</option>
+                            <option value="Usado">Usado</option>
                         </select>
                         <p>Revisar terminos y condiciones</p>
                     </div>

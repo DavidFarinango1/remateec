@@ -37,6 +37,7 @@ class CategoriesContainer extends Component{
             inputValue_name: '',
             inputValue_categories: '',
             inputValue_price: '',
+            inputValue_offerprice: '',
             inputValue_shortdetails: '',
             title_general_description1: '',
             details_general_description1: '',

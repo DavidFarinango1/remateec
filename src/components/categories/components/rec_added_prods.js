@@ -74,32 +74,44 @@ class RecAddedProds extends Component{
                                         {/* </Link> */}
                                         </a>
                                     </div>
+                                    <div className='PreciosOferta'>
+                                            <a className='Namerecc'>{item.data.p_name}</a>
+
+                                    </div>
                                     <div className='OneProdCateg_price'>
-                                        <p className='OneProdCateg_P'> ${item.data.p_price} </p>
+                                        <p className='OneProdCateg_P'> {item.data.p_logistic_seller} </p>
                                     </div>
-                                    {/* <div className='OneProdCateg_buttons'>
-                                        <button className='OneProdCateg_button1  btn btn-info' onClick={() => this.props.handleOnAdd(item)}>Comprar</button>
-                                        <button className='OneProdCateg_button1 OneProdCateg_button1_2 btn btn-danger' onClick={() => this.props.openModal2(item)} data-toggle="modal" data-target="#exampleModalCenter">Ver más</button>
-                                    </div> */}
                                     <div className='OneProdCateg_showPrice'>
-                                        <div className="alert alert-primary ShowPriceAlert" role="alert">
-                                            ${item.data.p_price}
+                                        {/* <div className="alert alert-primary ShowPriceAlert" role="alert">
+                                            {item.data.p_logistic_seller}
+                                        </div> */}
+                                        {item.data.p_logistic_seller === 'Nuevo' ? (
+                <div className='OneProdCateg_showPrice'>
+                    <div className="alert alert-primary ShowPriceAlert" role="alert">
+                        Nuevo
+                    </div>
+                </div>
+            ) : (
+                <div className='OneProdCateg_showPrice'>
+                    <div className="alert alert-danger ShowPriceAlert" role="alert">
+                        Usado
+                    </div>
+                </div>
+            )}
+                                    </div>
+                                    <div className=''>
+                                        <div className='PreciosOferta price_origin'>
+                                        <   div className="price_1">
+                                                $<a className='price1_1'>{item.data.p_price}  </a>
+                                            </div>
+                                            <div className="price_2">
+                                            $<a>{item.data.p_offerprice}</a>
+                                            </div>
+                                            
                                         </div>
                                     </div>
-                                    <div className='OneProdCateg_showPrice2'>
-                                        <div className="alert alert-primary ShowPriceAlert" role="alert">
-                                            {item.data.p_name}
-                                        </div>
-                                    </div>    
-                                    <div className='OneProdCateg_showPrice3'>
-                                        <div className="alert alert-primary ShowPriceAlert" role="alert">
-                                            ${item.data.p_price}
-                                        </div>
-                                    </div>
-                                    <div className='OneProdCateg_showPrice4'>
-                                        <div className="alert alert-primary ShowPriceAlert" role="alert">
-                                            AHORRAS: ${item.data.p_price - 1}
-                                        </div>
+                                    <div className='alertf'>
+                                        <a> AHORRAS $</a>{item.data.p_price - item.data.p_offerprice}
                                     </div>
                                 </div>
                             )):null                

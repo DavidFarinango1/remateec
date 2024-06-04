@@ -80,7 +80,7 @@ class Onedescription extends Component{
                 <div className="PBvendido-por" onClick={console.log(this.props.proddetails.data)}><strong>-Vendido por:<br /></strong>Remateec Industries</div>
                 {/* <div className="PBvendido-por" onClick={console.log(this.props.proddetails.data)}><strong>-Vendido por:<br /></strong>{this.props.proddetails.data.p_mybussinessname}</div> */}
                 {/* <div className="PBenviado-por"><strong>-Enviado por:</strong><br />{this.props.proddetails.data.p_logistic_seller}</div> */}
-                <div className="PBenviado-por"><strong>-Enviado por:</strong><br />Serviexpress Logistics</div>
+                <div className="PBenviado-por"><strong>Estado:</strong><br />{this.props.proddetails.data.p_logistic_seller}</div>
                 <div className="PBformas de pago"><strong>-Formas de pago:</strong> <br />Efectivo o Transferencia</div>
                 {/* <Link to='/ShoppingCart/Logged'> */}
                 <div className="PBbutton-sell">
